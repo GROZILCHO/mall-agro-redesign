@@ -1,13 +1,14 @@
 # Mall Agro Next Actions
 
-1. Run a source audit of the new localization/content/route config foundation.
-2. Confirm the config structure is ready before wiring it into UI.
-3. Preserve existing homepage components until a separate wiring or redesign task is approved.
-4. After foundation is clean, prepare a separate homepage/category-card implementation task.
-5. Later: run a separate SEO metadata/canonical/sitemap/hreflang task.
-6. Later: run a separate design-system audit/cleanup task before changing tokens.
-7. Later: run a separate asset performance audit before relying on the hero video in production.
+1. Review and approve or revise the design-system direction.
+2. Decide whether `Design System.jpg` becomes the approved visual direction.
+3. Approve color, typography, spacing, button, and card rules.
+4. Keep category cards deferred until design approval.
+5. Only after design approval, prepare a narrow design-token cleanup or card-pattern task.
+6. Continue controlled source wiring tasks only when their scope does not require visual redesign.
+7. Later: run a separate SEO metadata/canonical/sitemap/hreflang task.
+8. Later: run a separate asset performance audit before relying on the hero video in production.
 
 ## Recommended Immediate Next Task
 
-Audit the new localization config foundation before wiring it into the homepage or navigation.
+Approve or revise the design-system direction before any visual implementation.

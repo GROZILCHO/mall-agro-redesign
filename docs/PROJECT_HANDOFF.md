@@ -10,6 +10,8 @@ DEC-007 is approved: use domain-based localization with shared internal content 
 
 The localized content/config foundation has been added under `src/lib/`.
 
+Design-system audit is complete. Current classification: partial draft/reference.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -22,6 +24,7 @@ The localized content/config foundation has been added under `src/lib/`.
 - Current source route map: only `/`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 - Localized config modules for locales, route maps, category content, and navigation labels
+- Design-system inputs exist, but final visual direction is not approved
 
 ## What Was Added
 
@@ -51,7 +54,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run a source audit of the new localization/content/route config foundation before wiring it into UI.
+Approve or clarify the design-system direction before category cards or visual redesign.
 
 ## Source Audit Results
 
@@ -61,6 +64,7 @@ Run a source audit of the new localization/content/route config foundation befor
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - No homepage redesign, public route creation, SEO/sitemap/robots rollout, or product migration was done as part of the config foundation.
+- Do not start category cards or visual redesign yet.
 
 ## Files To Inspect First
 
@@ -77,6 +81,8 @@ Run a source audit of the new localization/content/route config foundation befor
 Do not modify source code, styles, assets, packages, build output, or deployment files without a separate narrow implementation task.
 
 Do not wire the new config into UI until the config foundation is audited.
+
+Do not modify Tailwind tokens, global CSS, component styling, or assets before a dedicated design-system task.
 
 Do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 

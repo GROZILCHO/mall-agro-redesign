@@ -23,10 +23,14 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - No homepage redesign has been done.
 - No public routes have been created.
 - No product migration is approved.
+- Design-system source audit is complete.
+- Design system is classified as partial draft/reference.
+- Visual implementation is not approved yet.
+- Category cards remain deferred until design-system approval.
 - No design-token changes are approved.
 - No SEO, sitemap, robots, canonical, hreflang, or Open Graph rollout has been implemented.
 - No browser-visible redesign task has started yet.
-- Next recommended step: audit the new localization config before wiring it into UI.
+- Next recommended design step: clarify or approve the design-system direction.
 
 ## Current Constraints
 
