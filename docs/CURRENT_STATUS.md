@@ -2,24 +2,27 @@
 
 ## Current Phase
 
-Project Setup / Documentation Bootstrap
+Project Setup / Post-Audit Planning
 
 ## Current State
 
-Existing early Next.js App Router project. Workflow docs are being added. No code implementation yet.
+Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. No source-code implementation has started after the audit.
 
 ## Notes
 
 - The project is early.
-- Existing assets and components appear useful and should be preserved until audited.
-- The first code task comes later.
+- Git repository is clean on `main`.
+- GitHub remote is configured as `origin https://github.com/GROZILCHO/mall-agro-redesign.git`.
+- Next.js source audit is complete.
+- Lint passed during audit.
+- Build was not run during audit because it writes to `.next`, which is forbidden at this phase.
+- Existing assets and components appear useful and should be preserved until implementation is scoped.
 - Browser-visible baseline is not yet established under workflow control.
-- The project has been initialized as a local Git repository, but no remote has been added.
-- The existing project files are untracked because the repository was initialized locally during workflow bootstrap.
+- Next blocker: decide domain localization architecture for `mallagro.com` and `mallagro.ro`.
 
 ## Current Constraints
 
-- Do not modify application code during documentation bootstrap.
-- Do not run build during documentation bootstrap.
-- Do not run `npm install` during documentation bootstrap.
+- Do not modify application code before the localization architecture is approved.
+- Do not run build at this phase.
+- Do not run `npm install` at this phase.
 - Do not modify `.next`.

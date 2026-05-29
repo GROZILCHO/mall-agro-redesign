@@ -2,7 +2,9 @@
 
 ## Current Project State
 
-Mall Agro is an early Next.js App Router project using JavaScript, React, and Tailwind CSS. The project is being brought under MindGrid Studio Standard Workflow v1.0 through documentation bootstrap.
+Mall Agro is an early Next.js App Router project using JavaScript, React, and Tailwind CSS. Documentation bootstrap is complete and the initial read-only Next.js source audit has been completed.
+
+Git baseline is clean on `main`. GitHub remote is configured as `origin https://github.com/GROZILCHO/mall-agro-redesign.git`.
 
 ## What Exists
 
@@ -11,7 +13,9 @@ Mall Agro is an early Next.js App Router project using JavaScript, React, and Ta
 - Header, top bar, navigation, hero, footer, icon component, and empty key metrics component
 - Tailwind configuration with early tokens
 - Mall Agro logo assets, hero video, hero background, icons, and fonts
-- Local Git repository initialized on `main`
+- Clean Git repository on `main`
+- GitHub remote configured
+- Current source route map: only `/`
 
 ## What Was Added
 
@@ -34,7 +38,6 @@ Workflow governance documentation:
 
 ## Unresolved Decisions
 
-- GitHub remote repository URL
 - Deployment target
 - Domain routing strategy
 - Localization implementation strategy
@@ -44,7 +47,15 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Commit the workflow documentation bootstrap, then run a focused Next.js source audit before making browser-visible implementation changes.
+Approve the localization/domain architecture for `mallagro.com` and `mallagro.ro` before any source implementation begins.
+
+## Source Audit Results
+
+- Source audit completed.
+- Lint passed.
+- Build was not run because `next build` writes to `.next`.
+- No old WooCommerce taxonomy or seed product leakage was found in source files.
+- Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 
 ## Files To Inspect First
 
@@ -59,6 +70,8 @@ Commit the workflow documentation bootstrap, then run a focused Next.js source a
 ## Warnings / Do Not Touch
 
 Do not modify source code, styles, assets, packages, build output, or deployment files without a separate narrow implementation task.
+
+Do not start source-code implementation before localization strategy is approved.
 
 Do not migrate products before taxonomy and content model approval.
 

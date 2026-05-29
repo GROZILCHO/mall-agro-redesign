@@ -1,15 +1,13 @@
 # Mall Agro Next Actions
 
-1. Confirm Git repository state.
-2. Confirm or add the correct GitHub remote repository URL.
-3. Commit workflow documentation bootstrap.
-4. Run a Next.js source audit.
-5. Review the existing design system.
-6. Confirm domain localization strategy.
-7. Approve the content model and taxonomy.
-8. Define the first browser-visible implementation task.
-9. Create homepage with three category cards later, after approval.
+1. Decide domain localization architecture for `mallagro.com` and `mallagro.ro`.
+2. Decide content/config strategy for localized labels, slugs, metadata, alt text, and category data.
+3. Prepare a narrow implementation task for localization/content foundation after architecture approval.
+4. Run a separate design-system audit/cleanup task before changing tokens.
+5. Run a separate asset performance audit before relying on the hero video in production.
+6. Define the first browser-visible implementation task only after localization architecture is approved.
+7. Create homepage with three category cards later, after localization/content foundation is in place.
 
 ## Recommended Immediate Next Task
 
-Commit only the workflow documentation bootstrap once the changed-file list is confirmed.
+Approve the domain localization architecture before any source implementation begins.
