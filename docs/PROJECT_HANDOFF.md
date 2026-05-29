@@ -14,6 +14,8 @@ Design-system audit is complete. Current classification: partial draft/reference
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
 
+Category-card pattern draft scope has been documented. Category card implementation remains deferred.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -28,6 +30,7 @@ DEC-008 is approved: the current design-system reference is approved as visual d
 - Localized config modules for locales, route maps, category content, and navigation labels
 - Design-system reference is approved as visual direction only
 - Final Tailwind tokens and component patterns are not yet implemented
+- Category-card pattern draft scope is documented in `docs/DESIGN_SYSTEM.md`
 
 ## What Was Added
 
@@ -57,7 +60,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Prepare a narrow design-token and component-pattern audit or planning task before category cards or visual redesign.
+Add missing category-card fields to `src/lib/content/categories.js` only, without UI.
 
 ## Source Audit Results
 
@@ -67,7 +70,7 @@ Prepare a narrow design-token and component-pattern audit or planning task befor
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - No homepage redesign, public route creation, SEO/sitemap/robots rollout, or product migration was done as part of the config foundation.
-- Category cards are still deferred until card pattern and layout rules are scoped.
+- Category cards are still deferred until card-specific content fields are added and audited.
 
 ## Files To Inspect First
 
@@ -88,6 +91,8 @@ Do not wire the new config into UI until the config foundation is audited.
 Do not modify Tailwind tokens, global CSS, component styling, or assets before a dedicated design-system task.
 
 Do not treat DEC-008 as approval to implement final Tailwind tokens, component styling, category cards, or asset changes.
+
+Do not implement cards, tokens, CSS, icons, or assets before the next scoped task.
 
 Do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 
