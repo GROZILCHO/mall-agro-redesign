@@ -2,9 +2,19 @@
 
 ## Current Classification
 
-The current Mall Agro design system is classified as a partial draft/reference, not an approved final source of truth.
+The current Mall Agro design system remains classified as a partial draft/reference, not an approved final source of truth.
 
-Do not treat the current tokens, components, or reference assets as final until Rosen / MindGrid Studio explicitly approves the design direction.
+DEC-008 approves the current Mall Agro design-system reference as the visual direction/reference for future work. This approval does not make the current tokens, components, layouts, or assets final implementation rules.
+
+## Approved Visual Direction
+
+The current Mall Agro design-system reference is approved as the visual direction/reference for future work.
+
+This approval covers general visual direction only. It may guide future visual tasks, category-card direction, CTA mood, green/yellow/warm-neutral palette direction, clean B2B catalog feel, agricultural/industrial iconographic direction, and overall layout language.
+
+It does not approve direct implementation of all values, tokens, layouts, or assets.
+
+It does not authorize immediate token cleanup, component styling changes, category-card implementation, or asset changes without a separate implementation task.
 
 ## Known Design-System Inputs
 
@@ -27,7 +37,9 @@ These inputs are useful audit material. They are not automatically approved fina
 
 It is not currently used by code.
 
-It is not yet approved as the final implementation source of truth.
+It is approved as a visual direction reference under DEC-008.
+
+It is not approved as the final implementation source of truth.
 
 It should not be treated as a runtime production asset unless explicitly approved.
 
@@ -78,7 +90,7 @@ Future Codex tasks must not change the following without a dedicated design-syst
 
 ## Design Blockers
 
-The design-system audit identified these blockers:
+The design-system audit identified these blockers for final implementation:
 
 - final color palette is not approved
 - typography system is not approved
@@ -89,13 +101,13 @@ The design-system audit identified these blockers:
 - logo/icon strategy is unclear
 - font strategy is unclear
 - hero video is large and needs performance review
-- `Design System.jpg` status needs human approval
+- final use of `Design System.jpg` as an implementation source or runtime asset is not approved
 
 ## Approval Checklist
 
-Rosen / MindGrid Studio should approve the following before visual implementation:
+Rosen / MindGrid Studio should approve the following before final design implementation:
 
-- [ ] Approve whether `Design System.jpg` is the visual direction.
+- [x] Approve whether `Design System.jpg` is the visual direction.
 - [ ] Approve final color palette.
 - [ ] Approve typography system and font strategy.
 - [ ] Approve spacing/layout scale.
@@ -118,9 +130,9 @@ Category cards should wait until card pattern, spacing, hover state, image rules
 
 The next design-related step should be one of:
 
-1. Human approval of `Design System.jpg` as visual direction.
-2. A revised design-system brief before implementation.
-3. A narrow design-token cleanup task after approval.
+1. A narrow design-token and component-pattern audit or planning task.
+2. A revised design-system brief for final implementation details.
+3. A narrow design-token cleanup task after final token approval.
 4. A card pattern implementation task after token/card approval.
 
-Do not implement category cards or visual redesign before a design-system approval decision is recorded.
+Do not implement category cards or visual redesign before card pattern and layout scope are approved.

@@ -12,6 +12,8 @@ The localized content/config foundation has been added under `src/lib/`.
 
 Design-system audit is complete. Current classification: partial draft/reference.
 
+DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -24,7 +26,8 @@ Design-system audit is complete. Current classification: partial draft/reference
 - Current source route map: only `/`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 - Localized config modules for locales, route maps, category content, and navigation labels
-- Design-system inputs exist, but final visual direction is not approved
+- Design-system reference is approved as visual direction only
+- Final Tailwind tokens and component patterns are not yet implemented
 
 ## What Was Added
 
@@ -48,13 +51,13 @@ Workflow governance documentation:
 ## Unresolved Decisions
 
 - Deployment target
-- Final design system approval
+- Final design implementation details
 - Final product list
 - Product detail page scope
 
 ## Next Recommended Task
 
-Approve or clarify the design-system direction before category cards or visual redesign.
+Prepare a narrow design-token and component-pattern audit or planning task before category cards or visual redesign.
 
 ## Source Audit Results
 
@@ -64,7 +67,7 @@ Approve or clarify the design-system direction before category cards or visual r
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - No homepage redesign, public route creation, SEO/sitemap/robots rollout, or product migration was done as part of the config foundation.
-- Do not start category cards or visual redesign yet.
+- Category cards are still deferred until card pattern and layout rules are scoped.
 
 ## Files To Inspect First
 
@@ -83,6 +86,8 @@ Do not modify source code, styles, assets, packages, build output, or deployment
 Do not wire the new config into UI until the config foundation is audited.
 
 Do not modify Tailwind tokens, global CSS, component styling, or assets before a dedicated design-system task.
+
+Do not treat DEC-008 as approval to implement final Tailwind tokens, component styling, category cards, or asset changes.
 
 Do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 

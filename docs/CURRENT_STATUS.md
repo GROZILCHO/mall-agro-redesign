@@ -6,7 +6,7 @@ Project Setup / Post-Audit Planning
 
 ## Current State
 
-Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. A localized content/config foundation has been added.
+Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. A localized content/config foundation has been added. Design direction decision DEC-008 is approved at reference level.
 
 ## Notes
 
@@ -25,12 +25,15 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - No product migration is approved.
 - Design-system source audit is complete.
 - Design system is classified as partial draft/reference.
-- Visual implementation is not approved yet.
-- Category cards remain deferred until design-system approval.
+- Design-system direction decision DEC-008 is approved.
+- Visual direction is approved at reference level.
+- Final design implementation details remain pending.
+- Category cards remain deferred until card pattern and layout scope are approved.
 - No design-token changes are approved.
+- No source visual implementation has started from DEC-008.
 - No SEO, sitemap, robots, canonical, hreflang, or Open Graph rollout has been implemented.
 - No browser-visible redesign task has started yet.
-- Next recommended design step: clarify or approve the design-system direction.
+- Next recommended design step: prepare a narrow design-token/card-pattern planning or audit task.
 
 ## Current Constraints
 
