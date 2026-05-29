@@ -3,7 +3,18 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from './Icon';
+import { navigationItems } from '../../lib/content/navigation.js';
+import { siteRoutes } from '../../lib/routes/siteRoutes.js';
+
+const locale = 'en';
+const navItems = navigationItems[locale];
+const routes = siteRoutes[locale];
+const primaryNavItem = navItems.find((item) => item.isPrimary);
+const mainNavItems = navItems.filter((item) => !item.isPrimary);
+
+function getNavHref(item) {
+  return routes[item.routeKey] || '/';
+}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,44 +55,22 @@ export default function Navbar() {
 
         {/* Десктоп навигация */}
         <nav className="hidden md:flex items-center space-x-6 text-accent text-sm md:text-base lg:text-lg">
-          <Link href="/" className="hover:underline whitespace-nowrap">Home</Link>
-
-          <div className="relative group">
-            <Link href="#products" className="hover:underline flex items-center whitespace-nowrap">
-              Products
-              <Icon name="chevronDown" size={20} className="ml-1" />
+          {mainNavItems.map((item) => (
+            <Link key={item.id} href={getNavHref(item)} className="hover:underline whitespace-nowrap">
+              {item.label}
             </Link>
-            <div className="absolute left-0 top-full bg-white text-black shadow-lg hidden group-hover:block p-4">
-              <ul>
-                <li><Link href="#product1" className="hover:underline">Product 1</Link></li>
-                <li><Link href="#product2" className="hover:underline">Product 2</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <Link href="#solutions" className="hover:underline flex items-center whitespace-nowrap">
-              Solutions
-              <Icon name="chevronDown" size={20} className="ml-1" />
-            </Link>
-            <div className="absolute left-0 top-full bg-white text-black shadow-lg hidden group-hover:block p-4">
-              <ul>
-                <li><Link href="#solution1" className="hover:underline">Solution 1</Link></li>
-                <li><Link href="#solution2" className="hover:underline">Solution 2</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <Link href="#about" className="hover:underline whitespace-nowrap">About Us</Link>
+          ))}
         </nav>
 
         {/* CTA бутон */}
-        <Link
-          href="#quote"
-          className="hidden md:block button sm:button-sm md:button-md lg:button-lg"
-        >
-          Get a Quote
-        </Link>
+        {primaryNavItem && (
+          <Link
+            href={getNavHref(primaryNavItem)}
+            className="hidden md:block button sm:button-sm md:button-md lg:button-lg"
+          >
+            {primaryNavItem.label}
+          </Link>
+        )}
 
         {/* Хамбургер бутон за мобилно меню */}
         <button
@@ -105,11 +94,16 @@ export default function Navbar() {
       {/* Мобилно меню */}
       {isMobileMenuOpen && (
         <nav className="md:hidden bg-[#154F3C] text-accent px-4 pt-4 pb-6 space-y-4 text-base">
-          <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block">Home</Link>
-          <Link href="#products" onClick={() => setIsMobileMenuOpen(false)} className="block">Products</Link>
-          <Link href="#solutions" onClick={() => setIsMobileMenuOpen(false)} className="block">Solutions</Link>
-          <Link href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block">About Us</Link>
-          <Link href="#quote" onClick={() => setIsMobileMenuOpen(false)} className="block button w-full text-center">Get a Quote</Link>
+          {mainNavItems.map((item) => (
+            <Link key={item.id} href={getNavHref(item)} onClick={() => setIsMobileMenuOpen(false)} className="block">
+              {item.label}
+            </Link>
+          ))}
+          {primaryNavItem && (
+            <Link href={getNavHref(primaryNavItem)} onClick={() => setIsMobileMenuOpen(false)} className="block button w-full text-center">
+              {primaryNavItem.label}
+            </Link>
+          )}
         </nav>
       )}
     </header>
