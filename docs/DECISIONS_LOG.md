@@ -8,3 +8,4 @@
 | DEC-004 | Exclude seed products from the new catalog. | 2026-05-29 | Draft | Seed products are out of scope unless explicitly re-approved. |
 | DEC-005 | Use fully localized domain-specific slugs and SEO metadata. | 2026-05-29 | Draft | No English slugs on Romanian domain unless explicitly approved. |
 | DEC-006 | Treat the old WooCommerce site as a content source, not a structure source. | 2026-05-29 | Draft | Product facts may be reviewed, but taxonomy must not be imported. |
+| DEC-007 | Use domain-based localization architecture with shared internal content identifiers and separate English/Romanian route, content, metadata, Open Graph, alt text, and slug configs. | 2026-05-29 | Approved | mallagro.com serves English URLs/content; mallagro.ro serves Romanian URLs/content. Internal category IDs remain shared: agriculture, grain-processing-handling, food-industry-equipment. |

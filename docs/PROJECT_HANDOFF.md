@@ -6,6 +6,8 @@ Mall Agro is an early Next.js App Router project using JavaScript, React, and Ta
 
 Git baseline is clean on `main`. GitHub remote is configured as `origin https://github.com/GROZILCHO/mall-agro-redesign.git`.
 
+DEC-007 is approved: use domain-based localization with shared internal content identifiers and separate English/Romanian route, content, metadata, Open Graph, alt text, and slug configs.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -16,6 +18,7 @@ Git baseline is clean on `main`. GitHub remote is configured as `origin https://
 - Clean Git repository on `main`
 - GitHub remote configured
 - Current source route map: only `/`
+- Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 
 ## What Was Added
 
@@ -39,15 +42,13 @@ Workflow governance documentation:
 ## Unresolved Decisions
 
 - Deployment target
-- Domain routing strategy
-- Localization implementation strategy
 - Final design system approval
 - Final product list
 - Product detail page scope
 
 ## Next Recommended Task
 
-Approve the localization/domain architecture for `mallagro.com` and `mallagro.ro` before any source implementation begins.
+Implement the localized content/config foundation for the approved domain-based localization architecture.
 
 ## Source Audit Results
 
@@ -71,7 +72,7 @@ Approve the localization/domain architecture for `mallagro.com` and `mallagro.ro
 
 Do not modify source code, styles, assets, packages, build output, or deployment files without a separate narrow implementation task.
 
-Do not start source-code implementation before localization strategy is approved.
+For the first foundation task, do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 
 Do not migrate products before taxonomy and content model approval.
 
