@@ -8,6 +8,8 @@ Git baseline is clean on `main`. GitHub remote is configured as `origin https://
 
 DEC-007 is approved: use domain-based localization with shared internal content identifiers and separate English/Romanian route, content, metadata, Open Graph, alt text, and slug configs.
 
+The localized content/config foundation has been added under `src/lib/`.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -19,6 +21,7 @@ DEC-007 is approved: use domain-based localization with shared internal content 
 - GitHub remote configured
 - Current source route map: only `/`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
+- Localized config modules for locales, route maps, category content, and navigation labels
 
 ## What Was Added
 
@@ -48,7 +51,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Implement the localized content/config foundation for the approved domain-based localization architecture.
+Run a source audit of the new localization/content/route config foundation before wiring it into UI.
 
 ## Source Audit Results
 
@@ -57,6 +60,7 @@ Implement the localized content/config foundation for the approved domain-based 
 - Build was not run because `next build` writes to `.next`.
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
+- No homepage redesign, public route creation, SEO/sitemap/robots rollout, or product migration was done as part of the config foundation.
 
 ## Files To Inspect First
 
@@ -72,7 +76,9 @@ Implement the localized content/config foundation for the approved domain-based 
 
 Do not modify source code, styles, assets, packages, build output, or deployment files without a separate narrow implementation task.
 
-For the first foundation task, do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
+Do not wire the new config into UI until the config foundation is audited.
+
+Do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 
 Do not migrate products before taxonomy and content model approval.
 

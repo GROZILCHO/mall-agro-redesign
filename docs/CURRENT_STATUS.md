@@ -6,7 +6,7 @@ Project Setup / Post-Audit Planning
 
 ## Current State
 
-Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. No source-code implementation has started after the audit.
+Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. A localized content/config foundation has been added.
 
 ## Notes
 
@@ -19,15 +19,18 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Existing assets and components appear useful and should be preserved until implementation is scoped.
 - Browser-visible baseline is not yet established under workflow control.
 - Domain localization architecture is approved: domain-based localization with shared internal IDs and separate localized configs.
-- Next implementation may now be scoped, but only as a narrow localization/content foundation task.
+- Localized content/config foundation exists under `src/lib/`.
+- No homepage redesign has been done.
+- No public routes have been created.
 - No product migration is approved.
 - No design-token changes are approved.
-- No SEO, sitemap, robots, canonical, hreflang, or Open Graph implementation is approved yet.
+- No SEO, sitemap, robots, canonical, hreflang, or Open Graph rollout has been implemented.
 - No browser-visible redesign task has started yet.
+- Next recommended step: audit the new localization config before wiring it into UI.
 
 ## Current Constraints
 
-- Do not modify application code outside a narrow approved localization/content foundation task.
+- Do not wire localization config into UI before a source audit of the new config.
 - Do not run build at this phase.
 - Do not run `npm install` at this phase.
 - Do not modify `.next`.

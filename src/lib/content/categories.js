@@ -1,0 +1,101 @@
+import { routeKeys, siteRoutes } from '../routes/siteRoutes.js';
+
+export const categoryIds = {
+  agriculture: 'agriculture',
+  grainProcessingHandling: 'grain-processing-handling',
+  foodIndustryEquipment: 'food-industry-equipment',
+};
+
+export const categories = [
+  {
+    id: categoryIds.agriculture,
+    routeKey: routeKeys.categoryAgriculture,
+    status: 'draft-needs-approval',
+    locales: {
+      en: {
+        title: 'Agriculture',
+        shortLabel: 'Agriculture',
+        slug: 'agriculture',
+        route: siteRoutes.en[routeKeys.categoryAgriculture],
+        seoTitle: 'Agriculture Equipment | Mall Agro',
+        seoDescription: 'Draft category page for Mall Agro agriculture equipment. Final SEO copy needs approval.',
+        openGraphTitle: 'Agriculture Equipment | Mall Agro',
+        openGraphDescription: 'Draft Open Graph text for the Mall Agro agriculture category. Needs approval.',
+        altText: 'Agriculture equipment category image for Mall Agro',
+      },
+      ro: {
+        title: 'Agricultură',
+        shortLabel: 'Agricultură',
+        slug: 'agricultura',
+        route: siteRoutes.ro[routeKeys.categoryAgriculture],
+        seoTitle: 'Echipamente pentru agricultură | Mall Agro',
+        seoDescription: 'Pagină draft pentru categoria de echipamente pentru agricultură Mall Agro. Textul SEO final necesită aprobare.',
+        openGraphTitle: 'Echipamente pentru agricultură | Mall Agro',
+        openGraphDescription: 'Text Open Graph draft pentru categoria Agricultură Mall Agro. Necesită aprobare.',
+        altText: 'Imagine pentru categoria de echipamente pentru agricultură Mall Agro',
+      },
+    },
+  },
+  {
+    id: categoryIds.grainProcessingHandling,
+    routeKey: routeKeys.categoryGrainProcessing,
+    status: 'draft-needs-approval',
+    locales: {
+      en: {
+        title: 'Grain Processing / Grain Handling',
+        shortLabel: 'Grain Processing',
+        slug: 'grain-processing',
+        route: siteRoutes.en[routeKeys.categoryGrainProcessing],
+        seoTitle: 'Grain Processing and Handling Equipment | Mall Agro',
+        seoDescription: 'Draft category page for Mall Agro grain processing and grain handling equipment. Final SEO copy needs approval.',
+        openGraphTitle: 'Grain Processing and Handling Equipment | Mall Agro',
+        openGraphDescription: 'Draft Open Graph text for the Mall Agro grain processing and handling category. Needs approval.',
+        altText: 'Grain processing and handling equipment category image for Mall Agro',
+      },
+      ro: {
+        title: 'Procesarea și manipularea cerealelor',
+        shortLabel: 'Procesarea cerealelor',
+        slug: 'procesarea-cerealelor',
+        route: siteRoutes.ro[routeKeys.categoryGrainProcessing],
+        seoTitle: 'Echipamente pentru procesarea și manipularea cerealelor | Mall Agro',
+        seoDescription: 'Pagină draft pentru categoria de echipamente pentru procesarea și manipularea cerealelor Mall Agro. Textul SEO final necesită aprobare.',
+        openGraphTitle: 'Echipamente pentru procesarea și manipularea cerealelor | Mall Agro',
+        openGraphDescription: 'Text Open Graph draft pentru categoria Procesarea și manipularea cerealelor Mall Agro. Necesită aprobare.',
+        altText: 'Imagine pentru categoria de echipamente pentru procesarea și manipularea cerealelor Mall Agro',
+      },
+    },
+  },
+  {
+    id: categoryIds.foodIndustryEquipment,
+    routeKey: routeKeys.categoryFoodIndustryEquipment,
+    status: 'draft-needs-approval',
+    locales: {
+      en: {
+        title: 'Food Industry Equipment',
+        shortLabel: 'Food Industry',
+        slug: 'food-industry-equipment',
+        route: siteRoutes.en[routeKeys.categoryFoodIndustryEquipment],
+        seoTitle: 'Food Industry Equipment | Mall Agro',
+        seoDescription: 'Draft category page for Mall Agro food industry equipment. Final SEO copy needs approval.',
+        openGraphTitle: 'Food Industry Equipment | Mall Agro',
+        openGraphDescription: 'Draft Open Graph text for the Mall Agro food industry equipment category. Needs approval.',
+        altText: 'Food industry equipment category image for Mall Agro',
+      },
+      ro: {
+        title: 'Echipamente pentru industria alimentară',
+        shortLabel: 'Industria alimentară',
+        slug: 'echipamente-industria-alimentara',
+        route: siteRoutes.ro[routeKeys.categoryFoodIndustryEquipment],
+        seoTitle: 'Echipamente pentru industria alimentară | Mall Agro',
+        seoDescription: 'Pagină draft pentru categoria de echipamente pentru industria alimentară Mall Agro. Textul SEO final necesită aprobare.',
+        openGraphTitle: 'Echipamente pentru industria alimentară | Mall Agro',
+        openGraphDescription: 'Text Open Graph draft pentru categoria Echipamente pentru industria alimentară Mall Agro. Necesită aprobare.',
+        altText: 'Imagine pentru categoria de echipamente pentru industria alimentară Mall Agro',
+      },
+    },
+  },
+];
+
+export function getCategoryById(categoryId) {
+  return categories.find((category) => category.id === categoryId) || null;
+}
