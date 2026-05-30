@@ -22,6 +22,8 @@ English category placeholder pages are implemented and pushed. Local browser QA 
 
 Root placeholder metadata has been replaced with a conservative English metadata baseline. `html lang="en"` remains a temporary English baseline until Romanian/domain runtime behavior is scoped.
 
+DEC-009 is approved: English category placeholder pages should temporarily use `noindex` until meaningful final category content is approved and implemented. No source implementation has been done yet.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -71,7 +73,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run or complete manual responsive/browser QA for homepage and category placeholder pages at mobile, tablet, and desktop widths.
+Add temporary `noindex` metadata to `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`.
 
 ## Source Audit Results
 
@@ -80,6 +82,8 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Build was not run because `next build` writes to `.next`.
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Root placeholder metadata is resolved; route-level metadata remains pending.
+- SEO route-level metadata readiness audit is complete.
+- DEC-009 approves temporary `noindex` for the three English category placeholder pages; source implementation is pending.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - Minimal homepage category cards are implemented and committed.
@@ -90,7 +94,7 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
-- Route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
+- Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 
 ## Files To Inspect First
 

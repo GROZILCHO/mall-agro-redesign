@@ -9,6 +9,20 @@ Mall Agro needs a separate SEO strategy per domain while preserving shared busin
 
 No mixed-language metadata is allowed.
 
+## Indexability
+
+The conservative English root metadata baseline is active. The homepage can remain indexable under the current English baseline.
+
+English category placeholder pages should temporarily use `noindex`:
+
+- `/products/agriculture`
+- `/products/grain-processing`
+- `/products/food-industry-equipment`
+
+This temporary policy does not create a `robots.txt` or sitemap policy. Canonical URLs, hreflang, sitemap, robots, Open Graph, and structured data remain future scoped tasks.
+
+Category pages can become indexable only after final category content is approved, the placeholder notice is removed or replaced, SEO metadata is reviewed, and the routing/domain strategy remains consistent.
+
 ## Localized Metadata
 
 Each page must define localized:

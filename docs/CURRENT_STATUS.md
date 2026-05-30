@@ -42,6 +42,10 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Root placeholder metadata has been replaced with a conservative English metadata baseline.
 - `html lang="en"` remains a temporary English baseline.
 - Route-level metadata is still pending.
+- SEO route-level metadata readiness audit is complete.
+- DEC-009 is approved: English category placeholder pages should temporarily use `noindex`.
+- Temporary category-page `noindex` metadata has not been implemented yet.
+- The next SEO implementation task should add temporary `noindex` metadata only to the three English category placeholder pages.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Romanian/domain runtime behavior remains a separate future task.
 - Manual browser visual/responsive QA is still pending.
