@@ -1,5 +1,6 @@
 // src/app/page.js
 import Link from 'next/link';
+import Image from 'next/image';
 import Hero from './components/Hero';
 import './globals.css';
 import { categories } from '../lib/content/categories.js';
@@ -35,9 +36,11 @@ export default function HomePage() {
                                 className="flex h-full flex-col rounded border border-neutral bg-white p-6 shadow"
                             >
                                 {category.icon && (
-                                    <img
+                                    <Image
                                         src={category.icon}
                                         alt={category.altText || `${category.title} category icon`}
+                                        width={56}
+                                        height={56}
                                         className="mb-6 h-14 w-14"
                                     />
                                 )}

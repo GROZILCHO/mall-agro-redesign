@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getCategoryById } from '../../../lib/content/categories.js';
 
@@ -16,9 +17,11 @@ export default function CategoryPlaceholderPage({ categoryId }) {
     <main className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
       <section className="mx-auto max-w-4xl rounded border border-neutral bg-white p-6 shadow md:p-10">
         {content.icon && (
-          <img
+          <Image
             src={content.icon}
             alt={content.altText}
+            width={64}
+            height={64}
             className="mb-6 h-16 w-16"
           />
         )}
