@@ -39,7 +39,11 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Category-card pattern and minimal homepage section are implemented.
 - No design-token changes are approved.
 - No Romanian runtime switching or domain detection exists yet.
-- No SEO, sitemap, robots, canonical, hreflang, or Open Graph rollout has been implemented.
+- Root placeholder metadata has been replaced with a conservative English metadata baseline.
+- `html lang="en"` remains a temporary English baseline.
+- Route-level metadata is still pending.
+- Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
+- Romanian/domain runtime behavior remains a separate future task.
 - Manual browser visual/responsive QA is still pending.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
 - The remaining category-card `<img>` lint warning in `src/app/page.js` is non-blocking and deferred to an icon/image strategy task.

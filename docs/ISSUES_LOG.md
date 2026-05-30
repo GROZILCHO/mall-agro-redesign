@@ -9,7 +9,7 @@
 | ISS-005 | Old WooCommerce taxonomy is too large and seed-heavy. | Open | It must be treated as source content only, not new structure. |
 | ISS-006 | Deployment/domain strategy is not confirmed. | Open | Vercel, Node hosting, or static export compatibility are TBD. |
 | ISS-007 | Existing project files were untracked after local Git initialization. | Open | Source audit later found the working tree clean; keep open until baseline commit history is verified. |
-| ISS-008 | Placeholder metadata exists in App Router layout. | Open | `src/app/layout.js` uses placeholder title and description. |
+| ISS-008 | Placeholder metadata exists in App Router layout. | Resolved | Conservative English root title and description are active. Route-level metadata and the full SEO rollout remain pending separate tasks. |
 | ISS-009 | Domain localization strategy is not implemented. | Open | No approved implementation exists yet for `mallagro.com` English and `mallagro.ro` Romanian routing/content. |
 | ISS-010 | Hard-coded English UI labels and placeholder navigation exist. | Open | Homepage/header content includes English labels and placeholder product/solution links. |
 | ISS-011 | Romanian route, content, and metadata implementation is missing. | Open | No Romanian App Router routes, localized content source, or Romanian metadata were found. |

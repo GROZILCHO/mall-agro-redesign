@@ -20,6 +20,8 @@ Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 English category placeholder pages are implemented and pushed. Local browser QA confirms the three homepage category-card CTA routes open normally.
 
+Root placeholder metadata has been replaced with a conservative English metadata baseline. `html lang="en"` remains a temporary English baseline until Romanian/domain runtime behavior is scoped.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -38,6 +40,8 @@ English category placeholder pages are implemented and pushed. Local browser QA 
 - Homepage category cards use English/default-locale data from `src/lib/content/categories.js`
 - Navbar logo uses the modern `next/image` fill API
 - English placeholder routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
+- Conservative English root metadata baseline
+- Temporary root `html lang="en"` baseline
 
 ## What Was Added
 
@@ -75,7 +79,9 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Lint passed.
 - Build was not run because `next build` writes to `.next`.
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
-- Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
+- Root placeholder metadata is resolved; route-level metadata remains pending.
+- Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
+- Hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - Minimal homepage category cards are implemented and committed.
 - Navbar logo `next/image` legacy prop warnings are fixed.
 - Manual responsive/browser QA remains pending.
@@ -84,7 +90,7 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
-- SEO metadata and domain/locale runtime strategy remain separate future tasks.
+- Route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 
 ## Files To Inspect First
 
