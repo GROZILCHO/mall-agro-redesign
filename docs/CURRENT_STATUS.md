@@ -44,8 +44,9 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Route-level metadata is still pending.
 - SEO route-level metadata readiness audit is complete.
 - DEC-009 is approved: English category placeholder pages should temporarily use `noindex`.
-- Temporary category-page `noindex` metadata has not been implemented yet.
-- The next SEO implementation task should add temporary `noindex` metadata only to the three English category placeholder pages.
+- Temporary category-page `noindex` metadata is implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`.
+- These English category placeholder pages remain accessible to users but are not final indexable SEO category pages.
+- The homepage/root English metadata baseline remains active.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Romanian/domain runtime behavior remains a separate future task.
 - Manual browser visual/responsive QA is still pending.

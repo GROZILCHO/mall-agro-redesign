@@ -22,7 +22,7 @@ English category placeholder pages are implemented and pushed. Local browser QA 
 
 Root placeholder metadata has been replaced with a conservative English metadata baseline. `html lang="en"` remains a temporary English baseline until Romanian/domain runtime behavior is scoped.
 
-DEC-009 is approved: English category placeholder pages should temporarily use `noindex` until meaningful final category content is approved and implemented. No source implementation has been done yet.
+DEC-009 is approved and implemented: English category placeholder pages temporarily use `noindex` until meaningful final category content is approved and implemented. The pages remain accessible to users but are not intended as final indexable SEO pages.
 
 ## What Exists
 
@@ -73,7 +73,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Add temporary `noindex` metadata to `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`.
+Decide icon/image strategy for category SVG icons and the remaining `<img>` warnings.
 
 ## Source Audit Results
 
@@ -83,7 +83,7 @@ Add temporary `noindex` metadata to `/products/agriculture`, `/products/grain-pr
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Root placeholder metadata is resolved; route-level metadata remains pending.
 - SEO route-level metadata readiness audit is complete.
-- DEC-009 approves temporary `noindex` for the three English category placeholder pages; source implementation is pending.
+- DEC-009 temporary `noindex` metadata is implemented for the three English category placeholder pages.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - Minimal homepage category cards are implemented and committed.
@@ -95,6 +95,7 @@ Add temporary `noindex` metadata to `/products/agriculture`, `/products/grain-pr
 - `/products` index page remains pending.
 - Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
+- Final category content must be approved before the placeholder pages become indexable.
 
 ## Files To Inspect First
 
