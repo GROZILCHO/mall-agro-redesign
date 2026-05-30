@@ -48,8 +48,8 @@ export default function Navbar() {
           <Image
             src="/Mall-Agro-logo-slogan.svg"
             alt="Mall Agro Logo"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: 'contain' }}
           />
         </div>
 
