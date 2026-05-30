@@ -30,7 +30,7 @@ export default function TopBar() {
 
     return (
         <div
-            className={`hidden md:flex bg-[#F8F5F0] text-[#1E5F4B] text-sm py-2 px-[100px] justify-between items-center transition-transform duration-300 ${
+            className={`hidden md:flex bg-[#F8F5F0] text-[#1E5F4B] text-sm py-2 px-4 lg:px-[100px] justify-between items-center transition-transform duration-300 ${
                 showTopBar ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
@@ -41,7 +41,7 @@ export default function TopBar() {
             </div>
 
             {/* Търсачка */}
-            <div className="sm:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2">
                 <Icon name="search" size={22} />
                 <input
                     type="text"
@@ -51,7 +51,7 @@ export default function TopBar() {
             </div>
 
             {/* Дясна секция */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 lg:gap-4">
                 <a href="tel:+1234567890" className="flex items-center gap-2 hover:underline whitespace-nowrap">
                     <Icon name="phoneThin" size={22} />
                     <span>+123 456 7890</span>
@@ -60,7 +60,7 @@ export default function TopBar() {
                     <Icon name="emailThin" size={22} />
                     <span>info@mallagro.com</span>
                 </a>
-                <a href="#" className="hover:underline flex items-center border-l border-[#1E5F4B] pl-4">
+                <a href="#" className="hover:underline flex items-center border-l border-[#1E5F4B] pl-2 lg:pl-4">
                     <Icon name="facebook" size={22} />
                 </a>
             </div>
