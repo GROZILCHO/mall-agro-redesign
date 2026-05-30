@@ -51,7 +51,11 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Romanian/domain runtime behavior remains a separate future task.
 - Manual browser visual/responsive QA is still pending.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
-- The remaining category-card `<img>` lint warning in `src/app/page.js` is non-blocking and deferred to an icon/image strategy task.
+- Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component.
+- The previous category `<img>` lint warnings are resolved.
+- Public SVG assets and config-driven icon paths remain unchanged.
+- `Icon.js` remains untouched.
+- Lint now passes without ESLint warnings or errors.
 - Future product/content expansion remains deferred until approval.
 
 ## Current Constraints

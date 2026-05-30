@@ -24,6 +24,8 @@ Root placeholder metadata has been replaced with a conservative English metadata
 
 DEC-009 is approved and implemented: English category placeholder pages temporarily use `noindex` until meaningful final category content is approved and implemented. The pages remain accessible to users but are not intended as final indexable SEO pages.
 
+Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component. The previous category `<img>` lint warnings are resolved without asset, config, or `Icon.js` changes.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -73,7 +75,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Decide icon/image strategy for category SVG icons and the remaining `<img>` warnings.
+Run or complete manual responsive/browser QA for homepage and category placeholder pages at mobile, tablet, and desktop widths.
 
 ## Source Audit Results
 
@@ -93,9 +95,10 @@ Decide icon/image strategy for category SVG icons and the remaining `<img>` warn
 - Romanian category routes are not implemented.
 - Product pages are not implemented.
 - `/products` index page remains pending.
-- Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
+- Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content must be approved before the placeholder pages become indexable.
+- Broader asset performance audit remains a separate future task.
 
 ## Files To Inspect First
 
