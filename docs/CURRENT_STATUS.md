@@ -24,8 +24,12 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Homepage category cards are implemented and committed.
 - Category cards use English/default-locale data from `src/lib/content/categories.js`.
 - Navbar logo `next/image` legacy props are fixed and committed.
-- No public routes have been created.
-- Category route pages do not exist yet.
+- English category placeholder pages are implemented and pushed.
+- Local browser QA confirms `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment` open normally.
+- Homepage category cards now link to existing English placeholder routes instead of 404 pages.
+- These are placeholder category landing pages, not final category pages.
+- No product detail pages exist yet.
+- Romanian category routes are not implemented yet.
 - No product migration is approved.
 - Design-system source audit is complete.
 - Design system is classified as partial draft/reference.
@@ -39,6 +43,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Manual browser visual/responsive QA is still pending.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
 - The remaining category-card `<img>` lint warning in `src/app/page.js` is non-blocking and deferred to an icon/image strategy task.
+- Future product/content expansion remains deferred until approval.
 
 ## Current Constraints
 

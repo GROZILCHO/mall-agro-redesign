@@ -18,6 +18,8 @@ Category-card pattern draft scope has been documented. The minimal homepage cate
 
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
+English category placeholder pages are implemented and pushed. Local browser QA confirms the three homepage category-card CTA routes open normally.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -35,6 +37,7 @@ Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 - Category-card pattern draft scope is documented in `docs/DESIGN_SYSTEM.md`
 - Homepage category cards use English/default-locale data from `src/lib/content/categories.js`
 - Navbar logo uses the modern `next/image` fill API
+- English placeholder routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
 
 ## What Was Added
 
@@ -64,7 +67,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run manual browser QA for homepage category cards at mobile, tablet, and desktop widths.
+Run or complete manual responsive/browser QA for homepage and category placeholder pages at mobile, tablet, and desktop widths.
 
 ## Source Audit Results
 
@@ -76,7 +79,10 @@ Run manual browser QA for homepage category cards at mobile, tablet, and desktop
 - Minimal homepage category cards are implemented and committed.
 - Navbar logo `next/image` legacy prop warnings are fixed.
 - Manual responsive/browser QA remains pending.
-- Category route pages remain missing and currently return 404.
+- English category placeholder routes open normally in local browser QA.
+- Romanian category routes are not implemented.
+- Product pages are not implemented.
+- `/products` index page remains pending.
 - Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
 - SEO metadata and domain/locale runtime strategy remain separate future tasks.
 
