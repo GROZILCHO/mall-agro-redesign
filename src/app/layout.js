@@ -4,8 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata = {
-    title: 'Your Website Title',
-    description: 'Your Website Description',
+    title: 'Mall Agro | B2B Equipment Catalog for Agriculture and Food Industry',
+    description: 'Explore Mall Agro equipment categories for agriculture, grain processing and handling, and food industry applications.',
 };
 
 export default function RootLayout({ children }) {
