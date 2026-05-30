@@ -14,12 +14,14 @@ Design-system audit is complete. Current classification: partial draft/reference
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
 
-Category-card pattern draft scope has been documented. Category card implementation remains deferred.
+Category-card pattern draft scope has been documented. The minimal homepage category-card section is implemented and committed.
+
+Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 ## What Exists
 
 - Next.js App Router structure under `src/app`
-- Early homepage rendering a hero section
+- Homepage baseline rendering Header, Hero, category-card section, and Footer
 - Header, top bar, navigation, hero, footer, icon component, and empty key metrics component
 - Tailwind configuration with early tokens
 - Mall Agro logo assets, hero video, hero background, icons, and fonts
@@ -31,6 +33,8 @@ Category-card pattern draft scope has been documented. Category card implementat
 - Design-system reference is approved as visual direction only
 - Final Tailwind tokens and component patterns are not yet implemented
 - Category-card pattern draft scope is documented in `docs/DESIGN_SYSTEM.md`
+- Homepage category cards use English/default-locale data from `src/lib/content/categories.js`
+- Navbar logo uses the modern `next/image` fill API
 
 ## What Was Added
 
@@ -60,7 +64,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Add missing category-card fields to `src/lib/content/categories.js` only, without UI.
+Run manual browser QA for homepage category cards at mobile, tablet, and desktop widths.
 
 ## Source Audit Results
 
@@ -69,8 +73,12 @@ Add missing category-card fields to `src/lib/content/categories.js` only, withou
 - Build was not run because `next build` writes to `.next`.
 - No old WooCommerce taxonomy or seed product leakage was found in source files.
 - Placeholder metadata, hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
-- No homepage redesign, public route creation, SEO/sitemap/robots rollout, or product migration was done as part of the config foundation.
-- Category cards are still deferred until card-specific content fields are added and audited.
+- Minimal homepage category cards are implemented and committed.
+- Navbar logo `next/image` legacy prop warnings are fixed.
+- Manual responsive/browser QA remains pending.
+- Category route pages remain missing and currently return 404.
+- Icon/image strategy and the category-card `<img>` lint warning remain follow-up work.
+- SEO metadata and domain/locale runtime strategy remain separate future tasks.
 
 ## Files To Inspect First
 
@@ -93,6 +101,8 @@ Do not modify Tailwind tokens, global CSS, component styling, or assets before a
 Do not treat DEC-008 as approval to implement final Tailwind tokens, component styling, category cards, or asset changes.
 
 Do not implement cards, tokens, CSS, icons, or assets before the next scoped task.
+
+Hydration mismatch with `data-tag-assistant-*` attributes is browser-extension related. Test in Incognito or with extensions disabled before treating it as a project code issue.
 
 Do not migrate products, redesign the homepage, change design tokens, or implement SEO/sitemap/robots unless separately approved.
 

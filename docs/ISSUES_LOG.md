@@ -18,3 +18,7 @@
 | ISS-014 | Tailwind token usage is mixed with arbitrary utility values. | Open | Source uses early Tailwind tokens plus hard-coded colors/spacing utilities. |
 | ISS-015 | Source comments show encoding/mojibake. | Open | Some comments and localized text display corrupted encoding. |
 | ISS-016 | Build validation has not been run under workflow control. | Open | Build was intentionally skipped during audit because `next build` writes to `.next`. |
+| ISS-017 | Category route pages are missing. | Open | `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment` are approved planned routes but currently return 404. |
+| ISS-018 | Manual responsive/browser QA is pending for homepage category cards. | Open | Source/SSR checks passed. Verify mobile, tablet, and desktop layouts manually in a browser. |
+| ISS-019 | Category-card SVG icons trigger `@next/next/no-img-element`. | Open | The warning in `src/app/page.js` is non-blocking for the current baseline. Resolve under a separate icon/image strategy task. |
+| ISS-020 | Google Tag Assistant attributes can cause hydration mismatch warnings. | Environment / Non-code | `data-tag-assistant-prod-present` and `data-tag-assistant-present` are browser-extension DOM mutations. Test in Incognito or with extensions disabled before treating this as a project bug. |
