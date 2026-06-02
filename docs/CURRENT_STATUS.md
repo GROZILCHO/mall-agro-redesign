@@ -19,6 +19,12 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Existing assets and components appear useful and should be preserved until implementation is scoped.
 - Browser-visible homepage baseline is established under workflow control.
 - Domain localization architecture is approved: domain-based localization with shared internal IDs and separate localized configs.
+- Domain population strategy audit is complete.
+- `mallagro.com` is the English version and `mallagro.ro` is the Romanian version. Future work must use domain-based language serving, not `/ro` prefixes or language redirects.
+- Current runtime supports the English baseline only.
+- Romanian config data exists, but Romanian runtime routes and localized shared UI strings are not implemented.
+- Deployment model remains unresolved: use one deployment for both domains or separate deployments from the same repository.
+- Romanian source implementation is not ready until deployment planning and localized shared UI content are clarified.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.
 - Homepage category cards are implemented and committed.

@@ -9,6 +9,12 @@ Mall Agro needs a separate SEO strategy per domain while preserving shared busin
 
 No mixed-language metadata is allowed.
 
+## Domain Serving Boundary
+
+`mallagro.com` and `mallagro.ro` are separate language versions. No redirect-based language SEO plan is approved. Do not redirect `mallagro.ro` to `mallagro.com/ro`, introduce a `/ro` primary route-prefix model, or use browser-language redirects unless separately approved.
+
+Canonical URLs, hreflang, sitemap, robots, and localized metadata rollout must wait until the domain/deployment strategy and both route trees are stable. Placeholder pages and temporary `noindex` policies remain separate from the final SEO rollout.
+
 ## Indexability
 
 The conservative English root metadata baseline is active. The homepage can remain indexable under the current English baseline.

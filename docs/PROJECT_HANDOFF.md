@@ -10,6 +10,10 @@ DEC-007 is approved: use domain-based localization with shared internal content 
 
 The localized content/config foundation has been added under `src/lib/`.
 
+The language strategy is domain-based serving, not language redirection. `mallagro.com` is the English version and `mallagro.ro` is the Romanian version. Do not introduce `/ro` prefixes, browser-language redirects, automatic switching, hidden middleware rewrites, or `mallagro.ro -> mallagro.com/ro` redirects without a dedicated approved architecture task.
+
+Current runtime is English baseline only. Romanian config exists, but Romanian runtime pages and shared UI localization are not implemented. The deployment model remains unresolved: one deployment for both domains or separate deployments from the same repository.
+
 Design-system audit is complete. Current classification: partial draft/reference.
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
@@ -37,7 +41,7 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 - Mall Agro logo assets, hero video, hero background, icons, and fonts
 - Clean Git repository on `main`
 - GitHub remote configured
-- Current source route map: only `/`
+- Current implemented English routes: `/`, `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 - Localized config modules for locales, route maps, category content, and navigation labels
 - Design-system reference is approved as visual direction only
@@ -77,7 +81,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run or complete manual responsive/browser QA for homepage and category placeholder pages at mobile, tablet, and desktop widths.
+Decide the deployment model and scope localized shared UI content config before Romanian route implementation. Do not start with middleware, redirects, or route creation.
 
 ## Source Audit Results
 
@@ -95,6 +99,9 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Manual responsive/browser QA remains pending.
 - English category placeholder routes open normally in local browser QA.
 - Romanian category routes are not implemented.
+- Domain population strategy audit is complete. The approved direction is domain-based language serving without `/ro` prefixes or language redirects.
+- Deployment selection remains unresolved.
+- Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.

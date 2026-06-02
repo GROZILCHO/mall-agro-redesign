@@ -13,6 +13,17 @@
 - `mallagro.ro` must be fully Romanian.
 - No mixed-language navigation, visible UI, metadata, slugs, Open Graph text, or alt text.
 
+## Domain-Based Language Serving
+
+- `mallagro.com` is the English version.
+- `mallagro.ro` is the Romanian version.
+- The primary Romanian model must not use a `/ro` route prefix.
+- Do not redirect `mallagro.ro` to `mallagro.com/ro`.
+- Do not introduce browser-language redirects or automatic language switching.
+- Do not introduce redirects, middleware rewrites, or hostname-based routing without a dedicated approved architecture task.
+- Do not use English slugs, metadata, or visible content on `mallagro.ro`.
+- Do not use Romanian slugs, metadata, or visible content on `mallagro.com`.
+
 ## Localized Slugs
 
 English domain slugs must be English.

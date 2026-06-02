@@ -2,6 +2,26 @@
 
 All routes are draft until approved. The two domains should share the same conceptual structure while using fully localized routes and content.
 
+## Domain-Based Route Model
+
+`mallagro.com` and `mallagro.ro` are separate language versions. The approved public URL model is domain-based, not redirect-based. No `/ro` route-prefix model is approved.
+
+Current implemented English routes:
+
+- `mallagro.com/`
+- `mallagro.com/products/agriculture`
+- `mallagro.com/products/grain-processing`
+- `mallagro.com/products/food-industry-equipment`
+
+Planned Romanian routes, not yet implemented:
+
+- `mallagro.ro/`
+- `mallagro.ro/produse/agricultura`
+- `mallagro.ro/produse/procesarea-cerealelor`
+- `mallagro.ro/produse/echipamente-industria-alimentara`
+
+Romanian routes must use Romanian slugs. English and Romanian route trees may share renderers, but they must expose language-specific public URLs. Deployment architecture remains unresolved.
+
 | Domain | Locale | Route | Page Name | Page Type | Next.js App Path / Proposed App Path | SEO Intent | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
 | mallagro.com | en | `/` | Home | Landing / catalog entry | `src/app/page.js` | Brand and category overview | Draft | Existing homepage is early and not workflow-approved. |
