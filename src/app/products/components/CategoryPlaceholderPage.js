@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getCategoryById } from '../../../lib/content/categories.js';
 
-const locale = 'en';
-
-export default function CategoryPlaceholderPage({ categoryId }) {
+export default function CategoryPlaceholderPage({ categoryId, locale = 'en' }) {
   const category = getCategoryById(categoryId);
   const content = category?.locales[locale];
 
