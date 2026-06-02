@@ -56,6 +56,11 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Public SVG assets and config-driven icon paths remain unchanged.
 - `Icon.js` remains untouched.
 - Lint now passes without ESLint warnings or errors.
+- TopBar tablet horizontal overflow is fixed with changes limited to `src/app/components/TopBar.js`.
+- Browser QA confirms no horizontal overflow at `375px`, `768px`, `1024px`, and `1440px`.
+- Phone, email, and social links remain visible at tablet widths.
+- TopBar search is hidden below `lg` and restored at `lg` and above.
+- No header or navbar layout redesign was done.
 - Future product/content expansion remains deferred until approval.
 
 ## Current Constraints

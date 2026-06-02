@@ -26,6 +26,8 @@ DEC-009 is approved and implemented: English category placeholder pages temporar
 
 Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component. The previous category `<img>` lint warnings are resolved without asset, config, or `Icon.js` changes.
 
+TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `375px`, `768px`, `1024px`, or `1440px`. Do not revisit TopBar unless new QA findings require it.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -96,6 +98,7 @@ Run or complete manual responsive/browser QA for homepage and category placehold
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.
+- TopBar tablet horizontal overflow is resolved and verified at `375px`, `768px`, `1024px`, and `1440px`.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content must be approved before the placeholder pages become indexable.
 - Broader asset performance audit remains a separate future task.
