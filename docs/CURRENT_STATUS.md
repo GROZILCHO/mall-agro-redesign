@@ -24,6 +24,9 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Current runtime supports the English baseline only.
 - Romanian config data exists, but Romanian runtime routes and localized shared UI strings are not implemented.
 - Deployment model remains unresolved: use one deployment for both domains or separate deployments from the same repository.
+- Deployment-model audit is complete.
+- `docs/DEPLOYMENT_GUIDE.md` captures the two candidate deployment models and required owner decision checklist.
+- Romanian source implementation is blocked pending deployment requirements and owner approval.
 - Romanian source implementation is not ready until deployment planning and localized shared UI content are clarified.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.

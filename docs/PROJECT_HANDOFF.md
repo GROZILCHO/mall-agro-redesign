@@ -14,6 +14,10 @@ The language strategy is domain-based serving, not language redirection. `mallag
 
 Current runtime is English baseline only. Romanian config exists, but Romanian runtime pages and shared UI localization are not implemented. The deployment model remains unresolved: one deployment for both domains or separate deployments from the same repository.
 
+Deployment-model audit is complete. `docs/DEPLOYMENT_GUIDE.md` now documents the same-deployment and separate-deployment options, owner decision checklist, blocked Romanian runtime work, and safe preparatory work.
+
+Romanian source implementation is blocked until the owner approves the deployment model and related routing/indexability policies.
+
 Design-system audit is complete. Current classification: partial draft/reference.
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
@@ -75,13 +79,16 @@ Workflow governance documentation:
 ## Unresolved Decisions
 
 - Deployment target
+- Deployment model for `mallagro.com` and `mallagro.ro`
+- Wrong-language route behavior
+- Romanian placeholder `noindex` policy
 - Final design implementation details
 - Final product list
 - Product detail page scope
 
 ## Next Recommended Task
 
-Decide the deployment model and scope localized shared UI content config before Romanian route implementation. Do not start with middleware, redirects, or route creation.
+Owner selects same deployment versus separate deployments and confirms hosting, DNS, CI/CD, wrong-language route behavior, and Romanian placeholder `noindex` policy. Safe technical work before that decision is limited to audits and content planning, not runtime implementation.
 
 ## Source Audit Results
 
@@ -101,6 +108,7 @@ Decide the deployment model and scope localized shared UI content config before 
 - Romanian category routes are not implemented.
 - Domain population strategy audit is complete. The approved direction is domain-based language serving without `/ro` prefixes or language redirects.
 - Deployment selection remains unresolved.
+- Romanian source implementation is blocked until deployment requirements are approved.
 - Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
 - Product pages are not implemented.
 - `/products` index page remains pending.
