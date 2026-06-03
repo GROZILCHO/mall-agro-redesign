@@ -3,9 +3,24 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getCategoryById } from '../../../lib/content/categories.js';
 
+const placeholderUi = {
+  en: {
+    placeholderNotice: 'This category page is being prepared as part of the Mall Agro B2B catalog redesign.',
+    backToHomepage: 'Back to homepage',
+    backHref: '/',
+  },
+  ro: {
+    placeholderNotice: 'Această pagină de categorie este în pregătire ca parte a reproiectării catalogului B2B Mall Agro.',
+    backToHomepage: 'Înapoi la pagina principală',
+    backHref: '/',
+  },
+};
+
 export default function CategoryPlaceholderPage({ categoryId, locale = 'en' }) {
   const category = getCategoryById(categoryId);
-  const content = category?.locales[locale];
+  const activeLocale = category?.locales[locale] ? locale : 'en';
+  const content = category?.locales[activeLocale];
+  const ui = placeholderUi[activeLocale] || placeholderUi.en;
 
   if (!content) {
     notFound();
@@ -27,11 +42,11 @@ export default function CategoryPlaceholderPage({ categoryId, locale = 'en' }) {
         <h1 className="responsive-h1 text-primary">{content.title}</h1>
         <p className="body mt-6 text-menu">{content.cardDescription}</p>
         <p className="body mt-4 text-menu">
-          This category page is being prepared as part of the Mall Agro B2B catalog redesign.
+          {ui.placeholderNotice}
         </p>
 
-        <Link href="/" className="button button-md mt-8 inline-block">
-          Back to homepage
+        <Link href={ui.backHref} className="button button-md mt-8 inline-block">
+          {ui.backToHomepage}
         </Link>
       </section>
     </main>
