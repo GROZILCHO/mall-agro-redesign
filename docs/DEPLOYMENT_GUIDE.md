@@ -76,15 +76,21 @@ Examples:
 - `mallagro.com/products/grain-processing` -> `mallagro.ro/produse/procesarea-cerealelor`
 - `mallagro.com/products/food-industry-equipment` -> `mallagro.ro/produse/echipamente-industria-alimentara`
 
-If no equivalent exists, fallback behavior must be explicitly defined before implementation.
+DEC-011 approves the fallback policy for pages without an approved equivalent.
 
-Possible fallback options, not yet approved:
+If no approved equivalent or explicitly related page exists, the language switch must not generate an active cross-domain link. The unavailable language option should be hidden or disabled.
+
+Hidden vs disabled remains a future UI/design implementation detail. The core fallback policy is already approved by DEC-011.
+
+The following are not approved default behaviors:
 
 - fallback to the other domain homepage
-- hide or disable the unavailable language switch
-- link to a related section landing page
-
-Do not implement any fallback option until it is approved.
+- fallback to a section landing page
+- guessing equivalent URLs from slug similarity
+- auto-pairing non-equivalent news/articles
+- browser-language redirects
+- `/ro` prefix redirects
+- hidden middleware rewrites
 
 ## Required Owner Decisions Before Romanian Runtime Work
 
