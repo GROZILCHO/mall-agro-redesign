@@ -32,7 +32,10 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Cross-domain language switching is intended to link to equivalent pages on the other domain where explicit route pairs exist.
 - No language switcher has been implemented.
 - No Romanian runtime routes have been implemented.
-- Route-pair mapping must be planned before language switch implementation.
+- Route-pair config foundation is implemented in `src/lib/routes/routePairs.js`.
+- The route-pair config currently covers the homepage `/` ↔ `/` pair and the three approved category pairs.
+- The route-pair config is data-only and uses relative paths.
+- The route-pair config does not implement UI, Romanian routes, redirects, middleware, or SEO runtime behavior.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.
 - Homepage category cards are implemented and committed.
