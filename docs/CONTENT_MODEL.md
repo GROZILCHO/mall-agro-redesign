@@ -77,3 +77,5 @@ Candidate future fields, not approved implementation requirements yet:
 | `hasLanguageEquivalent` | Indicates whether an equivalent language page exists. |
 
 Hreflang should only be used for true equivalents. Related-but-different content should not automatically receive hreflang pairing.
+
+Language switching should link only to direct translations or explicitly assigned related content. If no equivalent or approved related page exists, no active language-switch link should be generated for that unavailable language.

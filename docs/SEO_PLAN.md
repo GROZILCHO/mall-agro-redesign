@@ -29,7 +29,11 @@ Hreflang requires true equivalent pages. Static homepage/category pairs can late
 
 Future news or article pages without true equivalents must not be forced into hreflang pairs. Related-but-different content may be linked manually, but it should not automatically be treated as a translation equivalent.
 
-Route-pair policy and fallback behavior must be approved before SEO runtime implementation.
+Pages without equivalents must not receive guessed hreflang pairs. Related-but-different market content should not be hreflang-paired unless explicitly approved as equivalent.
+
+Fallback homepage links do not create SEO equivalence.
+
+Route-pair source implementation, canonical, hreflang, sitemap, robots, and final localized metadata remain deferred.
 
 ## Indexability
 

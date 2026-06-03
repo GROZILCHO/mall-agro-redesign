@@ -22,7 +22,7 @@ DEC-010 is approved: `mallagro.com` and `mallagro.ro` are treated as separate do
 
 No source implementation has been done for the cross-domain language switch strategy.
 
-Route-pair mapping policy is being defined in documentation. Static homepage/category route pairs are known, but fallback behavior is still not approved. Language switcher UI is not implemented. Romanian route wrappers are not implemented.
+Route-pair mapping policy is documented. Static homepage/category route pairs are known. DEC-011 is approved: missing equivalents should hide or disable the unavailable language switch option and must not redirect to the other domain homepage by default. Route-pair config, language switcher UI, and Romanian route wrappers are not implemented.
 
 Future news/articles may have no equivalent or may link to related-but-different content. Do not force future news content into one-to-one translation.
 
@@ -90,7 +90,7 @@ Workflow governance documentation:
 - Deployment model for `mallagro.com` and `mallagro.ro`
 - Wrong-language route behavior
 - Romanian placeholder `noindex` policy
-- Route-pair mapping and fallback behavior for cross-domain language switching
+- Route-pair config/source implementation for cross-domain language switching
 - Future news/content equivalence model
 - Final design implementation details
 - Final product list
@@ -98,7 +98,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Approve fallback behavior for missing language equivalents and decide whether the first source step should be route-pair config or Romanian route wrappers. Safe technical work remains limited to audits and content planning until that scope is approved.
+Prepare a route-pair config/audit for known static and category pairs. Language switcher UI, Romanian route wrappers, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -122,7 +122,7 @@ Approve fallback behavior for missing language equivalents and decide whether th
 - Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
 - Cross-domain language switching requires explicit route-pair mapping before implementation.
 - Future news/articles may differ by domain and may not always have direct hreflang/language-switch equivalents.
-- Route-pair mapping policy is documented at planning level; fallback behavior remains open.
+- Route-pair mapping policy is documented at planning level; fallback behavior is approved by DEC-011, but route-pair source implementation and language switcher UI remain pending.
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.

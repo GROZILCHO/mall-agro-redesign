@@ -58,13 +58,11 @@ These examples are not yet implemented as language switcher logic. Romanian rout
 
 Future dynamic content such as news or articles must not assume a translation exists. Dynamic content must support exact translation pairs, related but non-translated content, and pages with no equivalent.
 
-Fallback behavior for missing equivalents requires owner approval before implementation. Candidate fallback options are:
+If a route pair exists, a future language switch may link to the paired URL. If no route pair exists, the switch must not generate a guessed URL from slug similarity or route shape.
 
-1. Link to the other domain homepage.
-2. Hide or disable the unavailable language switch.
-3. Link to a related section landing page.
-4. Show only the available language.
-5. Use a manually assigned related article or page.
+If no equivalent or explicitly assigned related page exists, the unavailable language option should be hidden or disabled. The exact UI treatment is a future design/implementation detail.
+
+Fallback to the other domain homepage or to a section landing page is not approved as default behavior. Related pages may be used only when explicitly assigned in future content mapping.
 
 | Domain | Locale | Route | Page Name | Page Type | Next.js App Path / Proposed App Path | SEO Intent | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
