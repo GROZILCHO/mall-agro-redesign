@@ -56,3 +56,24 @@ Initial stable category IDs:
 The old WooCommerce website can be used as a source for product facts and media, but the old WooCommerce taxonomy must not be imported as the new structure.
 
 Seed products are excluded from the new product database unless explicitly re-approved.
+
+## Future Content Equivalence
+
+Future content such as news or articles may be:
+
+- a direct translation;
+- market-specific related content;
+- language-only content with no equivalent.
+
+Do not force all news or articles into one-to-one translation.
+
+Candidate future fields, not approved implementation requirements yet:
+
+| Field Candidate | Purpose |
+|---|---|
+| `translationGroupId` | Groups true translation equivalents across domains/languages. |
+| `relatedContentId` | Links related content that is not a direct translation. |
+| `marketContentGroup` | Groups content by market or business topic when content differs by domain. |
+| `hasLanguageEquivalent` | Indicates whether an equivalent language page exists. |
+
+Hreflang should only be used for true equivalents. Related-but-different content should not automatically receive hreflang pairing.

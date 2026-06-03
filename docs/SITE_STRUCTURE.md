@@ -39,6 +39,33 @@ Not every future page must be a direct translation. Future news or article conte
 
 Future dynamic content may need an internal pairing field, such as `translationGroupId`, `relatedContentId`, or a similar candidate. These are future candidates only and are not approved implementation requirements yet.
 
+## Cross-Domain Route-Pair Mapping Policy
+
+Route pairs must be explicit and auditable before any language switcher is implemented.
+
+Static route pairs may be listed explicitly. Category route pairs may be derived from shared internal category IDs because the approved categories have stable shared IDs and separate localized routes.
+
+Current approved static/category equivalence examples:
+
+| English URL | Romanian URL |
+|---|---|
+| `mallagro.com/` | `mallagro.ro/` |
+| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` |
+| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` |
+| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` |
+
+These examples are not yet implemented as language switcher logic. Romanian route wrappers are not yet implemented.
+
+Future dynamic content such as news or articles must not assume a translation exists. Dynamic content must support exact translation pairs, related but non-translated content, and pages with no equivalent.
+
+Fallback behavior for missing equivalents requires owner approval before implementation. Candidate fallback options are:
+
+1. Link to the other domain homepage.
+2. Hide or disable the unavailable language switch.
+3. Link to a related section landing page.
+4. Show only the available language.
+5. Use a manually assigned related article or page.
+
 | Domain | Locale | Route | Page Name | Page Type | Next.js App Path / Proposed App Path | SEO Intent | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
 | mallagro.com | en | `/` | Home | Landing / catalog entry | `src/app/page.js` | Brand and category overview | Draft | Existing homepage is early and not workflow-approved. |

@@ -22,6 +22,10 @@ DEC-010 is approved: `mallagro.com` and `mallagro.ro` are treated as separate do
 
 No source implementation has been done for the cross-domain language switch strategy.
 
+Route-pair mapping policy is being defined in documentation. Static homepage/category route pairs are known, but fallback behavior is still not approved. Language switcher UI is not implemented. Romanian route wrappers are not implemented.
+
+Future news/articles may have no equivalent or may link to related-but-different content. Do not force future news content into one-to-one translation.
+
 Design-system audit is complete. Current classification: partial draft/reference.
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
@@ -94,7 +98,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Define route-pair mapping and fallback behavior for future cross-domain language switching before Romanian route implementation. Safe technical work remains limited to audits and content planning, not runtime implementation.
+Approve fallback behavior for missing language equivalents and decide whether the first source step should be route-pair config or Romanian route wrappers. Safe technical work remains limited to audits and content planning until that scope is approved.
 
 ## Source Audit Results
 
@@ -118,6 +122,7 @@ Define route-pair mapping and fallback behavior for future cross-domain language
 - Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
 - Cross-domain language switching requires explicit route-pair mapping before implementation.
 - Future news/articles may differ by domain and may not always have direct hreflang/language-switch equivalents.
+- Route-pair mapping policy is documented at planning level; fallback behavior remains open.
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.

@@ -25,6 +25,12 @@ Future news or article content may not always have hreflang equivalents if the c
 
 Canonical, hreflang, sitemap, robots, and final localized metadata remain deferred.
 
+Hreflang requires true equivalent pages. Static homepage/category pairs can later support hreflang only after routes and deployment behavior are stable.
+
+Future news or article pages without true equivalents must not be forced into hreflang pairs. Related-but-different content may be linked manually, but it should not automatically be treated as a translation equivalent.
+
+Route-pair policy and fallback behavior must be approved before SEO runtime implementation.
+
 ## Indexability
 
 The conservative English root metadata baseline is active. The homepage can remain indexable under the current English baseline.
