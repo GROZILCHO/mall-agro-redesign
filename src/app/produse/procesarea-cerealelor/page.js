@@ -1,0 +1,12 @@
+import CategoryPlaceholderPage from '../../products/components/CategoryPlaceholderPage.js';
+
+export const metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
+export default function ProcesareaCerealelorPage() {
+  return <CategoryPlaceholderPage categoryId="grain-processing-handling" locale="ro" />;
+}
