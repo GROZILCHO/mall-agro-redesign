@@ -12,19 +12,21 @@ The localized content/config foundation has been added under `src/lib/`.
 
 The language strategy is domain-based serving, not language redirection. `mallagro.com` is the English version and `mallagro.ro` is the Romanian version. Do not introduce `/ro` prefixes, browser-language redirects, automatic switching, hidden middleware rewrites, or `mallagro.ro -> mallagro.com/ro` redirects without a dedicated approved architecture task.
 
-Current runtime is English baseline only. Romanian config exists, but Romanian runtime pages and shared UI localization are not implemented. The deployment model remains unresolved: one deployment for both domains or separate deployments from the same repository.
+Current runtime is English baseline plus Romanian category placeholder routes only. Romanian config exists, and the three Romanian category placeholders are implemented, but Romanian homepage/root behavior and broader shared UI localization remain pending. The deployment model remains unresolved: one deployment for both domains or separate deployments from the same repository.
 
 Deployment-model audit is complete. `docs/DEPLOYMENT_GUIDE.md` now documents the same-deployment and separate-deployment options, owner decision checklist, blocked Romanian runtime work, and safe preparatory work.
 
-Romanian source implementation is blocked until the owner approves the deployment model and related routing/indexability policies.
+Broader Romanian source implementation is blocked until the owner approves the deployment model and related routing/indexability policies.
 
 DEC-010 is approved: `mallagro.com` and `mallagro.ro` are treated as separate domain-specific sites. A future language switcher should navigate cross-domain to equivalent pages when explicit route pairs exist. Future news content may differ by domain and must not be forced into one-to-one translation.
 
 No source implementation has been done for the cross-domain language switch strategy.
 
-Route-pair mapping policy is documented. Static homepage/category route pairs are known. DEC-011 is approved: missing equivalents should hide or disable the unavailable language switch option and must not redirect to the other domain homepage by default. The route-pair config foundation exists in `src/lib/routes/routePairs.js`; language switcher UI and Romanian route wrappers are not implemented.
+Route-pair mapping policy is documented. Static homepage/category route pairs are known. DEC-011 is approved: missing equivalents should hide or disable the unavailable language switch option and must not redirect to the other domain homepage by default. The route-pair config foundation exists in `src/lib/routes/routePairs.js`; language switcher UI is not implemented.
 
 The route-pair config uses relative paths only, covers the homepage and three approved category pairs, and returns no active pair / `null` when no approved pair exists. A future language switcher can consume it later.
+
+Romanian category placeholder routes now exist at `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`. They use the shared category placeholder renderer with `locale="ro"` and temporary `noindex` metadata. They are not final Romanian category content.
 
 Future news/articles may have no equivalent or may link to related-but-different content. Do not force future news content into one-to-one translation.
 
@@ -56,6 +58,7 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 - Clean Git repository on `main`
 - GitHub remote configured
 - Current implemented English routes: `/`, `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
+- Current implemented Romanian category placeholder routes: `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 - Localized config modules for locales, route maps, category content, and navigation labels
 - Route-pair config foundation for homepage and approved category pairs
@@ -65,6 +68,7 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 - Homepage category cards use English/default-locale data from `src/lib/content/categories.js`
 - Navbar logo uses the modern `next/image` fill API
 - English placeholder routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
+- Romanian placeholder routes for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
 - Conservative English root metadata baseline
 - Temporary root `html lang="en"` baseline
 
@@ -92,7 +96,6 @@ Workflow governance documentation:
 - Deployment target
 - Deployment model for `mallagro.com` and `mallagro.ro`
 - Wrong-language route behavior
-- Romanian placeholder `noindex` policy
 - Language switcher UI implementation for cross-domain language switching
 - Future news/content equivalence model
 - Final design implementation details
@@ -101,7 +104,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Audit and plan language switcher UI integration using the existing route-pair config foundation. Romanian route wrappers and SEO runtime behavior remain deferred until separately scoped.
+Audit and plan language switcher UI integration using the existing route-pair config foundation and the implemented Romanian category placeholder routes. Romanian homepage/root behavior and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -118,11 +121,11 @@ Audit and plan language switcher UI integration using the existing route-pair co
 - Navbar logo `next/image` legacy prop warnings are fixed.
 - Manual responsive/browser QA remains pending.
 - English category placeholder routes open normally in local browser QA.
-- Romanian category routes are not implemented.
+- Romanian category placeholder routes are implemented with `locale="ro"` and temporary `noindex`; final Romanian category content remains pending.
 - Domain population strategy audit is complete. The approved direction is domain-based language serving without `/ro` prefixes or language redirects.
 - Deployment selection remains unresolved.
-- Romanian source implementation is blocked until deployment requirements are approved.
-- Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
+- Romanian homepage/root behavior remains blocked until deployment requirements and route handling are approved.
+- Romanian shared UI content for homepage, Hero, Footer, and TopBar must be scoped before broader Romanian runtime implementation.
 - Cross-domain language switching requires explicit route-pair mapping before implementation.
 - Future news/articles may differ by domain and may not always have direct hreflang/language-switch equivalents.
 - Route-pair mapping policy is documented at planning level; fallback behavior is approved by DEC-011, and the route-pair config foundation is implemented. Language switcher UI remains pending.

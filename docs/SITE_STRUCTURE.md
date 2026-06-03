@@ -13,14 +13,18 @@ Current implemented English routes:
 - `mallagro.com/products/grain-processing`
 - `mallagro.com/products/food-industry-equipment`
 
-Planned Romanian routes, not yet implemented:
+Current implemented Romanian category placeholder routes:
 
-- `mallagro.ro/`
 - `mallagro.ro/produse/agricultura`
 - `mallagro.ro/produse/procesarea-cerealelor`
 - `mallagro.ro/produse/echipamente-industria-alimentara`
 
-Romanian routes must use Romanian slugs. English and Romanian route trees may share renderers, but they must expose language-specific public URLs. Deployment architecture remains unresolved.
+Romanian routes still pending:
+
+- `mallagro.ro/`
+- `mallagro.ro/produse`
+
+The implemented `/produse/...` category routes are temporary placeholder pages that use the shared category placeholder renderer with Romanian content and temporary `noindex` metadata. The `/produse` index route and Romanian homepage/root behavior are not implemented. Romanian routes must use Romanian slugs. English and Romanian route trees may share renderers, but they must expose language-specific public URLs. Deployment architecture remains unresolved.
 
 ## Route Pair Model For Language Switching
 
@@ -31,9 +35,9 @@ Current and planned static route pairs:
 | English URL | Romanian URL | Status |
 |---|---|---|
 | `mallagro.com/` | `mallagro.ro/` | Planned pair; Romanian runtime not implemented. |
-| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` | Planned pair; Romanian route not implemented. |
-| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` | Planned pair; Romanian route not implemented. |
-| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` | Planned pair; Romanian route not implemented. |
+| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` | Route pair target exists as a Romanian placeholder route. |
+| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` | Route pair target exists as a Romanian placeholder route. |
+| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` | Route pair target exists as a Romanian placeholder route. |
 
 Not every future page must be a direct translation. Future news or article content may differ by market and may not always have a one-to-one equivalent.
 
@@ -54,7 +58,7 @@ Current approved static/category equivalence examples:
 | `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` |
 | `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` |
 
-These examples are not yet implemented as language switcher logic. Romanian route wrappers are not yet implemented.
+These examples are not yet implemented as language switcher logic. The three Romanian category route wrappers now exist as temporary placeholder pages and align with the route-pair config.
 
 Future dynamic content such as news or articles must not assume a translation exists. Dynamic content must support exact translation pairs, related but non-translated content, and pages with no equivalent.
 
@@ -78,10 +82,10 @@ Fallback to the other domain homepage or to a section landing page is not approv
 | mallagro.com | en | `/privacy-policy` | Privacy Policy | Legal | `src/app/privacy-policy/page.js` | Legal compliance | Draft | Proposed path. |
 | mallagro.com | en | `/cookie-policy` | Cookie Policy | Legal | `src/app/cookie-policy/page.js` | Legal compliance | Draft | Proposed path. |
 | mallagro.ro | ro | `/` | Acasă | Landing / catalog entry | `src/app/page.js` or locale/domain routing TBD | Prezentare brand și categorii | Draft | Domain routing strategy TBD. |
-| mallagro.ro | ro | `/produse` | Produse | Product index | `src/app/produse/page.js` or locale/domain routing TBD | Prezentare catalog produse | Draft | Romanian slug required. |
-| mallagro.ro | ro | `/produse/agricultura` | Agricultură | Category page | `src/app/produse/agricultura/page.js` or locale/domain routing TBD | Echipamente pentru agricultură | Draft | Romanian slug required. |
-| mallagro.ro | ro | `/produse/procesarea-cerealelor` | Procesarea și manipularea cerealelor | Category page | `src/app/produse/procesarea-cerealelor/page.js` or locale/domain routing TBD | Echipamente pentru procesarea cerealelor | Draft | Romanian slug required. |
-| mallagro.ro | ro | `/produse/echipamente-industria-alimentara` | Echipamente pentru industria alimentară | Category page | `src/app/produse/echipamente-industria-alimentara/page.js` or locale/domain routing TBD | Echipamente pentru industria alimentară | Draft | Romanian slug required. |
+| mallagro.ro | ro | `/produse` | Produse | Product index | `src/app/produse/page.js` or locale/domain routing TBD | Prezentare catalog produse | Draft | Not implemented. Romanian slug required. |
+| mallagro.ro | ro | `/produse/agricultura` | Agricultură | Category page | `src/app/produse/agricultura/page.js` | Echipamente pentru agricultură | Placeholder / Noindex | Implemented as temporary placeholder. Romanian slug required. |
+| mallagro.ro | ro | `/produse/procesarea-cerealelor` | Procesarea și manipularea cerealelor | Category page | `src/app/produse/procesarea-cerealelor/page.js` | Echipamente pentru procesarea cerealelor | Placeholder / Noindex | Implemented as temporary placeholder. Romanian slug required. |
+| mallagro.ro | ro | `/produse/echipamente-industria-alimentara` | Echipamente pentru industria alimentară | Category page | `src/app/produse/echipamente-industria-alimentara/page.js` | Echipamente pentru industria alimentară | Placeholder / Noindex | Implemented as temporary placeholder. Romanian slug required. |
 | mallagro.ro | ro | `/solutii` | Soluții | Solutions index | `src/app/solutii/page.js` or locale/domain routing TBD | Soluții pentru industrii și aplicații | Draft | Romanian slug required. |
 | mallagro.ro | ro | `/despre-noi` | Despre noi | Company page | `src/app/despre-noi/page.js` or locale/domain routing TBD | Informații despre companie | Draft | Romanian slug required. |
 | mallagro.ro | ro | `/contact` | Contact | Contact page | `src/app/contact/page.js` or locale/domain routing TBD | Contact și descoperire locală | Draft | Same spelling works in Romanian. |

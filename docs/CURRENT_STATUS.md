@@ -21,21 +21,23 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Domain localization architecture is approved: domain-based localization with shared internal IDs and separate localized configs.
 - Domain population strategy audit is complete.
 - `mallagro.com` is the English version and `mallagro.ro` is the Romanian version. Future work must use domain-based language serving, not `/ro` prefixes or language redirects.
-- Current runtime supports the English baseline only.
-- Romanian config data exists, but Romanian runtime routes and localized shared UI strings are not implemented.
+- Current runtime supports the English baseline and Romanian category placeholder routes only.
+- Romanian config data exists, and Romanian category placeholder routes are implemented; Romanian homepage/root behavior and broader localized shared UI remain pending.
 - Deployment model remains unresolved: use one deployment for both domains or separate deployments from the same repository.
 - Deployment-model audit is complete.
 - `docs/DEPLOYMENT_GUIDE.md` captures the two candidate deployment models and required owner decision checklist.
-- Romanian source implementation is blocked pending deployment requirements and owner approval.
-- Romanian source implementation is not ready until deployment planning and localized shared UI content are clarified.
+- Broader Romanian source implementation remains blocked pending deployment requirements and owner approval.
+- Romanian homepage/root behavior and shared UI localization are not ready until deployment planning and localized shared UI content are clarified.
 - DEC-010 is approved: use separate domain-specific language deployments with future cross-domain equivalent-page language switching.
 - Cross-domain language switching is intended to link to equivalent pages on the other domain where explicit route pairs exist.
 - No language switcher has been implemented.
-- No Romanian runtime routes have been implemented.
+- Romanian category placeholder routes have been implemented for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`.
+- The Romanian category placeholders use the shared category placeholder renderer with `locale="ro"` and temporary `noindex` metadata.
+- No Romanian homepage/root behavior has been implemented.
 - Route-pair config foundation is implemented in `src/lib/routes/routePairs.js`.
 - The route-pair config currently covers the homepage `/` ↔ `/` pair and the three approved category pairs.
 - The route-pair config is data-only and uses relative paths.
-- The route-pair config does not implement UI, Romanian routes, redirects, middleware, or SEO runtime behavior.
+- The route-pair config does not implement UI, redirects, middleware, or SEO runtime behavior.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.
 - Homepage category cards are implemented and committed.
@@ -46,7 +48,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Homepage category cards now link to existing English placeholder routes instead of 404 pages.
 - These are placeholder category landing pages, not final category pages.
 - No product detail pages exist yet.
-- Romanian category routes are not implemented yet.
+- Romanian category routes are implemented as temporary placeholder pages, not final Romanian category content.
 - No product migration is approved.
 - Design-system source audit is complete.
 - Design system is classified as partial draft/reference.
@@ -65,7 +67,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - These English category placeholder pages remain accessible to users but are not final indexable SEO category pages.
 - The homepage/root English metadata baseline remains active.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
-- Romanian/domain runtime behavior remains a separate future task.
+- Romanian homepage/root behavior, language switcher UI, and SEO runtime remain separate future tasks.
 - Manual browser visual/responsive QA is still pending.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
 - Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component.
