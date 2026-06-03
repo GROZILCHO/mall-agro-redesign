@@ -15,6 +15,16 @@ No mixed-language metadata is allowed.
 
 Canonical URLs, hreflang, sitemap, robots, and localized metadata rollout must wait until the domain/deployment strategy and both route trees are stable. Placeholder pages and temporary `noindex` policies remain separate from the final SEO rollout.
 
+## Cross-Domain SEO Pairing
+
+English SEO belongs to `mallagro.com`. Romanian SEO belongs to `mallagro.ro`.
+
+Future canonical and hreflang implementation must respect explicit cross-domain route pairs. Hreflang should only be implemented after route pairs and deployment behavior are stable.
+
+Future news or article content may not always have hreflang equivalents if the content differs significantly by market or language.
+
+Canonical, hreflang, sitemap, robots, and final localized metadata remain deferred.
+
 ## Indexability
 
 The conservative English root metadata baseline is active. The homepage can remain indexable under the current English baseline.

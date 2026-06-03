@@ -28,6 +28,11 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - `docs/DEPLOYMENT_GUIDE.md` captures the two candidate deployment models and required owner decision checklist.
 - Romanian source implementation is blocked pending deployment requirements and owner approval.
 - Romanian source implementation is not ready until deployment planning and localized shared UI content are clarified.
+- DEC-010 is approved: use separate domain-specific language deployments with future cross-domain equivalent-page language switching.
+- Cross-domain language switching is intended to link to equivalent pages on the other domain where explicit route pairs exist.
+- No language switcher has been implemented.
+- No Romanian runtime routes have been implemented.
+- Route-pair mapping must be planned before language switch implementation.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.
 - Homepage category cards are implemented and committed.

@@ -18,6 +18,10 @@ Deployment-model audit is complete. `docs/DEPLOYMENT_GUIDE.md` now documents the
 
 Romanian source implementation is blocked until the owner approves the deployment model and related routing/indexability policies.
 
+DEC-010 is approved: `mallagro.com` and `mallagro.ro` are treated as separate domain-specific sites. A future language switcher should navigate cross-domain to equivalent pages when explicit route pairs exist. Future news content may differ by domain and must not be forced into one-to-one translation.
+
+No source implementation has been done for the cross-domain language switch strategy.
+
 Design-system audit is complete. Current classification: partial draft/reference.
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
@@ -82,13 +86,15 @@ Workflow governance documentation:
 - Deployment model for `mallagro.com` and `mallagro.ro`
 - Wrong-language route behavior
 - Romanian placeholder `noindex` policy
+- Route-pair mapping and fallback behavior for cross-domain language switching
+- Future news/content equivalence model
 - Final design implementation details
 - Final product list
 - Product detail page scope
 
 ## Next Recommended Task
 
-Owner selects same deployment versus separate deployments and confirms hosting, DNS, CI/CD, wrong-language route behavior, and Romanian placeholder `noindex` policy. Safe technical work before that decision is limited to audits and content planning, not runtime implementation.
+Define route-pair mapping and fallback behavior for future cross-domain language switching before Romanian route implementation. Safe technical work remains limited to audits and content planning, not runtime implementation.
 
 ## Source Audit Results
 
@@ -110,6 +116,8 @@ Owner selects same deployment versus separate deployments and confirms hosting, 
 - Deployment selection remains unresolved.
 - Romanian source implementation is blocked until deployment requirements are approved.
 - Romanian shared UI content for homepage, Hero, Footer, TopBar, and placeholder labels must be scoped before Romanian route wrappers are created.
+- Cross-domain language switching requires explicit route-pair mapping before implementation.
+- Future news/articles may differ by domain and may not always have direct hreflang/language-switch equivalents.
 - Product pages are not implemented.
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.

@@ -8,10 +8,14 @@ Domain routing strategy is not implemented yet.
 
 Next.js deployment model is TBD.
 
-No deployment model is approved yet for the two domain-specific language versions:
+The approved language model uses two domain-specific language versions:
 
 - `mallagro.com` = English
 - `mallagro.ro` = Romanian
+
+Both domains are available through the company's SuperHosting / hosting account.
+
+The intended practical model is a separate deployment or public site per domain from the same repository or codebase, unless later hosting constraints require adjustment.
 
 The project must use domain-based language serving. Do not use `mallagro.ro -> mallagro.com/ro`, `/ro` as the primary Romanian model, browser-language redirects, or unapproved middleware rewrites.
 
@@ -26,6 +30,7 @@ The project must use domain-based language serving. Do not use `mallagro.ro -> m
 - `mallagro.com` must serve the English experience.
 - `mallagro.ro` must serve the Romanian experience.
 - Each domain must use matching localized routes, metadata, Open Graph text, alt text, and sitemap entries.
+- Each language/domain version should behave like its own site.
 
 ## Candidate Deployment Models
 
@@ -51,6 +56,8 @@ Risks:
 
 This model requires hosting and CI/CD controls that prevent wrong-language exposure and keep both deployments synchronized.
 
+This is the current intended practical direction, subject to final hosting and CI/CD constraints.
+
 Risks:
 
 - deployment drift
@@ -58,6 +65,26 @@ Risks:
 - environment variable mistakes
 - sitemap, robots, and canonical separation complexity
 - need for a clear CI/CD process
+
+## Cross-Domain Language Switch Strategy
+
+A future language switcher should point to the equivalent URL on the other domain when a mapped equivalent exists.
+
+Examples:
+
+- `mallagro.com/products/agriculture` -> `mallagro.ro/produse/agricultura`
+- `mallagro.com/products/grain-processing` -> `mallagro.ro/produse/procesarea-cerealelor`
+- `mallagro.com/products/food-industry-equipment` -> `mallagro.ro/produse/echipamente-industria-alimentara`
+
+If no equivalent exists, fallback behavior must be explicitly defined before implementation.
+
+Possible fallback options, not yet approved:
+
+- fallback to the other domain homepage
+- hide or disable the unavailable language switch
+- link to a related section landing page
+
+Do not implement any fallback option until it is approved.
 
 ## Required Owner Decisions Before Romanian Runtime Work
 

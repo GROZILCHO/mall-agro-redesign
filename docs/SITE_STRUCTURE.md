@@ -22,6 +22,23 @@ Planned Romanian routes, not yet implemented:
 
 Romanian routes must use Romanian slugs. English and Romanian route trees may share renderers, but they must expose language-specific public URLs. Deployment architecture remains unresolved.
 
+## Route Pair Model For Language Switching
+
+Future cross-domain language switching should use explicit route pairs, not automatic slug similarity.
+
+Current and planned static route pairs:
+
+| English URL | Romanian URL | Status |
+|---|---|---|
+| `mallagro.com/` | `mallagro.ro/` | Planned pair; Romanian runtime not implemented. |
+| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` | Planned pair; Romanian route not implemented. |
+| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` | Planned pair; Romanian route not implemented. |
+| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` | Planned pair; Romanian route not implemented. |
+
+Not every future page must be a direct translation. Future news or article content may differ by market and may not always have a one-to-one equivalent.
+
+Future dynamic content may need an internal pairing field, such as `translationGroupId`, `relatedContentId`, or a similar candidate. These are future candidates only and are not approved implementation requirements yet.
+
 | Domain | Locale | Route | Page Name | Page Type | Next.js App Path / Proposed App Path | SEO Intent | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
 | mallagro.com | en | `/` | Home | Landing / catalog entry | `src/app/page.js` | Brand and category overview | Draft | Existing homepage is early and not workflow-approved. |
