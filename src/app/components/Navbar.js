@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { navigationItems } from '../../lib/content/navigation.js';
 import { siteRoutes } from '../../lib/routes/siteRoutes.js';
+import LanguageSwitcher from './LanguageSwitcher.js';
 
 const locale = 'en';
 const navItems = navigationItems[locale];
@@ -72,6 +73,8 @@ export default function Navbar() {
           </Link>
         )}
 
+        <LanguageSwitcher className="hidden md:block text-accent text-sm md:text-base lg:text-lg hover:underline whitespace-nowrap" />
+
         {/* Хамбургер бутон за мобилно меню */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,6 +107,10 @@ export default function Navbar() {
               {primaryNavItem.label}
             </Link>
           )}
+          <LanguageSwitcher
+            className="block"
+            onNavigate={() => setIsMobileMenuOpen(false)}
+          />
         </nav>
       )}
     </header>
