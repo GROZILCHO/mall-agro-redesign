@@ -30,14 +30,16 @@ The implemented `/produse/...` category routes are temporary placeholder pages t
 
 Future cross-domain language switching should use explicit route pairs, not automatic slug similarity.
 
-Current and planned static route pairs:
+The current language switcher supports only approved route pairs from `src/lib/routes/routePairs.js` and cross-domain URL generation from `src/lib/routes/languageUrls.js`. Unknown or unpaired routes do not produce a language switcher link.
+
+Current implemented route-pair support:
 
 | English URL | Romanian URL | Status |
 |---|---|---|
-| `mallagro.com/` | `mallagro.ro/` | Planned pair; Romanian runtime not implemented. |
-| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` | Route pair target exists as a Romanian placeholder route. |
-| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` | Route pair target exists as a Romanian placeholder route. |
-| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` | Route pair target exists as a Romanian placeholder route. |
+| `mallagro.com/` | `mallagro.ro/` | Pair configured; Romanian homepage/root behavior not implemented. |
+| `mallagro.com/products/agriculture` | `mallagro.ro/produse/agricultura` | Both paths physically exist; Romanian route is a placeholder. |
+| `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` | Both paths physically exist; Romanian route is a placeholder. |
+| `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` | Both paths physically exist; Romanian route is a placeholder. |
 
 Not every future page must be a direct translation. Future news or article content may differ by market and may not always have a one-to-one equivalent.
 
@@ -58,7 +60,7 @@ Current approved static/category equivalence examples:
 | `mallagro.com/products/grain-processing` | `mallagro.ro/produse/procesarea-cerealelor` |
 | `mallagro.com/products/food-industry-equipment` | `mallagro.ro/produse/echipamente-industria-alimentara` |
 
-These examples are not yet implemented as language switcher logic. The three Romanian category route wrappers now exist as temporary placeholder pages and align with the route-pair config.
+These examples are implemented as route-pair data and minimal language switcher URL targets. The three Romanian category route wrappers now exist as temporary placeholder pages and align with the route-pair config.
 
 Future dynamic content such as news or articles must not assume a translation exists. Dynamic content must support exact translation pairs, related but non-translated content, and pages with no equivalent.
 

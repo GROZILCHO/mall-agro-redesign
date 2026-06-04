@@ -1,10 +1,10 @@
 # Mall Agro Next Actions
 
-1. Audit/plan language switcher UI integration now that the route-pair config foundation and Romanian category target routes exist.
-2. Audit Romanian homepage/root behavior separately.
-3. Audit Romanian shared UI content readiness for homepage, Hero, Footer, TopBar, and placeholder labels.
+1. Run manual/browser QA for the language switcher across desktop, tablet, and mobile.
+2. Audit or implement Romanian homepage/root behavior separately.
+3. Audit full Header/Navbar localization readiness for the Romanian domain.
 4. Keep `/produse` index route implementation separate unless explicitly approved.
-5. Keep canonical, hreflang, sitemap, robots, localized metadata rollout, and structured data deferred until route pairs and deployment behavior are stable.
+5. Keep canonical, hreflang, sitemap, robots, localized metadata rollout, and structured data deferred until route pairs, deployment behavior, and Romanian runtime behavior are stable.
 6. Keep future news/content equivalence modeling separate from static category pages.
 7. Track Romanian mojibake/display-text audit separately if still present.
 8. Confirm hosting provider, DNS/domain control, and CI/CD deployment settings.
@@ -18,4 +18,4 @@
 
 ## Recommended Immediate Next Task
 
-Audit and plan language switcher UI integration using the existing route-pair config foundation and the implemented Romanian category placeholder routes while keeping Romanian homepage/root behavior and SEO runtime behavior deferred.
+Run manual browser QA for the minimal language switcher across `/`, English category routes, and Romanian category placeholder routes, including desktop, tablet, and mobile checks.

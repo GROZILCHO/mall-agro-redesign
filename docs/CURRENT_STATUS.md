@@ -30,14 +30,17 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Romanian homepage/root behavior and shared UI localization are not ready until deployment planning and localized shared UI content are clarified.
 - DEC-010 is approved: use separate domain-specific language deployments with future cross-domain equivalent-page language switching.
 - Cross-domain language switching is intended to link to equivalent pages on the other domain where explicit route pairs exist.
-- No language switcher has been implemented.
+- Cross-domain language URL helper exists in `src/lib/routes/languageUrls.js`.
+- `LanguageSwitcher` exists and `Navbar` has minimal language switcher integration.
+- The language switcher uses approved route pairs only and returns no output for unknown or unpaired routes.
+- The language switcher does not fallback to the homepage, guessed URLs, section landing pages, or unrelated content.
 - Romanian category placeholder routes have been implemented for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`.
 - The Romanian category placeholders use the shared category placeholder renderer with `locale="ro"` and temporary `noindex` metadata.
 - No Romanian homepage/root behavior has been implemented.
 - Route-pair config foundation is implemented in `src/lib/routes/routePairs.js`.
 - The route-pair config currently covers the homepage `/` ↔ `/` pair and the three approved category pairs.
 - The route-pair config is data-only and uses relative paths.
-- The route-pair config does not implement UI, redirects, middleware, or SEO runtime behavior.
+- The route-pair config does not implement redirects, middleware, or SEO runtime behavior.
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, and Footer.
 - Homepage category cards are implemented and committed.
@@ -57,7 +60,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Final design implementation details remain pending.
 - Category-card pattern and minimal homepage section are implemented.
 - No design-token changes are approved.
-- No Romanian runtime switching or domain detection exists yet.
+- No Romanian homepage/root behavior, full Romanian navigation/header localization, or domain detection exists yet.
 - Root placeholder metadata has been replaced with a conservative English metadata baseline.
 - `html lang="en"` remains a temporary English baseline.
 - Route-level metadata is still pending.
@@ -67,7 +70,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - These English category placeholder pages remain accessible to users but are not final indexable SEO category pages.
 - The homepage/root English metadata baseline remains active.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
-- Romanian homepage/root behavior, language switcher UI, and SEO runtime remain separate future tasks.
+- Romanian homepage/root behavior, full Romanian navigation/header localization, `html lang="ro"` behavior, and SEO runtime remain separate future tasks.
 - Manual browser visual/responsive QA is still pending.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
 - Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component.
