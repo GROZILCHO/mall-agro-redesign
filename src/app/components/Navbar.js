@@ -73,7 +73,10 @@ export default function Navbar() {
           </Link>
         )}
 
-        <LanguageSwitcher className="hidden md:block text-accent text-sm md:text-base lg:text-lg hover:underline whitespace-nowrap" />
+        <LanguageSwitcher
+          className="hidden md:block text-accent text-sm md:text-base lg:text-lg hover:underline whitespace-nowrap"
+          viewport="desktop"
+        />
 
         {/* Хамбургер бутон за мобилно меню */}
         <button
@@ -110,6 +113,7 @@ export default function Navbar() {
           <LanguageSwitcher
             className="block"
             onNavigate={() => setIsMobileMenuOpen(false)}
+            viewport="mobile"
           />
         </nav>
       )}
