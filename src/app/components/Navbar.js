@@ -55,7 +55,7 @@ export default function Navbar() {
         </div>
 
         {/* Десктоп навигация */}
-        <nav className="hidden md:flex items-center space-x-6 text-accent text-sm md:text-base lg:text-lg">
+        <nav className="hidden xl:flex items-center space-x-6 text-accent text-sm md:text-base lg:text-lg">
           {mainNavItems.map((item) => (
             <Link key={item.id} href={getNavHref(item)} className="hover:underline whitespace-nowrap">
               {item.label}
@@ -67,21 +67,21 @@ export default function Navbar() {
         {primaryNavItem && (
           <Link
             href={getNavHref(primaryNavItem)}
-            className="hidden md:block button sm:button-sm md:button-md lg:button-lg"
+            className="hidden xl:block button sm:button-sm md:button-md lg:button-lg"
           >
             {primaryNavItem.label}
           </Link>
         )}
 
         <LanguageSwitcher
-          className="hidden md:block text-accent text-sm md:text-base lg:text-lg hover:underline whitespace-nowrap"
+          className="hidden xl:block text-accent text-sm md:text-base lg:text-lg hover:underline whitespace-nowrap"
           viewport="desktop"
         />
 
         {/* Хамбургер бутон за мобилно меню */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-[#FFCC33] hover:text-yellow-500 z-50"
+          className="xl:hidden text-[#FFCC33] hover:text-yellow-500 z-50"
         >
           {isMobileMenuOpen ? (
             // X икона
@@ -99,7 +99,7 @@ export default function Navbar() {
 
       {/* Мобилно меню */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-[#154F3C] text-accent px-4 pt-4 pb-6 space-y-4 text-base">
+        <nav className="xl:hidden bg-[#154F3C] text-accent px-4 pt-4 pb-6 space-y-4 text-base">
           {mainNavItems.map((item) => (
             <Link key={item.id} href={getNavHref(item)} onClick={() => setIsMobileMenuOpen(false)} className="block">
               {item.label}
@@ -113,7 +113,6 @@ export default function Navbar() {
           <LanguageSwitcher
             className="block"
             onNavigate={() => setIsMobileMenuOpen(false)}
-            viewport="mobile"
           />
         </nav>
       )}
