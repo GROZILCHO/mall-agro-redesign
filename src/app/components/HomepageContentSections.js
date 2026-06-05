@@ -8,63 +8,95 @@ export default function HomepageContentSections() {
   return (
     <>
       <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:items-center">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-5">
+          <div className="lg:col-span-3">
             <p className="body text-accent">
               {content.intro.eyebrow}
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
               {content.intro.title}
             </h2>
+            <p className="body mt-5 text-menu">
+              {content.intro.body}
+            </p>
+            <p className="body mt-5 border-l border-neutral pl-4 text-menu">
+              {content.intro.note}
+            </p>
           </div>
-          <p className="body text-menu">
-            {content.intro.body}
-          </p>
+
+          <div className="border-y border-neutral py-2 lg:col-span-2">
+            <h3 className="h3 py-4 text-primary">
+              {content.audiences.title}
+            </h3>
+            <div>
+              {content.audiences.items.map((item) => (
+                <div
+                  key={item.label}
+                  className="border-t border-neutral py-4"
+                >
+                  <p className="body text-accent">
+                    {item.label}
+                  </p>
+                  <p className="body mt-2 text-menu">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-10 max-w-3xl">
+          <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
             <h2 className="responsive-h2 text-primary">
-              {content.process.title}
+              {content.workflow.title}
             </h2>
+            <p className="body text-menu">
+              {content.workflow.body}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {content.process.steps.map((step, index) => (
-              <article
+          <div className="border-y border-neutral bg-white">
+            {content.workflow.steps.map((step) => (
+              <div
                 key={step.title}
-                className="rounded border border-neutral bg-white p-6 shadow"
+                className="grid gap-4 border-t border-neutral px-4 py-6 first:border-t-0 md:grid-cols-4 md:px-6"
               >
-                <p className="body text-accent">
-                  Step {index + 1}
+                <p className="body text-accent md:col-span-1">
+                  {step.label}
                 </p>
-                <h3 className="h3 mt-3 text-primary">
-                  {step.title}
-                </h3>
-                <p className="body mt-4 text-menu">
-                  {step.body}
-                </p>
-              </article>
+                <div className="md:col-span-3">
+                  <h3 className="h3 text-primary">
+                    {step.title}
+                  </h3>
+                  <p className="body mt-3 text-menu">
+                    {step.body}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded border border-neutral bg-gentle p-6 shadow md:flex-row md:items-center md:justify-between">
-          <div className="max-w-3xl">
-            <h2 className="responsive-h2 text-primary">
+        <div className="mx-auto grid max-w-6xl gap-8 bg-primary p-6 text-white shadow md:grid-cols-3 md:items-center">
+          <div className="md:col-span-2">
+            <p className="body text-accent">
+              {content.cta.eyebrow}
+            </p>
+            <h2 className="responsive-h2 text-white">
               {content.cta.title}
             </h2>
-            <p className="body mt-4 text-menu">
+            <p className="body mt-4">
               {content.cta.body}
             </p>
           </div>
           <Link
             href={content.cta.href}
-            className="button button-md inline-block self-start whitespace-nowrap md:self-center"
+            className="button button-md inline-block self-start whitespace-nowrap md:justify-self-end"
           >
             {content.cta.label}
           </Link>
