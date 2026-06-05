@@ -7,6 +7,37 @@ export const categoryPageContent = {
         title: 'Agriculture Equipment and Project-Oriented Inquiry Support',
         body: 'Use this category as a starting point for equipment discussions related to agricultural operations, field-related workflows, and preparation needs.',
       },
+      visuals: {
+        hero: {
+          label: 'Visual placeholder',
+          title: 'Agricultural equipment / field operation visual',
+          note: 'Future approved visual: equipment in agricultural operating context.',
+        },
+        operatingContexts: [
+          {
+            title: 'Field operations',
+            note: 'Future visual: agricultural machine or field workflow.',
+          },
+          {
+            title: 'Preparation and handling',
+            note: 'Future visual: material handling or preparation context.',
+          },
+          {
+            title: 'Inquiry planning',
+            note: 'Future visual: technical discussion, equipment planning, or project context.',
+          },
+        ],
+        equipmentDirection: {
+          title: 'Equipment direction visual placeholder',
+          note: 'Future visual: machinery, process line, or technical diagram related to agricultural equipment direction.',
+        },
+      },
+      categoryIntent: [
+        'Field workflows',
+        'Preparation context',
+        'Inquiry planning',
+        'Project discussion',
+      ],
       overview: {
         title: 'A category entry point for agricultural equipment needs',
         body: [
