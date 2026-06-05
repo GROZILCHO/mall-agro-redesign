@@ -19,7 +19,7 @@ export default function HomePage() {
     return (
         <main>
             <Hero />
-            <section className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
+            <section id="categories" className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-10 max-w-3xl">
                         <h2 className="responsive-h2 text-primary">
