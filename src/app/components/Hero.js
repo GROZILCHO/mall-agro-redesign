@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { heroContent } from '../../lib/content/hero.js';
+
+const locale = 'en';
+const content = heroContent[locale];
 
 export default function Hero() {
   const [isMounted, setIsMounted] = useState(false);
@@ -32,18 +36,29 @@ export default function Hero() {
       {/* Съдържание */}
       <div className="container mx-auto px-4 md:px-10 lg:px-16 relative z-20">
         <div className="text-white w-full md:w-3/5 lg:w-[60%]">
+          <p className="body mb-3 text-accent text-shadow-custom">
+            {content.eyebrow}
+          </p>
           <h1 className="responsive-h1 mb-4 md:mb-4 lg:mb-6 text-shadow-custom">
-            Expert Solutions for Food and Agriculture Industries
+            {content.title}
           </h1>
           <h4 className="responsive-h4 mb-6 md:mb-8 lg:mb-12 text-shadow-custom">
-            With over 10 years of experience, we provide tailored machinery and automation solutions for the agriculture and food processing industries.
+            {content.body}
           </h4>
-          <Link
-            href="#quote"
-            className="inline-block button sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
-          >
-            Get a Quote
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={content.primaryCta.href}
+              className="inline-block button sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
+            >
+              {content.primaryCta.label}
+            </Link>
+            <Link
+              href={content.secondaryCta.href}
+              className="inline-block button sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
+            >
+              {content.secondaryCta.label}
+            </Link>
+          </div>
         </div>
       </div>
     </section>
