@@ -1,21 +1,22 @@
 # Mall Agro Next Actions
 
-1. Run manual/browser QA for the language switcher across desktop, tablet, and mobile.
-2. Audit or implement Romanian homepage/root behavior separately.
-3. Audit full Header/Navbar localization readiness for the Romanian domain.
-4. Keep `/produse` index route implementation separate unless explicitly approved.
-5. Keep canonical, hreflang, sitemap, robots, localized metadata rollout, and structured data deferred until route pairs, deployment behavior, and Romanian runtime behavior are stable.
-6. Keep future news/content equivalence modeling separate from static category pages.
-7. Track Romanian mojibake/display-text audit separately if still present.
-8. Confirm hosting provider, DNS/domain control, and CI/CD deployment settings.
-9. Decide wrong-language route policy.
-10. Plan final Romanian category content separately from the temporary placeholder pages.
-11. Keep middleware, rewrites, and language redirects deferred unless separately approved.
-12. Continue broader manual visual QA for homepage and category placeholder pages; the TopBar tablet overflow is resolved.
-13. Plan final category content before making category pages indexable.
-14. Keep token cleanup and broader asset performance audit as separate tasks.
-15. Continue avoiding product migration and WooCommerce taxonomy import.
+1. Audit category landing page template scope.
+2. Define rich English category landing page structure before replacing placeholder category pages.
+3. Keep final Hero media/visual refinement separate.
+4. Keep final inquiry form/contact flow separate from the temporary `/quote` placeholder.
+5. Audit or implement Romanian homepage/root behavior separately.
+6. Audit full Header/Navbar localization readiness for the Romanian domain.
+7. Keep `/produse` index route implementation separate unless explicitly approved.
+8. Keep canonical, hreflang, sitemap, robots, localized metadata rollout, and structured data deferred until route pairs, deployment behavior, and Romanian runtime behavior are stable.
+9. Keep future news/content equivalence modeling separate from static category pages.
+10. Track Romanian mojibake/display-text audit separately if still present.
+11. Confirm hosting provider, DNS/domain control, and CI/CD deployment settings.
+12. Decide wrong-language route policy.
+13. Plan final Romanian category content separately from the temporary placeholder pages.
+14. Keep middleware, rewrites, and language redirects deferred unless separately approved.
+15. Keep token cleanup and broader asset performance audit as separate tasks.
+16. Continue avoiding product migration and WooCommerce taxonomy import.
 
 ## Recommended Immediate Next Task
 
-Run manual browser QA for the minimal language switcher across `/`, English category routes, and Romanian category placeholder routes, including desktop, tablet, and mobile checks.
+Audit category landing page template scope and define the rich English category landing page structure. The English homepage is accepted as a working B2B baseline; it is not final visual design.

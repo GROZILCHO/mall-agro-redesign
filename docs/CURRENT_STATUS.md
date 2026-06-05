@@ -6,7 +6,7 @@ Project Setup / Post-Audit Planning
 
 ## Current State
 
-Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. A localized content/config foundation has been added. Design direction decision DEC-008 is approved at reference level. The homepage category-card baseline is implemented.
+Documentation bootstrap baseline is complete. The existing early Next.js App Router project has completed its initial source audit. Architecture decision DEC-007 is approved. A localized content/config foundation has been added. Design direction decision DEC-008 is approved at reference level. The English homepage working B2B baseline is implemented and accepted as a working baseline.
 
 ## Notes
 
@@ -42,9 +42,17 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - The route-pair config is data-only and uses relative paths.
 - The route-pair config does not implement redirects, middleware, or SEO runtime behavior.
 - Localized content/config foundation exists under `src/lib/`.
-- Homepage baseline now includes Header, Hero, category-card section, and Footer.
+- Homepage baseline now includes Header, Hero, category-card section, refined B2B content sections, and Footer.
+- English homepage working B2B baseline is implemented and accepted as a working baseline.
+- Hero uses conservative config-driven B2B catalog copy from `src/lib/content/hero.js`.
+- Old unsupported Hero claims have been removed: `Expert Solutions`, `over 10 years`, and `tailored machinery and automation solutions`.
+- Hero primary CTA points to `/#categories`.
+- Homepage category section has `id="categories"`.
 - Homepage category cards are implemented and committed.
 - Category cards use English/default-locale data from `src/lib/content/categories.js`.
+- Refined English B2B homepage sections render after category cards from `src/lib/content/homepage.js` through `HomepageContentSections.js`.
+- `/quote` placeholder route exists, returns `200`, and is temporary `noindex`.
+- Navbar responsive behavior at `768px` and `1024px` has been corrected by using the mobile/tablet menu below `xl`.
 - Navbar logo `next/image` legacy props are fixed and committed.
 - English category placeholder pages are implemented and pushed.
 - Local browser QA confirms `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment` open normally.
@@ -71,7 +79,10 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - The homepage/root English metadata baseline remains active.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Romanian homepage/root behavior, full Romanian navigation/header localization, `html lang="ro"` behavior, and SEO runtime remain separate future tasks.
-- Manual browser visual/responsive QA is still pending.
+- Manual visual review accepted the English homepage as a working B2B baseline.
+- The homepage is not final visual design.
+- Hero media/background strategy remains future work.
+- Mobile Hero is usable but may need future refinement.
 - Hydration mismatch with `data-tag-assistant-*` attributes is caused by Google Tag Assistant/browser-extension DOM mutation, not project code.
 - Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component.
 - The previous category `<img>` lint warnings are resolved.
@@ -84,6 +95,8 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - TopBar search is hidden below `lg` and restored at `lg` and above.
 - No header or navbar layout redesign was done.
 - Future product/content expansion remains deferred until approval.
+- SEO runtime remains deferred.
+- Romanian homepage/root behavior and full Romanian shared navigation/header localization remain deferred.
 
 ## Current Constraints
 

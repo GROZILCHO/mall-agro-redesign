@@ -34,11 +34,13 @@ Design-system audit is complete. Current classification: partial draft/reference
 
 DEC-008 is approved: the current design-system reference is approved as visual direction only, not as the final implementation source of truth.
 
-Category-card pattern draft scope has been documented. The minimal homepage category-card section is implemented and committed.
+Category-card pattern draft scope has been documented. The English homepage working B2B baseline is implemented and accepted as a working baseline. It includes conservative Hero copy from `src/lib/content/hero.js`, category cards with `id="categories"`, refined English B2B sections from `src/lib/content/homepage.js`, and Footer. This is not final visual design.
 
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 English category placeholder pages are implemented and pushed. Local browser QA confirms the three homepage category-card CTA routes open normally.
+
+`/quote` exists as a temporary English placeholder route with `noindex` and returns `200`. It is not the final inquiry form/contact flow.
 
 Root placeholder metadata has been replaced with a conservative English metadata baseline. `html lang="en"` remains a temporary English baseline until Romanian/domain runtime behavior is scoped.
 
@@ -48,16 +50,18 @@ Category SVG icons now use Next.js `<Image />` in homepage category cards and th
 
 TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `375px`, `768px`, `1024px`, or `1440px`. Do not revisit TopBar unless new QA findings require it.
 
+Navbar responsive correction is implemented: desktop layout appears at `xl`, and mobile/tablet menu appears below `xl`, resolving the 768px/1024px overlap issue in manual visual review.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
-- Homepage baseline rendering Header, Hero, category-card section, and Footer
+- Homepage working baseline rendering Header, Hero, category-card section, refined B2B content sections, and Footer
 - Header, top bar, navigation, hero, footer, icon component, and empty key metrics component
 - Tailwind configuration with early tokens
 - Mall Agro logo assets, hero video, hero background, icons, and fonts
 - Clean Git repository on `main`
 - GitHub remote configured
-- Current implemented English routes: `/`, `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
+- Current implemented English routes: `/`, `/quote`, `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
 - Current implemented Romanian category placeholder routes: `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
 - Approved architecture direction: domain-based localization with shared internal IDs and separate localized configs
 - Localized config modules for locales, route maps, category content, and navigation labels
@@ -68,6 +72,8 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 - Final Tailwind tokens and component patterns are not yet implemented
 - Category-card pattern draft scope is documented in `docs/DESIGN_SYSTEM.md`
 - Homepage category cards use English/default-locale data from `src/lib/content/categories.js`
+- Conservative Hero copy uses `src/lib/content/hero.js`
+- Refined English homepage B2B sections use `src/lib/content/homepage.js`
 - Navbar logo uses the modern `next/image` fill API
 - English placeholder routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
 - Romanian placeholder routes for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
@@ -106,7 +112,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run manual browser QA for the minimal language switcher across `/`, English category routes, and Romanian category placeholder routes. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Audit category landing page template scope and define the rich English category landing page structure. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -121,7 +127,7 @@ Run manual browser QA for the minimal language switcher across `/`, English cate
 - Hard-coded English labels, missing Romanian routing/content/metadata, design-system drift, asset performance risk, and encoding/mojibake remain open issues.
 - Minimal homepage category cards are implemented and committed.
 - Navbar logo `next/image` legacy prop warnings are fixed.
-- Manual responsive/browser QA remains pending.
+- English homepage working baseline has passed source, lint, local route, and manual visual review at practical viewport levels.
 - English category placeholder routes open normally in local browser QA.
 - Romanian category placeholder routes are implemented with `locale="ro"` and temporary `noindex`; final Romanian category content remains pending.
 - Domain population strategy audit is complete. The approved direction is domain-based language serving without `/ro` prefixes or language redirects.
@@ -135,8 +141,11 @@ Run manual browser QA for the minimal language switcher across `/`, English cate
 - `/products` index page remains pending.
 - Category SVG icon `<img>` warnings are resolved through the narrow Next.js `<Image />` migration.
 - TopBar tablet horizontal overflow is resolved and verified at `375px`, `768px`, `1024px`, and `1440px`.
+- Navbar 768px/1024px overlap is resolved by using the mobile/tablet menu below `xl`.
+- `/quote` placeholder route is implemented with temporary `noindex`; final inquiry/contact flow remains pending.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content must be approved before the placeholder pages become indexable.
+- Next major work package: category landing page template.
 - Broader asset performance audit remains a separate future task.
 
 ## Files To Inspect First

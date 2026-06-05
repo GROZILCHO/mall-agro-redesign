@@ -12,6 +12,19 @@ Current implemented English routes:
 - `mallagro.com/products/agriculture`
 - `mallagro.com/products/grain-processing`
 - `mallagro.com/products/food-industry-equipment`
+- `mallagro.com/quote`
+
+The English homepage `/` is the current accepted working B2B baseline. It includes:
+
+- Header
+- Hero with conservative config-driven B2B catalog copy
+- category cards with `id="categories"`
+- refined B2B content sections
+- Footer
+
+This is a working baseline, not final visual design or final SEO rollout.
+
+The English `/quote` route exists as a temporary placeholder route with `noindex`. It is a project/equipment inquiry starting point, not the final inquiry flow.
 
 Current implemented Romanian category placeholder routes:
 
@@ -80,7 +93,7 @@ Fallback to the other domain homepage or to a section landing page is not approv
 | mallagro.com | en | `/solutions` | Solutions | Solutions index | `src/app/solutions/page.js` | Industry and business solutions | Draft | Proposed path. |
 | mallagro.com | en | `/about` | About | Company page | `src/app/about/page.js` | Company trust and background | Draft | Proposed path. |
 | mallagro.com | en | `/contact` | Contact | Contact page | `src/app/contact/page.js` | Contact and local business discovery | Draft | Proposed path. |
-| mallagro.com | en | `/quote` | Request a Quote | Lead generation | `src/app/quote/page.js` | Quote request conversions | Draft | Proposed path. |
+| mallagro.com | en | `/quote` | Request a Quote | Lead generation | `src/app/quote/page.js` | Quote request conversions | Placeholder / Noindex | Implemented as temporary placeholder. Final inquiry flow remains pending. |
 | mallagro.com | en | `/privacy-policy` | Privacy Policy | Legal | `src/app/privacy-policy/page.js` | Legal compliance | Draft | Proposed path. |
 | mallagro.com | en | `/cookie-policy` | Cookie Policy | Legal | `src/app/cookie-policy/page.js` | Legal compliance | Draft | Proposed path. |
 | mallagro.ro | ro | `/` | Acasă | Landing / catalog entry | `src/app/page.js` or locale/domain routing TBD | Prezentare brand și categorii | Draft | Domain routing strategy TBD. |
