@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Hero from './components/Hero';
+import HomepageContentSections from './components/HomepageContentSections';
 import './globals.css';
 import { categories } from '../lib/content/categories.js';
 
@@ -64,6 +65,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
+            <HomepageContentSections />
             {/* Добавете останалите секции тук */}
         </main>
     );
