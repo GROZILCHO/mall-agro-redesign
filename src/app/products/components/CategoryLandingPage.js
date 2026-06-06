@@ -37,7 +37,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
 
           <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
-            <div className="flex min-h-56 items-center justify-center border-b border-neutral bg-white p-6 text-center">
+            <div className="flex min-h-56 items-end border-b border-neutral bg-white p-6">
               <div>
                 <p className="body text-accent">
                   {richContent.visuals.hero.label}
@@ -65,7 +65,21 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <section className="px-4 py-12 md:px-10 lg:px-16">
+      <nav aria-label="Agriculture category sections" className="bg-primary px-4 py-4 md:px-10 lg:px-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 text-white sm:flex-row sm:flex-wrap">
+          {richContent.pageNavigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="body border border-neutral px-4 py-3 text-center text-white hover:text-accent"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      <section id="overview" className="scroll-mt-24 px-4 py-12 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 border-y border-neutral py-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="body text-accent">
@@ -85,7 +99,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
+      <section id="applications" className="scroll-mt-24 bg-white px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
             <p className="body text-accent">
@@ -101,10 +115,10 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 <div className="flex min-h-40 items-center border-b border-neutral bg-white p-5">
                   <div>
                     <p className="body text-accent">
-                      Planned image area
+                      {richContent.visuals.operatingContexts[index]?.title || area.title}
                     </p>
                     <h3 className="h3 mt-3 text-primary">
-                      {richContent.visuals.operatingContexts[index]?.title || area.title}
+                      {area.title}
                     </h3>
                     <p className="body mt-3 text-menu">
                       {richContent.visuals.operatingContexts[index]?.note}
@@ -125,7 +139,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:px-10 lg:px-16">
+      <section id="equipment-direction" className="scroll-mt-24 px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="body text-accent">
@@ -138,7 +152,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           <div className="grid gap-6 lg:col-span-3">
             <div className="rounded border border-neutral bg-white p-6 shadow">
               <p className="body text-accent">
-                Future category visual
+                Category context
               </p>
               <h3 className="h3 mt-3 text-primary">
                 {richContent.visuals.equipmentDirection.title}
@@ -158,7 +172,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
+      <section id="inquiry" className="scroll-mt-24 bg-white px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
             <div>
@@ -216,6 +230,30 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-12 md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-6xl gap-6 border-y border-neutral py-8 md:grid-cols-3 md:items-center">
+          <div>
+            <p className="body text-accent">
+              {richContent.relatedCategories.eyebrow}
+            </p>
+            <h2 className="h3 mt-3 text-primary">
+              {richContent.relatedCategories.title}
+            </h2>
+          </div>
+          <div className="grid gap-3 md:col-span-2 md:grid-cols-2">
+            {richContent.relatedCategories.links.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="body rounded border border-neutral bg-gentle px-4 py-4 text-primary hover:text-accent"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -9,29 +9,47 @@ export const categoryPageContent = {
       },
       visuals: {
         hero: {
-          label: 'Visual placeholder',
-          title: 'Agricultural equipment / field operation visual',
-          note: 'Future approved visual: equipment in agricultural operating context.',
+          label: 'Category context',
+          title: 'Agricultural equipment in operating context',
+          note: 'A planned visual frame for field-related equipment and agricultural workflow context.',
         },
         operatingContexts: [
           {
-            title: 'Field operations',
-            note: 'Future visual: agricultural machine or field workflow.',
+            title: 'Field workflow context',
+            note: 'A visual frame for agricultural operations and field-related workflow discussion.',
           },
           {
-            title: 'Preparation and handling',
-            note: 'Future visual: material handling or preparation context.',
+            title: 'Preparation and handling context',
+            note: 'A visual frame for preparation, handling, and pre-processing inquiry context.',
           },
           {
-            title: 'Inquiry planning',
-            note: 'Future visual: technical discussion, equipment planning, or project context.',
+            title: 'Equipment planning context',
+            note: 'A visual frame for technical discussion and project-oriented equipment planning.',
           },
         ],
         equipmentDirection: {
-          title: 'Equipment direction visual placeholder',
-          note: 'Future visual: machinery, process line, or technical diagram related to agricultural equipment direction.',
+          title: 'Equipment direction',
+          note: 'A visual frame for machinery, workflow, or technical direction related to agricultural equipment inquiries.',
         },
       },
+      pageNavigation: [
+        {
+          label: 'Overview',
+          href: '#overview',
+        },
+        {
+          label: 'Applications',
+          href: '#applications',
+        },
+        {
+          label: 'Equipment direction',
+          href: '#equipment-direction',
+        },
+        {
+          label: 'Inquiry',
+          href: '#inquiry',
+        },
+      ],
       categoryIntent: [
         'Field workflows',
         'Preparation context',
@@ -100,6 +118,20 @@ export const categoryPageContent = {
         body: 'Use the quote page to share the category, application, workflow, or equipment direction you want to discuss.',
         label: 'Request a quote',
         href: '/quote',
+      },
+      relatedCategories: {
+        eyebrow: 'Continue browsing',
+        title: 'Related equipment categories',
+        links: [
+          {
+            label: 'Grain Processing / Grain Handling',
+            href: '/products/grain-processing',
+          },
+          {
+            label: 'Food Industry Equipment',
+            href: '/products/food-industry-equipment',
+          },
+        ],
       },
     },
   },
