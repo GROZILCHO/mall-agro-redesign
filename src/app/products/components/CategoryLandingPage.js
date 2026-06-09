@@ -11,6 +11,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
     return null;
   }
 
+  const imageSlots = richContent.imageSlots;
+
   return (
     <main className="bg-gentle">
       <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
@@ -37,16 +39,16 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
 
           <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
-            <div className="flex min-h-56 items-end border-b border-neutral bg-white p-6">
+            <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
               <div>
                 <p className="body text-accent">
-                  {richContent.visuals.hero.label}
+                  {imageSlots.hero.label}
                 </p>
                 <h2 className="h3 mt-3 text-primary">
-                  {richContent.visuals.hero.title}
+                  {imageSlots.hero.title}
                 </h2>
                 <p className="body mt-3 text-menu">
-                  {richContent.visuals.hero.note}
+                  {imageSlots.hero.body}
                 </p>
               </div>
             </div>
@@ -112,16 +114,16 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           <div className="grid gap-6 md:grid-cols-3">
             {richContent.applicationAreas.map((area, index) => (
               <article key={area.title} className="overflow-hidden rounded border border-neutral bg-gentle shadow">
-                <div className="flex min-h-40 items-center border-b border-neutral bg-white p-5">
+                <div className="flex min-h-48 items-end border-b border-neutral bg-white p-5">
                   <div>
                     <p className="body text-accent">
-                      {richContent.visuals.operatingContexts[index]?.label || area.title}
+                      {imageSlots.operatingContexts[index]?.label || area.title}
                     </p>
                     <h3 className="h3 mt-3 text-primary">
-                      {richContent.visuals.operatingContexts[index]?.title || area.title}
+                      {imageSlots.operatingContexts[index]?.title || area.title}
                     </h3>
                     <p className="body mt-3 text-menu">
-                      {richContent.visuals.operatingContexts[index]?.body || area.body}
+                      {imageSlots.operatingContexts[index]?.body || area.body}
                     </p>
                   </div>
                 </div>
@@ -149,13 +151,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           <div className="grid gap-6 lg:col-span-3">
             <div className="rounded border border-neutral bg-white p-6 shadow">
               <p className="body text-accent">
-                Category context
+                {imageSlots.equipmentDirection.label}
               </p>
               <h3 className="h3 mt-3 text-primary">
-                {richContent.visuals.equipmentDirection.title}
+                {imageSlots.equipmentDirection.title}
               </h3>
               <p className="body mt-3 text-menu">
-                {richContent.visuals.equipmentDirection.note}
+                {imageSlots.equipmentDirection.body}
               </p>
             </div>
             <ul className="grid gap-4 sm:grid-cols-2">
@@ -182,6 +184,17 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </div>
             <p className="body border-l border-neutral pl-4 text-menu">
               Move from general category interest toward a clearer project conversation.
+            </p>
+          </div>
+          <div className="mb-6 rounded border border-neutral bg-gentle p-5">
+            <p className="body text-accent">
+              {imageSlots.workflow.label}
+            </p>
+            <h3 className="h3 mt-3 text-primary">
+              {imageSlots.workflow.title}
+            </h3>
+            <p className="body mt-3 text-menu">
+              {imageSlots.workflow.body}
             </p>
           </div>
           <div className="grid gap-4">
