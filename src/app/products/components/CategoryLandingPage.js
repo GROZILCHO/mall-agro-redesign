@@ -115,20 +115,17 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 <div className="flex min-h-40 items-center border-b border-neutral bg-white p-5">
                   <div>
                     <p className="body text-accent">
-                      {richContent.visuals.operatingContexts[index]?.title || area.title}
+                      {richContent.visuals.operatingContexts[index]?.label || area.title}
                     </p>
                     <h3 className="h3 mt-3 text-primary">
-                      {area.title}
+                      {richContent.visuals.operatingContexts[index]?.title || area.title}
                     </h3>
                     <p className="body mt-3 text-menu">
-                      {richContent.visuals.operatingContexts[index]?.note}
+                      {richContent.visuals.operatingContexts[index]?.body || area.body}
                     </p>
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="h3 text-primary">
-                    {area.title}
-                  </h3>
                   <p className="body mt-3 text-menu">
                     {area.body}
                   </p>

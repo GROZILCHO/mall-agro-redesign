@@ -9,27 +9,30 @@ export const categoryPageContent = {
       },
       visuals: {
         hero: {
-          label: 'Category context',
+          label: 'Field operations',
           title: 'Agricultural equipment in operating context',
-          note: 'A planned visual frame for field-related equipment and agricultural workflow context.',
+          note: 'Use this category to frame field-related equipment and workflow discussions.',
         },
         operatingContexts: [
           {
-            title: 'Field workflow context',
-            note: 'A visual frame for agricultural operations and field-related workflow discussion.',
+            label: 'Field operations',
+            title: 'Agricultural workflow context',
+            body: 'Frame equipment needs around field-related workflows and operating conditions.',
           },
           {
-            title: 'Preparation and handling context',
-            note: 'A visual frame for preparation, handling, and pre-processing inquiry context.',
+            label: 'Preparation and handling',
+            title: 'Material preparation context',
+            body: 'Clarify preparation, handling, or pre-processing needs before a project discussion.',
           },
           {
-            title: 'Equipment planning context',
-            note: 'A visual frame for technical discussion and project-oriented equipment planning.',
+            label: 'Equipment planning',
+            title: 'Project inquiry context',
+            body: 'Use category-level context to shape the first equipment inquiry conversation.',
           },
         ],
         equipmentDirection: {
           title: 'Equipment direction',
-          note: 'A visual frame for machinery, workflow, or technical direction related to agricultural equipment inquiries.',
+          note: 'Frame the workflow, application, and project context before moving into equipment-specific discussion.',
         },
       },
       pageNavigation: [
@@ -80,10 +83,10 @@ export const categoryPageContent = {
       equipmentDirection: {
         title: 'What this category can help frame',
         items: [
-          'equipment category direction',
-          'application or workflow context',
-          'initial project inquiry requirements',
-          'future product-detail expansion after content approval',
+          'Field equipment direction',
+          'Workflow or application context',
+          'Material preparation needs',
+          'Project inquiry details',
         ],
       },
       inquiryWorkflow: {
