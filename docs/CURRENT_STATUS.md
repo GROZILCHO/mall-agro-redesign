@@ -97,6 +97,16 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Future product/content expansion remains deferred until approval.
 - SEO runtime remains deferred.
 - Romanian homepage/root behavior and full Romanian shared navigation/header localization remain deferred.
+- Latest stable implementation baseline is `bc91cdd refactor: define Agriculture category image slots`.
+- After killing stale Node processes, deleting `.next`, and starting one clean dev server, the homepage route `/` was confirmed working with `200`.
+- `/products/agriculture` was confirmed working and uses the rich Agriculture category page with explicit image-slot architecture.
+- `/quote` was confirmed working with `200`.
+- Other English category routes and Romanian category routes remain placeholders.
+- No real category image assets have been added for the Agriculture image slots.
+- `/products/agriculture` remains temporary `noindex`; SEO runtime remains deferred.
+- The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted.
+- Agriculture mobile 375px overflow/readability remains a separate controlled follow-up.
+- Mobile menu concerns remain observation-only unless reproduced on a clean single dev server.
 
 ## Current Constraints
 

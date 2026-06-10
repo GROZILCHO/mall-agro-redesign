@@ -52,6 +52,14 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 
 Navbar responsive correction is implemented: desktop layout appears at `xl`, and mobile/tablet menu appears below `xl`, resolving the 768px/1024px overlap issue in manual visual review.
 
+Latest stable implementation baseline is `bc91cdd refactor: define Agriculture category image slots`.
+
+The recent local homepage `404` report was traced to stale/multiple local dev servers or port mismatch. After killing Node processes, deleting `.next`, and starting one clean dev server, `/`, `/products/agriculture`, and `/quote` returned `200`. If route behavior differs by port, stop and clear stale Node/Next processes before assuming source regression.
+
+The Agriculture category page uses explicit image-slot architecture and remains temporary `noindex`. No real image assets have been added. Other English category routes and Romanian category routes remain placeholders.
+
+The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted. Mobile readability at 375px remains a separate controlled follow-up. Mobile menu concerns are observation-only unless reproduced on a clean single dev server.
+
 ## What Exists
 
 - Next.js App Router structure under `src/app`
@@ -79,6 +87,7 @@ Navbar responsive correction is implemented: desktop layout appears at `xl`, and
 - Romanian placeholder routes for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
 - Conservative English root metadata baseline
 - Temporary root `html lang="en"` baseline
+- Rich Agriculture category page with image-slot architecture at `/products/agriculture`
 
 ## What Was Added
 
@@ -112,7 +121,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Audit category landing page template scope and define the rich English category landing page structure. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Choose the next controlled category-page step: visual asset pipeline planning for the Agriculture image slots, or a controlled mobile readability/overflow audit if the issue is still reproducible. Do not implement Grain Processing or Food Industry rich pages until the Agriculture template is visually accepted. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -147,6 +156,8 @@ Audit category landing page template scope and define the rich English category 
 - Final category content must be approved before the placeholder pages become indexable.
 - Next major work package: category landing page template.
 - Broader asset performance audit remains a separate future task.
+- Current category-page baseline is the committed Agriculture image-slot architecture in `bc91cdd`.
+- Avoid multiple concurrent local dev servers. If `/` or another route behaves differently by port, kill stale Node processes, delete `.next` if needed, and restart one clean dev server from this repository.
 
 ## Files To Inspect First
 
@@ -161,6 +172,8 @@ Audit category landing page template scope and define the rich English category 
 ## Warnings / Do Not Touch
 
 Do not modify source code, styles, assets, packages, build output, or deployment files without a separate narrow implementation task.
+
+Do not modify Navbar, Header, homepage, or mobile menu behavior without a dedicated audit and scoped implementation task.
 
 Do not wire the new config into UI until the config foundation is audited.
 
