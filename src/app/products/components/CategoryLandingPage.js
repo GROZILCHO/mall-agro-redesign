@@ -39,6 +39,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
 
           <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
+            {imageSlots.hero.asset && (
+              <img
+                src={imageSlots.hero.asset}
+                alt={imageSlots.hero.title}
+                className="aspect-[16/9] w-full object-cover"
+              />
+            )}
             <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
               <div>
                 <p className="body text-accent">

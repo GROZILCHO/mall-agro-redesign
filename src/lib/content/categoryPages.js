@@ -15,7 +15,7 @@ export const categoryPageContent = {
           title: 'Agricultural equipment in operating context',
           body: 'Use this category to frame field-related equipment and workflow discussions.',
           intent: 'Immediate category recognition and agriculture equipment identity.',
-          asset: null,
+          asset: '/images/categories/agriculture/agriculture-hero-project-context.webp',
         },
         operatingContexts: [
           {
@@ -25,7 +25,7 @@ export const categoryPageContent = {
             title: 'Agricultural workflow context',
             body: 'Frame equipment needs around field-related workflows and operating conditions.',
             intent: 'Help visitors identify field-operation needs.',
-            asset: null,
+            asset: '/images/categories/agriculture/agriculture-context-field-workflows.webp',
           },
           {
             id: 'preparation-handling',
@@ -34,7 +34,7 @@ export const categoryPageContent = {
             title: 'Material preparation context',
             body: 'Clarify preparation, handling, or pre-processing needs before a project discussion.',
             intent: 'Support preparation and handling inquiry framing.',
-            asset: null,
+            asset: '/images/categories/agriculture/agriculture-context-preparation-handling.webp',
           },
           {
             id: 'equipment-planning',
