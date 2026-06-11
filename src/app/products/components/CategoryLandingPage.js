@@ -112,18 +112,28 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {richContent.applicationAreas.map((area, index) => (
+            {richContent.applicationAreas.map((area, index) => {
+              const context = imageSlots.operatingContexts[index];
+
+              return (
               <article key={area.title} className="overflow-hidden rounded border border-neutral bg-gentle shadow">
+                {context?.asset && (
+                  <img
+                    src={context.asset}
+                    alt={context.title}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                )}
                 <div className="flex min-h-48 items-end border-b border-neutral bg-white p-5">
                   <div>
                     <p className="body text-accent">
-                      {imageSlots.operatingContexts[index]?.label || area.title}
+                      {context?.label || area.title}
                     </p>
                     <h3 className="h3 mt-3 text-primary">
-                      {imageSlots.operatingContexts[index]?.title || area.title}
+                      {context?.title || area.title}
                     </h3>
                     <p className="body mt-3 text-menu">
-                      {imageSlots.operatingContexts[index]?.body || area.body}
+                      {context?.body || area.body}
                     </p>
                   </div>
                 </div>
@@ -133,7 +143,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                   </p>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

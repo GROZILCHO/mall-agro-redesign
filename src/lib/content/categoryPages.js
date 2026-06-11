@@ -43,7 +43,7 @@ export const categoryPageContent = {
             title: 'Project inquiry context',
             body: 'Use category-level context to shape the first equipment inquiry conversation.',
             intent: 'Support technical and non-technical inquiry planning.',
-            asset: null,
+            asset: '/images/categories/agriculture/agriculture-context-project-inquiry.webp',
           },
         ],
         equipmentDirection: {
