@@ -1,4 +1,4 @@
-import CategoryPlaceholderPage from '../components/CategoryPlaceholderPage.js';
+import CategoryLandingPage from '../components/CategoryLandingPage.js';
 
 export const metadata = {
   robots: {
@@ -8,5 +8,5 @@ export const metadata = {
 };
 
 export default function FoodIndustryEquipmentPage() {
-  return <CategoryPlaceholderPage categoryId="food-industry-equipment" />;
+  return <CategoryLandingPage categoryId="food-industry-equipment" locale="en" />;
 }

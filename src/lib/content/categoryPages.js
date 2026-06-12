@@ -167,5 +167,172 @@ export const categoryPageContent = {
         ],
       },
     },
+    'food-industry-equipment': {
+      categoryId: 'food-industry-equipment',
+      hero: {
+        eyebrow: 'Food industry equipment category',
+        title: 'Food Industry Equipment for Production Workflow Planning',
+        body: 'Explore equipment discussions for food production environments, processing workflows, preparation and handling steps, and the practical details needed before an inquiry.',
+      },
+      imageSlots: {
+        hero: {
+          id: 'food-industry-hero',
+          role: 'Category hero visual',
+          label: 'Production workflow',
+          title: 'Food production equipment in workflow context',
+          body: 'Review food production activity, processing steps, and the equipment discussion that may need to be prepared.',
+          intent: 'Immediate category recognition and food industry equipment identity.',
+          asset: '/images/categories/food-industry/food-industry-hero-production-process.webp',
+        },
+        operatingContexts: [
+          {
+            id: 'production-workflows',
+            role: 'Application context visual',
+            label: 'Production workflows',
+            title: 'Food Production Workflows',
+            body: 'For discussions connected to preparation, processing, handling, or movement of food materials through a production environment.',
+            intent: 'Help visitors identify production workflow needs.',
+            asset: null,
+          },
+          {
+            id: 'line-planning',
+            role: 'Application context visual',
+            label: 'Line planning',
+            title: 'Production Line Planning',
+            body: 'For workflows where equipment needs to fit into existing steps, available space, operator access, or downstream handling requirements.',
+            intent: 'Support production line and equipment planning.',
+            asset: null,
+          },
+          {
+            id: 'equipment-inquiry',
+            role: 'Application context visual',
+            label: 'Equipment inquiry',
+            title: 'Project Inquiry Preparation',
+            body: 'For early-stage equipment discussions where the product type, workflow constraints, and expected production setup need to be clarified.',
+            intent: 'Support technical and non-technical inquiry planning.',
+            asset: null,
+          },
+        ],
+        equipmentDirection: {
+          id: 'equipment-direction',
+          role: 'Equipment direction visual',
+          label: 'Equipment direction',
+          title: 'Equipment needs and workflow fit',
+          body: 'Connect preparation steps, processing requirements, handling needs, and production planning details before narrowing the discussion to equipment options.',
+          intent: 'Connect the category to machinery and process logic.',
+          asset: null,
+        },
+        workflow: {
+          id: 'inquiry-workflow',
+          role: 'Process graphic slot',
+          label: 'Inquiry workflow',
+          title: 'Preparing a food industry equipment inquiry',
+          body: 'Bring together the product type, current workflow, production environment, and expected equipment needs before sending an inquiry.',
+          intent: 'Clarify the inquiry path without turning the page into a product grid.',
+          asset: null,
+        },
+      },
+      pageNavigation: [
+        {
+          label: 'Overview',
+          href: '#overview',
+        },
+        {
+          label: 'Applications',
+          href: '#applications',
+        },
+        {
+          label: 'Equipment direction',
+          href: '#equipment-direction',
+        },
+        {
+          label: 'Inquiry',
+          href: '#inquiry',
+        },
+      ],
+      categoryIntent: [
+        'Production workflows',
+        'Processing context',
+        'Line planning',
+        'Inquiry preparation',
+      ],
+      overview: {
+        title: 'Food Industry Equipment category scope',
+        body: [
+          'The Food Industry Equipment category covers equipment discussions connected to food production workflows, preparation and handling steps, processing environments, and production line planning.',
+          'Visitors can use this category to organize an early discussion around the product type, current workflow, production setting, and equipment needs that should be explored.',
+        ],
+      },
+      applicationAreas: [
+        {
+          title: 'Food Production Workflows',
+          body: 'Use this context when the inquiry starts from preparation, processing, handling, or movement of food materials through a production workflow.',
+        },
+        {
+          title: 'Production Line Planning',
+          body: 'Use this context when equipment needs to connect with existing work steps, available space, operator access, or downstream production activity.',
+        },
+        {
+          title: 'Project Inquiry Preparation',
+          body: 'Use this context when the next step is to describe the product type, workflow constraints, production environment, and equipment discussion needed.',
+        },
+      ],
+      equipmentDirection: {
+        title: 'Equipment discussions this category can support',
+        items: [
+          'Food production equipment discussions connected to preparation, processing, or handling workflows',
+          'Production line planning where equipment must fit existing steps or available working space',
+          'Handling requirements around material flow, operator access, hygiene-sensitive environments, or downstream discussion',
+          'Project planning details that help define the right equipment discussion before a quote request',
+        ],
+      },
+      inquiryWorkflow: {
+        title: 'How to prepare an effective equipment inquiry',
+        steps: [
+          {
+            title: 'Describe the production activity',
+            body: 'Start with the food product type, production step, and workflow where equipment is needed.',
+          },
+          {
+            title: 'Explain the current workflow',
+            body: 'Share how preparation, processing, handling, or downstream steps currently work and where support is needed.',
+          },
+          {
+            title: 'Clarify the equipment discussion',
+            body: 'Indicate the expected equipment need, known constraints, and the information required for the next project conversation.',
+          },
+        ],
+      },
+      inquiryPreparation: {
+        title: 'Before sending an inquiry, prepare these details',
+        items: [
+          'Product type or food material involved in the production workflow',
+          'Current preparation, processing, handling, or downstream steps',
+          'Production environment details, including space, access, or hygiene-sensitive requirements if known',
+          'Expected equipment need, project constraints, or questions that should guide the first discussion',
+        ],
+      },
+      cta: {
+        eyebrow: 'Equipment inquiry',
+        title: 'Share the context for a food industry equipment inquiry',
+        body: 'Use the inquiry page to describe the product type, production workflow, current process, and equipment need so the discussion can start with the right context.',
+        label: 'Request a quote',
+        href: '/quote',
+      },
+      relatedCategories: {
+        eyebrow: 'Continue browsing',
+        title: 'Related equipment categories',
+        links: [
+          {
+            label: 'Agriculture',
+            href: '/products/agriculture',
+          },
+          {
+            label: 'Grain Processing / Grain Handling',
+            href: '/products/grain-processing',
+          },
+        ],
+      },
+    },
   },
 };
