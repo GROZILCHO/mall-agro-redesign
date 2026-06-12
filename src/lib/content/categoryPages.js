@@ -334,5 +334,172 @@ export const categoryPageContent = {
         ],
       },
     },
+    'grain-processing-handling': {
+      categoryId: 'grain-processing-handling',
+      hero: {
+        eyebrow: 'Grain processing and handling category',
+        title: 'Grain Processing and Handling Equipment Planning',
+        body: 'Explore equipment discussions for grain reception, cleaning and preparation, conveying and elevation, storage-adjacent handling, and the practical details needed before an inquiry.',
+      },
+      imageSlots: {
+        hero: {
+          id: 'grain-processing-hero',
+          role: 'Category hero visual',
+          label: 'Grain workflow',
+          title: 'Grain handling and processing workflow context',
+          body: 'Review the grain flow, handling steps, and equipment discussion that may need to be prepared.',
+          intent: 'Immediate category recognition and grain processing equipment identity.',
+          asset: null,
+        },
+        operatingContexts: [
+          {
+            id: 'reception-intake',
+            role: 'Application context visual',
+            label: 'Reception and intake',
+            title: 'Grain Reception and Intake',
+            body: 'For discussions connected to receiving grain, planning intake flow, and understanding how material enters the handling or preparation process.',
+            intent: 'Help visitors identify grain intake and reception needs.',
+            asset: null,
+          },
+          {
+            id: 'cleaning-preparation',
+            role: 'Application context visual',
+            label: 'Cleaning and preparation',
+            title: 'Cleaning and Preparation',
+            body: 'For workflows where grain needs to be cleaned, prepared, sorted, or conditioned before storage, handling, or further processing steps.',
+            intent: 'Support grain cleaning and preparation inquiry planning.',
+            asset: null,
+          },
+          {
+            id: 'conveying-storage-handling',
+            role: 'Application context visual',
+            label: 'Conveying and handling',
+            title: 'Conveying, Elevation, and Storage-Adjacent Handling',
+            body: 'For equipment discussions around moving grain between process steps, elevation points, storage areas, or production-line connections.',
+            intent: 'Support conveying, elevation, and storage-adjacent handling planning.',
+            asset: null,
+          },
+        ],
+        equipmentDirection: {
+          id: 'equipment-direction',
+          role: 'Equipment direction visual',
+          label: 'Equipment direction',
+          title: 'Equipment needs and grain workflow fit',
+          body: 'Connect reception, cleaning, conveying, elevation, and storage-adjacent handling requirements before narrowing the discussion to equipment options.',
+          intent: 'Connect the category to machinery and process logic.',
+          asset: null,
+        },
+        workflow: {
+          id: 'inquiry-workflow',
+          role: 'Process graphic slot',
+          label: 'Inquiry workflow',
+          title: 'Preparing a grain processing equipment inquiry',
+          body: 'Bring together the grain type, current flow, handling steps, site constraints, and expected equipment needs before sending an inquiry.',
+          intent: 'Clarify the inquiry path without turning the page into a product grid.',
+          asset: null,
+        },
+      },
+      pageNavigation: [
+        {
+          label: 'Overview',
+          href: '#overview',
+        },
+        {
+          label: 'Applications',
+          href: '#applications',
+        },
+        {
+          label: 'Equipment direction',
+          href: '#equipment-direction',
+        },
+        {
+          label: 'Inquiry',
+          href: '#inquiry',
+        },
+      ],
+      categoryIntent: [
+        'Reception and intake',
+        'Cleaning context',
+        'Conveying and elevation',
+        'Inquiry preparation',
+      ],
+      overview: {
+        title: 'Grain Processing / Grain Handling category scope',
+        body: [
+          'The Grain Processing / Grain Handling category covers equipment discussions connected to grain reception, cleaning and preparation, conveying and elevation, storage-adjacent handling, and process flow planning.',
+          'Visitors can use this category to organize an early discussion around the grain material, current workflow, handling requirements, site context, and equipment needs that should be explored.',
+        ],
+      },
+      applicationAreas: [
+        {
+          title: 'Grain Reception and Intake',
+          body: 'Use this context when the inquiry starts from receiving grain, planning intake flow, or connecting incoming material with the next preparation or handling step.',
+        },
+        {
+          title: 'Cleaning and Preparation',
+          body: 'Use this context when grain needs to be cleaned, prepared, sorted, or conditioned before storage, processing, or another handling stage.',
+        },
+        {
+          title: 'Conveying, Elevation, and Storage-Adjacent Handling',
+          body: 'Use this context when the discussion involves moving grain between steps, lifting material, connecting storage areas, or planning process flow.',
+        },
+      ],
+      equipmentDirection: {
+        title: 'Equipment discussions this category can support',
+        items: [
+          'Grain reception and intake discussions connected to incoming material flow and site layout',
+          'Cleaning and preparation workflows that need equipment for organizing grain before the next step',
+          'Conveying and elevation requirements around material movement, transfer points, and storage-adjacent handling',
+          'Project planning details for farms, mills, storage operators, or processors before a quote request',
+        ],
+      },
+      inquiryWorkflow: {
+        title: 'How to prepare an effective equipment inquiry',
+        steps: [
+          {
+            title: 'Describe the grain workflow',
+            body: 'Start with the grain material, site context, and the process step where equipment is needed.',
+          },
+          {
+            title: 'Explain handling and preparation needs',
+            body: 'Share how grain is received, cleaned, moved, elevated, stored, or prepared today and where support is needed.',
+          },
+          {
+            title: 'Clarify the equipment discussion',
+            body: 'Indicate the expected equipment need, known constraints, and the information required for the next project conversation.',
+          },
+        ],
+      },
+      inquiryPreparation: {
+        title: 'Before sending an inquiry, prepare these details',
+        items: [
+          'Grain type or material involved in the handling or processing workflow',
+          'Current reception, cleaning, conveying, elevation, or storage-adjacent steps',
+          'Site and process context, including transfer points, available space, or integration needs if known',
+          'Expected equipment need, project constraints, or questions that should guide the first discussion',
+        ],
+      },
+      cta: {
+        eyebrow: 'Equipment inquiry',
+        title: 'Share the context for a grain processing equipment inquiry',
+        body: 'Use the inquiry page to describe the grain material, current workflow, handling steps, and equipment need so the discussion can start with the right context.',
+        label: 'Request a quote',
+        href: '/quote',
+      },
+      relatedCategories: {
+        eyebrow: 'Continue browsing',
+        title: 'Related equipment categories',
+        links: [
+          {
+            label: 'Agriculture',
+            href: '/products/agriculture',
+          },
+          {
+            label: 'Food Industry Equipment',
+            href: '/products/food-industry-equipment',
+          },
+        ],
+      },
+    },
   },
 };

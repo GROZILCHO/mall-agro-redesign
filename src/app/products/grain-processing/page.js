@@ -1,4 +1,4 @@
-import CategoryPlaceholderPage from '../components/CategoryPlaceholderPage.js';
+import CategoryLandingPage from '../components/CategoryLandingPage.js';
 
 export const metadata = {
   robots: {
@@ -8,5 +8,5 @@ export const metadata = {
 };
 
 export default function GrainProcessingPage() {
-  return <CategoryPlaceholderPage categoryId="grain-processing-handling" />;
+  return <CategoryLandingPage categoryId="grain-processing-handling" locale="en" />;
 }
