@@ -38,13 +38,13 @@ Category-card pattern draft scope has been documented. The English homepage work
 
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
-English category placeholder pages are implemented and pushed. Local browser QA confirms the three homepage category-card CTA routes open normally.
+English rich category pages are implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`. Local browser QA confirms the three routes return `200`, render rich category layouts, show no broken images, and have no horizontal overflow at tested viewports.
 
 `/quote` exists as a temporary English placeholder route with `noindex` and returns `200`. It is not the final inquiry form/contact flow.
 
 Root placeholder metadata has been replaced with a conservative English metadata baseline. `html lang="en"` remains a temporary English baseline until Romanian/domain runtime behavior is scoped.
 
-DEC-009 is approved and implemented: English category placeholder pages temporarily use `noindex` until meaningful final category content is approved and implemented. The pages remain accessible to users but are not intended as final indexable SEO pages.
+DEC-009 is approved and implemented: English category pages temporarily use `noindex` until final indexable category content and SEO treatment are approved. The pages remain accessible to users but are not intended as final indexable SEO pages yet.
 
 Category SVG icons now use Next.js `<Image />` in homepage category cards and the English category placeholder page component. The previous category `<img>` lint warnings are resolved without asset, config, or `Icon.js` changes.
 
@@ -52,11 +52,11 @@ TopBar tablet horizontal overflow is fixed. Browser QA confirms no overflow at `
 
 Navbar responsive correction is implemented: desktop layout appears at `xl`, and mobile/tablet menu appears below `xl`, resolving the 768px/1024px overlap issue in manual visual review.
 
-Latest stable implementation baseline is `bc91cdd refactor: define Agriculture category image slots`.
+Latest stable category baseline includes rich English category pages for Agriculture, Grain Processing / Grain Handling, and Food Industry Equipment.
 
 The recent local homepage `404` report was traced to stale/multiple local dev servers or port mismatch. After killing Node processes, deleting `.next`, and starting one clean dev server, `/`, `/products/agriculture`, and `/quote` returned `200`. If route behavior differs by port, stop and clear stale Node/Next processes before assuming source regression.
 
-The Agriculture category page uses explicit image-slot architecture and remains temporary `noindex`. No real image assets have been added. Other English category routes and Romanian category routes remain placeholders.
+The Agriculture category page uses explicit image-slot architecture, v1 content, and implemented visuals. Food Industry Equipment has a rich page v1 and hero visual. Grain Processing / Grain Handling has a rich page v1 with all image slots currently empty. All three English category pages remain temporary `noindex`. Romanian category routes remain placeholders.
 
 The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted. Mobile readability at 375px remains a separate controlled follow-up. Mobile menu concerns are observation-only unless reproduced on a clean single dev server.
 
@@ -83,11 +83,13 @@ The attempted Agriculture mobile overflow/readability fix was not committed and 
 - Conservative Hero copy uses `src/lib/content/hero.js`
 - Refined English homepage B2B sections use `src/lib/content/homepage.js`
 - Navbar logo uses the modern `next/image` fill API
-- English placeholder routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
+- English rich category routes for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`
 - Romanian placeholder routes for `/produse/agricultura`, `/produse/procesarea-cerealelor`, and `/produse/echipamente-industria-alimentara`
 - Conservative English root metadata baseline
 - Temporary root `html lang="en"` baseline
-- Rich Agriculture category page with image-slot architecture at `/products/agriculture`
+- Rich Agriculture category page with image-slot architecture and implemented visuals at `/products/agriculture`
+- Rich Grain Processing / Grain Handling category page v1 at `/products/grain-processing`; visual assets remain pending
+- Rich Food Industry Equipment category page v1 with hero visual at `/products/food-industry-equipment`
 
 ## What Was Added
 
@@ -121,7 +123,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Choose the next controlled category-page step: visual asset pipeline planning for the Agriculture image slots, or a controlled mobile readability/overflow audit if the issue is still reproducible. Do not implement Grain Processing or Food Industry rich pages until the Agriculture template is visually accepted. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Run a content/editorial QA sprint across the three English rich category pages, then plan homepage professional redesign/alignment against the category-page baseline. Optional follow-ups include migrating shared category image rendering from `<img>` to `next/image` and planning Grain Processing visual assets. Product template/product import work remains a later phase. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -137,7 +139,7 @@ Choose the next controlled category-page step: visual asset pipeline planning fo
 - Minimal homepage category cards are implemented and committed.
 - Navbar logo `next/image` legacy prop warnings are fixed.
 - English homepage working baseline has passed source, lint, local route, and manual visual review at practical viewport levels.
-- English category placeholder routes open normally in local browser QA.
+- English rich category routes open normally in local browser QA.
 - Romanian category placeholder routes are implemented with `locale="ro"` and temporary `noindex`; final Romanian category content remains pending.
 - Domain population strategy audit is complete. The approved direction is domain-based language serving without `/ro` prefixes or language redirects.
 - Deployment selection remains unresolved.
@@ -153,8 +155,8 @@ Choose the next controlled category-page step: visual asset pipeline planning fo
 - Navbar 768px/1024px overlap is resolved by using the mobile/tablet menu below `xl`.
 - `/quote` placeholder route is implemented with temporary `noindex`; final inquiry/contact flow remains pending.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
-- Final category content must be approved before the placeholder pages become indexable.
-- Next major work package: category landing page template.
+- Final category content and SEO treatment must be approved before the category pages become indexable.
+- Next major work packages: category content/editorial QA, homepage professional redesign/alignment, and later product template/product import planning.
 - Broader asset performance audit remains a separate future task.
 - Current category-page baseline is the committed Agriculture image-slot architecture in `bc91cdd`.
 - Avoid multiple concurrent local dev servers. If `/` or another route behaves differently by port, kill stale Node processes, delete `.next` if needed, and restart one clean dev server from this repository.

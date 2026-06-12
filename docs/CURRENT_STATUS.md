@@ -54,10 +54,10 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - `/quote` placeholder route exists, returns `200`, and is temporary `noindex`.
 - Navbar responsive behavior at `768px` and `1024px` has been corrected by using the mobile/tablet menu below `xl`.
 - Navbar logo `next/image` legacy props are fixed and committed.
-- English category placeholder pages are implemented and pushed.
-- Local browser QA confirms `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment` open normally.
-- Homepage category cards now link to existing English placeholder routes instead of 404 pages.
-- These are placeholder category landing pages, not final category pages.
+- English rich category pages baseline is implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`.
+- Local browser QA confirms the three English category routes return `200`, render rich category layouts, show no broken images, and have no horizontal overflow at tested viewports.
+- Homepage category cards now link to existing English rich category routes instead of 404 pages.
+- These are working category page v1 baselines, not final indexable SEO category pages.
 - No product detail pages exist yet.
 - Romanian category routes are implemented as temporary placeholder pages, not final Romanian category content.
 - No product migration is approved.
@@ -75,7 +75,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - SEO route-level metadata readiness audit is complete.
 - DEC-009 is approved: English category placeholder pages should temporarily use `noindex`.
 - Temporary category-page `noindex` metadata is implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`.
-- These English category placeholder pages remain accessible to users but are not final indexable SEO category pages.
+- These English category pages remain accessible to users but are still temporary `noindex` until final content/SEO approval.
 - The homepage/root English metadata baseline remains active.
 - Open Graph, canonical, sitemap, robots, hreflang, and structured data remain deferred.
 - Romanian homepage/root behavior, full Romanian navigation/header localization, `html lang="ro"` behavior, and SEO runtime remain separate future tasks.
@@ -97,13 +97,19 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Future product/content expansion remains deferred until approval.
 - SEO runtime remains deferred.
 - Romanian homepage/root behavior and full Romanian shared navigation/header localization remain deferred.
-- Latest stable implementation baseline is `bc91cdd refactor: define Agriculture category image slots`.
+- Latest stable implementation baseline includes rich English category pages for Agriculture, Grain Processing / Grain Handling, and Food Industry Equipment.
 - After killing stale Node processes, deleting `.next`, and starting one clean dev server, the homepage route `/` was confirmed working with `200`.
 - `/products/agriculture` was confirmed working and uses the rich Agriculture category page with explicit image-slot architecture.
 - `/quote` was confirmed working with `200`.
-- Other English category routes and Romanian category routes remain placeholders.
-- No real category image assets have been added for the Agriculture image slots.
+- `/products/grain-processing` was confirmed working and uses a rich Grain Processing / Grain Handling category page v1 with all image slots currently `asset: null`.
+- `/products/food-industry-equipment` was confirmed working and uses a rich Food Industry Equipment category page v1 with a hero visual.
+- Romanian category routes remain placeholders.
+- Agriculture has v1 content and implemented category visuals.
+- Food Industry has v1 content and the hero visual `food-industry-hero-production-process.webp`.
+- Grain Processing has v1 content but no approved visual assets yet.
 - `/products/agriculture` remains temporary `noindex`; SEO runtime remains deferred.
+- Temporary `noindex` remains on all three English category pages.
+- `npm.cmd run build` passed for the English category baseline. Non-blocking warnings remain: shared `<img>` warnings in `CategoryLandingPage.js` and stale Browserslist/caniuse-lite data.
 - The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted.
 - Agriculture mobile 375px overflow/readability remains a separate controlled follow-up.
 - Mobile menu concerns remain observation-only unless reproduced on a clean single dev server.
@@ -111,6 +117,6 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 ## Current Constraints
 
 - Do not wire localization config into UI before a source audit of the new config.
-- Do not run build at this phase.
+- Do not run build unless a scoped validation task explicitly requires it.
 - Do not run `npm install` at this phase.
 - Do not modify `.next`.
