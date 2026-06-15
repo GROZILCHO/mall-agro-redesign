@@ -66,7 +66,6 @@ export default function HomePage() {
                 </div>
             </section>
             <HomepageContentSections />
-            {/* Добавете останалите секции тук */}
         </main>
     );
 }

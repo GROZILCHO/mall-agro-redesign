@@ -3,57 +3,57 @@ import { routeKeys, siteRoutes } from '../routes/siteRoutes.js';
 export const homepageContent = {
   en: {
     intro: {
-      eyebrow: 'B2B equipment catalog portal',
-      title: 'A practical catalog entry point for equipment-driven projects',
-      body: 'Mall Agro is structured around the main equipment categories that matter to agricultural operations, grain processors, food production companies, and industrial project investors.',
-      note: 'The catalog is designed for inquiry and project orientation, not instant checkout or product-cart browsing.',
+      eyebrow: 'B2B equipment category gateway',
+      title: 'Start with the equipment area that matches your project',
+      body: 'Mall Agro organizes equipment inquiries around three practical areas: agriculture, grain processing and handling, and food industry production workflows.',
+      note: 'Use the catalog to choose the relevant category, review the working context, and prepare the details needed for a focused inquiry.',
     },
     audiences: {
-      title: 'Built around different operating contexts',
+      title: 'Built around practical equipment needs',
       items: [
         {
           label: 'Agricultural operations',
-          body: 'Category-led browsing for field-related workflows and equipment direction.',
+          body: 'Field activity, preparation tasks, material handling, and site realities around agricultural work.',
         },
         {
           label: 'Grain processors',
-          body: 'A clear route into processing, handling, storage-related, and preparation workflows.',
+          body: 'Reception, cleaning, conveying, elevation, storage-adjacent handling, and grain flow planning.',
         },
         {
           label: 'Food production companies',
-          body: 'A dedicated category path for production, processing, and handling applications.',
+          body: 'Production workflows, processing environments, line planning, and operational continuity needs.',
         },
         {
-          label: 'Industrial project investors',
-          body: 'A structured starting point for discussing equipment needs before final specifications are approved.',
+          label: 'Project and procurement teams',
+          body: 'A structured way to gather operating details before moving into an equipment planning discussion.',
         },
       ],
     },
     workflow: {
-      title: 'From category signal to project inquiry',
-      body: 'The homepage helps visitors narrow the area of interest before a more specific project discussion.',
+      title: 'From category choice to prepared inquiry',
+      body: 'The homepage helps visitors move from a broad equipment area toward the practical details needed for the next discussion.',
       steps: [
         {
           label: '01',
-          title: 'Choose the operating area',
-          body: 'Start with agriculture, grain processing and handling, or food industry equipment.',
+          title: 'Choose the equipment area',
+          body: 'Start with the category that best matches the operation: agriculture, grain processing and handling, or food industry equipment.',
         },
         {
           label: '02',
-          title: 'Frame the equipment need',
-          body: 'Use the category page as a reference point for the workflow or application you want to discuss.',
+          title: 'Review the working context',
+          body: 'Use the category page to check the relevant workflow, material handling step, production setting, or site requirement.',
         },
         {
           label: '03',
-          title: 'Continue as a project discussion',
-          body: 'Move from catalog direction toward a practical inquiry, proposal, or future content-approved product detail.',
+          title: 'Prepare the inquiry details',
+          body: 'Share the operation, material, current process, site limits, and expected equipment need when requesting a quote.',
         },
       ],
     },
     cta: {
-      eyebrow: 'Project-oriented, not ecommerce checkout',
-      title: 'Use Mall Agro to start the right equipment conversation',
-      body: 'The current category pages are catalog entry points. Final product detail pages and richer category content will be added only after the content scope is approved.',
+      eyebrow: 'Equipment inquiry',
+      title: 'Prepare a focused equipment inquiry',
+      body: 'Use the quote page to share the category, operation, material or product type, current workflow, and equipment need so the first response can focus on the relevant details.',
       label: 'Request a quote',
       href: siteRoutes.en[routeKeys.quote],
     },
