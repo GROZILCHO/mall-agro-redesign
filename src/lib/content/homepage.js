@@ -29,6 +29,44 @@ export const homepageContent = {
         },
       ],
     },
+    whatWeSupport: {
+      eyebrow: 'What we support',
+      title: 'Support for focused equipment needs and larger industrial projects',
+      body: 'Mall Agro works with inquiries that range from individual equipment requests to broader production and handling projects.',
+      paths: [
+        {
+          title: 'Single Equipment Needs',
+          body: 'Individual machines, replacement equipment, targeted handling or processing needs, and smaller upgrades for farms, processors, and production operators.',
+        },
+        {
+          title: 'Industrial Projects',
+          body: 'Production lines, modernization work, silo and grain handling systems, and integrated equipment solutions where planning, delivery, and implementation need coordination.',
+        },
+      ],
+    },
+    projectCapabilities: {
+      eyebrow: 'Project capability',
+      title: 'Capabilities Behind the Equipment Request',
+      body: 'Mall Agro helps connect the commercial inquiry with the practical requirements behind the work: equipment selection, workflow planning, logistics coordination, and implementation support.',
+      items: [
+        {
+          title: 'Project planning support',
+          body: 'Clarify the production or operational requirement before moving toward equipment selection.',
+        },
+        {
+          title: 'Equipment selection',
+          body: 'Match equipment needs with the material, workflow, site conditions, and expected role in the process.',
+        },
+        {
+          title: 'Logistics coordination',
+          body: 'Prepare larger equipment requests with delivery planning and coordination requirements in mind.',
+        },
+        {
+          title: 'Implementation support',
+          body: 'Include installation or implementation context in the inquiry where it is relevant to the work.',
+        },
+      ],
+    },
     authority: {
       eyebrow: 'Practical inquiry discipline',
       title: 'Built Around Practical Equipment Inquiries',

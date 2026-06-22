@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Hero from './components/Hero';
-import HomepageContentSections, { HomepageIntroSection } from './components/HomepageContentSections';
+import HomepageContentSections, { HomepageIntroSection, HomepagePreCategorySections } from './components/HomepageContentSections';
 import './globals.css';
 import { categories } from '../lib/content/categories.js';
 
@@ -20,6 +20,7 @@ export default function HomePage() {
         <main>
             <Hero />
             <HomepageIntroSection />
+            <HomepagePreCategorySections />
             <section id="categories" className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
                 <div className="mx-auto max-w-6xl min-w-0">
                     <div className="mb-10 max-w-3xl min-w-0">

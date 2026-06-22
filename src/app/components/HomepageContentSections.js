@@ -48,6 +48,76 @@ export function HomepageIntroSection() {
   );
 }
 
+export function HomepagePreCategorySections() {
+  return (
+    <>
+      <section className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-6xl min-w-0">
+          <div className="mb-10 max-w-3xl min-w-0">
+            <p className="body text-accent">
+              {content.whatWeSupport.eyebrow}
+            </p>
+            <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
+              {content.whatWeSupport.title}
+            </h2>
+            <p className="body mt-5 break-words [overflow-wrap:anywhere] text-menu">
+              {content.whatWeSupport.body}
+            </p>
+          </div>
+
+          <div className="grid min-w-0 gap-6 md:grid-cols-2">
+            {content.whatWeSupport.paths.map((path) => (
+              <article
+                key={path.title}
+                className="min-w-0 rounded border border-neutral bg-white p-6 shadow"
+              >
+                <h3 className="responsive-h3 break-words [overflow-wrap:anywhere] text-primary">
+                  {path.title}
+                </h3>
+                <p className="body mt-4 break-words [overflow-wrap:anywhere] text-menu">
+                  {path.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-full overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-6xl min-w-0 gap-10 lg:grid-cols-5">
+          <div className="min-w-0 lg:col-span-2">
+            <p className="body text-accent">
+              {content.projectCapabilities.eyebrow}
+            </p>
+            <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
+              {content.projectCapabilities.title}
+            </h2>
+            <p className="body mt-5 break-words [overflow-wrap:anywhere] text-menu">
+              {content.projectCapabilities.body}
+            </p>
+          </div>
+
+          <div className="grid min-w-0 gap-4 lg:col-span-3">
+            {content.projectCapabilities.items.map((item) => (
+              <article
+                key={item.title}
+                className="grid min-w-0 gap-3 border-t border-neutral py-5 first:border-t-0 md:grid-cols-[minmax(12rem,1fr)_2fr]"
+              >
+                <h3 className="responsive-h3 break-words text-primary">
+                  {item.title}
+                </h3>
+                <p className="body break-words [overflow-wrap:anywhere] text-menu">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 export default function HomepageContentSections() {
   return (
     <>
