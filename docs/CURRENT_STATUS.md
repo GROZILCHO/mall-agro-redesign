@@ -49,6 +49,12 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Homepage Authority v1 updated hero messaging, aligned category gateway copy, added a content-driven authority/trust section, expanded the inquiry process to four steps, and improved quote CTA framing.
 - QA for Homepage Authority v1 passed: `npm.cmd run build` passed, `/` returned `200`, the three English category routes returned `200`, and no unsupported claims were introduced.
 - Known non-blocking Homepage Authority v1 notes: shared `<img>` warnings remain in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data remains, and a future homepage layout refinement may move company positioning before the category gateway.
+- Homepage v2 Phase 2 is complete in commit `8be18c9` (`feat: add homepage project capability sections`).
+- Homepage v2 Phase 2 updated hero positioning, added `What We Support`, added `Project Capabilities`, and positioned company capability sections before the category gateway.
+- Homepage v2 Phase 2 preserved category links, routes, SEO behavior, assets, localization, category pages, and product pages.
+- Current homepage order: Hero, Company / intro positioning, What We Support, Project Capabilities, Equipment Categories, Authority / Inquiry Discipline, Inquiry Process, Final CTA.
+- QA for Homepage v2 Phase 2 passed: `npm.cmd run build` passed, `/` returned `200`, `/products/agriculture` returned `200`, `/products/grain-processing` returned `200`, `/products/food-industry-equipment` returned `200`, and no unsupported claims were introduced.
+- Known non-blocking Homepage v2 Phase 2 notes: shared `<img>` warnings remain in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data remains, the homepage still lacks strong visual proof of project capability and industrial scale, and a future visual strategy is required before the homepage can reach an international B2B standard.
 - Hero uses conservative config-driven B2B catalog copy from `src/lib/content/hero.js`.
 - Old unsupported Hero claims have been removed: `Expert Solutions`, `over 10 years`, and `tailored machinery and automation solutions`.
 - Hero primary CTA points to `/#categories`.

@@ -40,6 +40,12 @@ Homepage Authority & Trust Expansion v1 is complete in commit `69f9372`. The hom
 
 Homepage Authority v1 QA passed: `npm.cmd run build` passed, `/` returned `200`, the three English category routes returned `200`, and no unsupported claims were introduced. Known non-blocking notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, and a possible future homepage hierarchy refinement to move company positioning before the category gateway.
 
+Homepage v2 Phase 2 is complete in commit `8be18c9` (`feat: add homepage project capability sections`). The milestone updated hero positioning, added `What We Support`, added `Project Capabilities`, and positioned company capability sections before the category gateway while preserving category links, routes, SEO behavior, assets, localization, category pages, and product pages.
+
+Current homepage order is: Hero, Company / intro positioning, What We Support, Project Capabilities, Equipment Categories, Authority / Inquiry Discipline, Inquiry Process, Final CTA.
+
+Homepage v2 Phase 2 QA passed: `npm.cmd run build` passed, `/` returned `200`, `/products/agriculture` returned `200`, `/products/grain-processing` returned `200`, `/products/food-industry-equipment` returned `200`, and no unsupported claims were introduced. Known non-blocking notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, the homepage still lacks strong visual proof of project capability and industrial scale, and a future visual strategy is required before the homepage can reach an international B2B standard.
+
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 English rich category pages are implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`. Local browser QA confirms the three routes return `200`, render rich category layouts, show no broken images, and have no horizontal overflow at tested viewports.
@@ -127,7 +133,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Run homepage visual/UX QA for Homepage Authority & Trust Expansion v1, then decide whether to refine homepage hierarchy before moving into About page messaging. Optional follow-ups include a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define what visual proof is needed for project capability, logistics, engineering, equipment integration, and category credibility. The strategy must avoid exposing sensitive client, project, or manufacturer information. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -160,7 +166,7 @@ Run homepage visual/UX QA for Homepage Authority & Trust Expansion v1, then deci
 - `/quote` placeholder route is implemented with temporary `noindex`; final inquiry/contact flow remains pending.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content and SEO treatment must be approved before the category pages become indexable.
-- Next major work packages: homepage visual/UX QA, homepage hierarchy decision, About page messaging, and later product template architecture/product import planning.
+- Next major work packages: homepage visual evidence strategy, About page messaging, and later product template architecture/product import planning.
 - Broader asset performance audit remains a separate future task.
 - Current category-page baseline is the committed Agriculture image-slot architecture in `bc91cdd`.
 - Avoid multiple concurrent local dev servers. If `/` or another route behaves differently by port, kill stale Node processes, delete `.next` if needed, and restart one clean dev server from this repository.
