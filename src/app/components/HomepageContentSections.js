@@ -47,6 +47,40 @@ export default function HomepageContentSections() {
         </div>
       </section>
 
+      {content.authority && (
+        <section className="bg-primary px-4 py-16 text-white md:px-10 lg:px-16">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-5">
+            <div className="lg:col-span-2">
+              <p className="body text-accent">
+                {content.authority.eyebrow}
+              </p>
+              <h2 className="responsive-h2 mt-3 text-white">
+                {content.authority.title}
+              </h2>
+              <p className="body mt-5">
+                {content.authority.body}
+              </p>
+            </div>
+
+            <div className="border-y border-neutral lg:col-span-3">
+              {content.authority.items.map((item) => (
+                <div
+                  key={item.title}
+                  className="grid gap-4 border-t border-neutral py-5 first:border-t-0 md:grid-cols-3"
+                >
+                  <h3 className="h3 text-white md:col-span-1">
+                    {item.title}
+                  </h3>
+                  <p className="body md:col-span-2">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">

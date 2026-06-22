@@ -3,58 +3,82 @@ import { routeKeys, siteRoutes } from '../routes/siteRoutes.js';
 export const homepageContent = {
   en: {
     intro: {
-      eyebrow: 'B2B equipment category gateway',
-      title: 'Start with the equipment area that matches your project',
-      body: 'Mall Agro organizes equipment inquiries around three practical areas: agriculture, grain processing and handling, and food industry production workflows.',
-      note: 'Use the catalog to choose the relevant category, review the working context, and prepare the details needed for a focused inquiry.',
+      eyebrow: 'B2B equipment and project support',
+      title: 'Start with the equipment context behind the inquiry',
+      body: 'Mall Agro helps visitors organize equipment needs across agriculture, grain processing and handling, and food industry production workflows.',
+      note: 'Use the homepage to choose the relevant equipment area, clarify the working context, and prepare the details needed for a focused quote discussion.',
     },
     audiences: {
-      title: 'Built around practical equipment needs',
+      title: 'Built around practical project requirements',
       items: [
         {
           label: 'Agricultural operations',
-          body: 'Field activity, preparation tasks, material handling, and site realities around agricultural work.',
+          body: 'Field activity, preparation tasks, material handling, and site realities that shape agriculture equipment needs.',
         },
         {
           label: 'Grain processors',
-          body: 'Reception, cleaning, conveying, elevation, storage-adjacent handling, and grain flow planning.',
+          body: 'Reception, cleaning, conveying, elevation, storage-adjacent handling, and grain flow requirements.',
         },
         {
           label: 'Food production companies',
-          body: 'Production workflows, processing environments, line planning, and operational continuity needs.',
+          body: 'Production workflows, processing environments, line planning, and operational continuity requirements.',
         },
         {
           label: 'Project and procurement teams',
-          body: 'A structured way to gather operating details before moving into an equipment planning discussion.',
+          body: 'A structured way to gather operating details before starting an equipment planning discussion.',
+        },
+      ],
+    },
+    authority: {
+      eyebrow: 'Practical inquiry discipline',
+      title: 'Built Around Practical Equipment Inquiries',
+      body: 'The category structure is the starting point, not the whole process. Mall Agro uses clear equipment areas, workflow context, material details, and site requirements to help shape a more useful first discussion.',
+      items: [
+        {
+          title: 'Structured category organization',
+          body: 'Agriculture, grain processing and handling, and food industry equipment are kept separate so visitors can start from the area that matches their operation.',
+        },
+        {
+          title: 'Requirement gathering before quotation',
+          body: 'The inquiry path focuses on operation type, material or product flow, current workflow, site limits, and expected equipment needs.',
+        },
+        {
+          title: 'Clear separation from ecommerce',
+          body: 'The homepage guides visitors toward a focused quote discussion rather than product stock browsing or instant checkout.',
         },
       ],
     },
     workflow: {
-      title: 'From category choice to prepared inquiry',
-      body: 'The homepage helps visitors move from a broad equipment area toward the practical details needed for the next discussion.',
+      title: 'From equipment area to focused quote discussion',
+      body: 'The homepage connects category browsing with the practical details needed before a project-oriented inquiry.',
       steps: [
         {
           label: '01',
           title: 'Choose the equipment area',
-          body: 'Start with the category that best matches the operation: agriculture, grain processing and handling, or food industry equipment.',
+          body: 'Start with the area that best matches the operation: agriculture, grain processing and handling, or food industry equipment.',
         },
         {
           label: '02',
-          title: 'Review the working context',
-          body: 'Use the category page to check the relevant workflow, material handling step, production setting, or site requirement.',
+          title: 'Describe the operation or production activity',
+          body: 'Identify the work being done, the material or product involved, and the current workflow that needs equipment support.',
         },
         {
           label: '03',
-          title: 'Prepare the inquiry details',
-          body: 'Share the operation, material, current process, site limits, and expected equipment need when requesting a quote.',
+          title: 'Share site and workflow requirements',
+          body: 'Prepare the site limits, process requirements, handling steps, and expected equipment needs before requesting a quote.',
+        },
+        {
+          label: '04',
+          title: 'Start a focused quote discussion',
+          body: 'Use the quote page to share enough context for the first response to focus on relevant equipment details.',
         },
       ],
     },
     cta: {
       eyebrow: 'Equipment inquiry',
-      title: 'Prepare a focused equipment inquiry',
-      body: 'Use the quote page to share the category, operation, material or product type, current workflow, and equipment need so the first response can focus on the relevant details.',
-      label: 'Request a quote',
+      title: 'Planning an equipment inquiry?',
+      body: 'Share the category, operation, material or product type, current workflow, site limits, and expected equipment need so the first discussion can start with relevant details.',
+      label: 'Request a Quote',
       href: siteRoutes.en[routeKeys.quote],
     },
   },

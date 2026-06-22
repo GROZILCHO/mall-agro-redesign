@@ -1,14 +1,14 @@
 export const heroContent = {
   en: {
-    eyebrow: 'B2B equipment catalog',
-    title: 'B2B Equipment Catalog for Agriculture, Grain Handling, and Food Industry',
-    body: 'Explore focused equipment categories and use Mall Agro as a project-oriented starting point for equipment inquiries.',
+    eyebrow: 'B2B equipment support',
+    title: 'Equipment Support for Agriculture, Grain Handling, and Food Production Projects',
+    body: 'Explore equipment areas, review the working context, and prepare a focused inquiry for agriculture, grain handling, or food production requirements.',
     primaryCta: {
-      label: 'Explore categories',
+      label: 'Explore Equipment Areas',
       href: '/#categories',
     },
     secondaryCta: {
-      label: 'Request a quote',
+      label: 'Request a Quote',
       href: '/quote',
     },
   },

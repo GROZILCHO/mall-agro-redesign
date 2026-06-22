@@ -23,10 +23,10 @@ export default function HomePage() {
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-10 max-w-3xl">
                         <h2 className="responsive-h2 text-primary">
-                            Explore our equipment categories
+                            Choose your starting category
                         </h2>
                         <p className="body mt-4 text-menu">
-                            A focused B2B catalog structure for agriculture, grain processing and handling, and food industry equipment.
+                            Choose the starting point that best matches the operation, material flow, production activity, or equipment requirement behind your inquiry.
                         </p>
                     </div>
 
