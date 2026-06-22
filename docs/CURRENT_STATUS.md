@@ -44,6 +44,11 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - Localized content/config foundation exists under `src/lib/`.
 - Homepage baseline now includes Header, Hero, category-card section, refined B2B content sections, and Footer.
 - English homepage working B2B baseline is implemented and accepted as a working baseline.
+- Homepage Authority & Trust Expansion v1 is complete in commit `69f9372`.
+- The homepage now aligns with `docs/BRAND_POSITIONING.md` and `docs/HOMEPAGE_MESSAGING.md`.
+- Homepage Authority v1 updated hero messaging, aligned category gateway copy, added a content-driven authority/trust section, expanded the inquiry process to four steps, and improved quote CTA framing.
+- QA for Homepage Authority v1 passed: `npm.cmd run build` passed, `/` returned `200`, the three English category routes returned `200`, and no unsupported claims were introduced.
+- Known non-blocking Homepage Authority v1 notes: shared `<img>` warnings remain in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data remains, and a future homepage layout refinement may move company positioning before the category gateway.
 - Hero uses conservative config-driven B2B catalog copy from `src/lib/content/hero.js`.
 - Old unsupported Hero claims have been removed: `Expert Solutions`, `over 10 years`, and `tailored machinery and automation solutions`.
 - Hero primary CTA points to `/#categories`.
