@@ -17,7 +17,7 @@ export default function Hero() {
   if (!isMounted) return null;
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative h-screen min-h-[600px] flex max-w-full items-center overflow-hidden">
       {/* Видео фон */} 
       <div className="absolute inset-0 z-[-2]">
         <video
@@ -34,27 +34,27 @@ export default function Hero() {
       <div className="absolute inset-0 bg-primary bg-opacity-50 z-[-1] pointer-events-none"></div>
 
       {/* Съдържание */}
-      <div className="container mx-auto px-4 md:px-10 lg:px-16 relative z-20">
-        <div className="text-white w-full md:w-3/5 lg:w-[60%]">
+      <div className="mx-auto w-full max-w-full px-4 md:px-10 lg:px-16 relative z-20 min-w-0">
+        <div className="text-white w-full max-w-full min-w-0 md:w-3/5 lg:w-[60%]">
           <p className="body mb-3 text-accent text-shadow-custom">
             {content.eyebrow}
           </p>
-          <h1 className="responsive-h1 mb-4 md:mb-4 lg:mb-6 text-shadow-custom">
+          <h1 className="responsive-h1 mb-4 break-words [overflow-wrap:anywhere] md:mb-4 lg:mb-6 text-shadow-custom">
             {content.title}
           </h1>
-          <h4 className="responsive-h4 mb-6 md:mb-8 lg:mb-12 text-shadow-custom">
+          <h4 className="responsive-h4 mb-6 break-words [overflow-wrap:anywhere] md:mb-8 lg:mb-12 text-shadow-custom">
             {content.body}
           </h4>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={content.primaryCta.href}
-              className="inline-block button sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
+              className="inline-block button w-full text-center sm:w-auto sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
             >
               {content.primaryCta.label}
             </Link>
             <Link
               href={content.secondaryCta.href}
-              className="inline-block button sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
+              className="inline-block button w-full text-center sm:w-auto sm:button-sm md:button-md lg:button-lg hover:bg-yellow-600 hover:outline hover:outline-accent hover:outline-1 hover:text-accent transition-all"
             >
               {content.secondaryCta.label}
             </Link>

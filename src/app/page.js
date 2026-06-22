@@ -19,13 +19,13 @@ export default function HomePage() {
     return (
         <main>
             <Hero />
-            <section id="categories" className="bg-gentle px-4 py-16 md:px-10 lg:px-16">
-                <div className="mx-auto max-w-6xl">
-                    <div className="mb-10 max-w-3xl">
-                        <h2 className="responsive-h2 text-primary">
+            <section id="categories" className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
+                <div className="mx-auto max-w-6xl min-w-0">
+                    <div className="mb-10 max-w-3xl min-w-0">
+                        <h2 className="responsive-h2 break-words [overflow-wrap:anywhere] text-primary">
                             Choose your starting category
                         </h2>
-                        <p className="body mt-4 text-menu">
+                        <p className="body mt-4 break-words [overflow-wrap:anywhere] text-menu">
                             Choose the starting point that best matches the operation, material flow, production activity, or equipment requirement behind your inquiry.
                         </p>
                     </div>
@@ -34,7 +34,7 @@ export default function HomePage() {
                         {homepageCategories.map((category) => (
                             <article
                                 key={category.id}
-                                className="flex h-full flex-col rounded border border-neutral bg-white p-6 shadow"
+                                className="flex h-full min-w-0 flex-col rounded border border-neutral bg-white p-6 shadow"
                             >
                                 {category.icon && (
                                     <Image
@@ -46,11 +46,11 @@ export default function HomePage() {
                                     />
                                 )}
 
-                                <div className="flex flex-1 flex-col">
-                                    <h3 className="h3 text-primary">
+                                <div className="flex min-w-0 flex-1 flex-col">
+                                    <h3 className="responsive-h3 break-words [overflow-wrap:anywhere] text-primary">
                                         {category.title}
                                     </h3>
-                                    <p className="body mt-4 flex-1 text-menu">
+                                    <p className="body mt-4 flex-1 break-words [overflow-wrap:anywhere] text-menu">
                                         {category.cardDescription}
                                     </p>
                                     <Link
