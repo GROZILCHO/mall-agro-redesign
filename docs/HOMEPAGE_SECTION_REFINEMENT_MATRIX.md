@@ -160,6 +160,7 @@ Codex may only:
 
 - map approved refined copy into existing content files;
 - preserve section order;
+- preserve claim-safety;
 - adjust formatting only where required by the existing data structure;
 - report if a proposed text does not fit the current component structure.
 
