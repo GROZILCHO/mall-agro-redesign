@@ -95,9 +95,9 @@ export function HomepagePreCategorySections() {
             {content.projectCapabilities.items.map((item) => (
               <article
                 key={item.title}
-                className="grid min-w-0 gap-3 border-t border-neutral py-5 first:border-t-0 md:grid-cols-[minmax(12rem,1fr)_2fr]"
+                className="grid min-w-0 gap-3 border-t border-neutral py-5 first:border-t-0 lg:grid-cols-[minmax(18rem,1fr)_2fr]"
               >
-                <h3 className="responsive-h3 break-words text-primary">
+                <h3 className="responsive-h3 break-normal text-primary">
                   {item.title}
                 </h3>
                 <p className="body break-words [overflow-wrap:anywhere] text-menu">
