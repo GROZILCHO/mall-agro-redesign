@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { homepageContent } from '../../lib/content/homepage.js';
+import HomepageVisualPlaceholder from './HomepageVisualPlaceholder.js';
 
 const locale = 'en';
 const content = homepageContent[locale];
@@ -35,6 +36,13 @@ export function HomepageIntroSection() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="mt-6">
+            <HomepageVisualPlaceholder
+              eyebrow={content.visualPlaceholders.projectPlanning.eyebrow}
+              title={content.visualPlaceholders.projectPlanning.title}
+              variant="project"
+            />
           </div>
         </div>
       </div>
@@ -89,6 +97,13 @@ export function HomepagePreCategorySections() {
             <p className="body mt-5 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
               {content.projectCapabilities.body}
             </p>
+            <div className="mt-6">
+              <HomepageVisualPlaceholder
+                eyebrow={content.visualPlaceholders.capabilities.eyebrow}
+                title={content.visualPlaceholders.capabilities.title}
+                variant="capability"
+              />
+            </div>
           </div>
 
           <div className="grid min-w-0 gap-5 sm:grid-cols-2 lg:col-span-3">

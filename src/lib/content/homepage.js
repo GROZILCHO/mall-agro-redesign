@@ -14,6 +14,16 @@ export const homepageContent = {
         'Category structure used as a starting point, not as the full service',
       ],
     },
+    visualPlaceholders: {
+      projectPlanning: {
+        eyebrow: 'Project context',
+        title: 'Equipment planning and production flow',
+      },
+      capabilities: {
+        eyebrow: 'Capability context',
+        title: 'From requirement review to implementation planning',
+      },
+    },
     whatWeSupport: {
       eyebrow: 'What we support',
       title: 'Support across machines, production lines and industrial projects',
