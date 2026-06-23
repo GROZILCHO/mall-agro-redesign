@@ -46,6 +46,12 @@ Current homepage order is: Hero, Company / intro positioning, What We Support, P
 
 Homepage v2 Phase 2 QA passed: `npm.cmd run build` passed, `/` returned `200`, `/products/agriculture` returned `200`, `/products/grain-processing` returned `200`, `/products/food-industry-equipment` returned `200`, and no unsupported claims were introduced. Known non-blocking notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, the homepage still lacks strong visual proof of project capability and industrial scale, and a future visual strategy is required before the homepage can reach an international B2B standard.
 
+Homepage v2 responsive and section hierarchy refinement is complete in commit `a016f47` (`fix: refine homepage responsive layout and section hierarchy`). The refinement split Hero content into a shorter H1 and industry subline, fixed Hero CTA visibility, improved Hero mobile readability, improved `What We Support` cards, changed `Project Capabilities` to a stronger card/grid presentation, improved the authority section label to `Confidential Communication`, improved Inquiry Process readability, and refined category cards and CTA touch targets.
+
+The current homepage is a stable responsive baseline with the Content Matrix implemented. Mobile layout is no longer blocked by hidden CTAs or cramped cards, and desktop remains structurally stable. The refinement preserved routes, SEO behavior, metadata, localization, assets, product pages, and category pages.
+
+Known non-blocking homepage notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, missing strong visual proof of industrial scale, limited visual communication of equipment, production lines, logistics, implementation, and project capability, category cards that still need stronger future visual differentiation, and an Inquiry Process section that is functional but visually dry.
+
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 English rich category pages are implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`. Local browser QA confirms the three routes return `200`, render rich category layouts, show no broken images, and have no horizontal overflow at tested viewports.
@@ -133,7 +139,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define what visual proof is needed for project capability, logistics, engineering, equipment integration, and category credibility. The strategy must avoid exposing sensitive client, project, or manufacturer information. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define the visual proof needed for industrial equipment context, production lines, grain handling / storage-adjacent systems, food production environments, logistics and delivery coordination, engineering / planning context, and category-specific credibility. The strategy must avoid client-identifiable facilities, readable manufacturer labels, visible brand logos unless approved, fake certificates, stock-photo handshakes, and exaggerated AI imagery. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 

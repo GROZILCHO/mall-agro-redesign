@@ -1,8 +1,8 @@
 # Mall Agro Next Actions
 
 1. Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` for the next homepage work package.
-2. Define what visual proof is needed for project capability, logistics, engineering, equipment integration, and category credibility.
-3. Keep homepage visual evidence planning claim-safe and avoid exposing sensitive client, project, or manufacturer information.
+2. Define required visual proof types for industrial equipment context, production lines, grain handling / storage-adjacent systems, food production environments, logistics and delivery coordination, engineering / planning context, and category-specific credibility.
+3. Keep homepage visual evidence planning claim-safe: no client-identifiable facilities, no readable manufacturer labels, no visible brand logos unless approved, no fake certificates, no stock-photo handshakes, and no exaggerated AI imagery.
 4. Plan About page messaging using `docs/BRAND_POSITIONING.md` and `docs/HOMEPAGE_MESSAGING.md` as claim-safety boundaries.
 5. Run a content/editorial QA sprint across the three English rich category pages if additional polish is needed.
 6. Optionally migrate shared `CategoryLandingPage.js` image rendering from `<img>` to `next/image`.
@@ -25,4 +25,4 @@
 
 ## Recommended Immediate Next Task
 
-Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define the visual proof needed for project capability, logistics, engineering, equipment integration, and category credibility. The strategy must avoid exposing sensitive client, project, or manufacturer information. Product template architecture and product import strategy remain later phases, not immediate work.
+Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define the visual proof needed for industrial equipment context, production lines, grain handling / storage-adjacent systems, food production environments, logistics and delivery coordination, engineering / planning context, and category-specific credibility. The strategy must avoid client-identifiable facilities, readable manufacturer labels, visible brand logos unless approved, fake certificates, stock-photo handshakes, and exaggerated AI imagery. Product template architecture and product import strategy remain later phases, not immediate work.
