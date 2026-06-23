@@ -24,22 +24,22 @@ export default function HomePage() {
             <section id="categories" className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
                 <div className="mx-auto max-w-6xl min-w-0">
                     <div className="mb-10 max-w-3xl min-w-0">
-                        <p className="body text-accent">
+                        <p className="body font-semibold text-primary">
                             Equipment areas
                         </p>
                         <h2 className="responsive-h2 break-words [overflow-wrap:anywhere] text-primary">
                             Choose the right starting area
                         </h2>
-                        <p className="body mt-4 break-words [overflow-wrap:anywhere] text-menu">
+                        <p className="body mt-4 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
                             Use the category structure to start from the area that best matches the operation, material flow, production activity or equipment requirement behind your inquiry.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
                         {homepageCategories.map((category) => (
                             <article
                                 key={category.id}
-                                className="flex h-full min-w-0 flex-col rounded border border-neutral bg-white p-6 shadow"
+                                className="flex h-full min-w-0 flex-col rounded border border-neutral bg-white p-7 shadow-md"
                             >
                                 {category.icon && (
                                     <Image
@@ -55,12 +55,12 @@ export default function HomePage() {
                                     <h3 className="responsive-h3 break-words [overflow-wrap:anywhere] text-primary">
                                         {category.title}
                                     </h3>
-                                    <p className="body mt-4 flex-1 break-words [overflow-wrap:anywhere] text-menu">
+                                    <p className="body mt-4 flex-1 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
                                         {category.cardDescription}
                                     </p>
                                     <Link
                                         href={category.route}
-                                        className="button button-md mt-6 inline-block self-start"
+                                        className="button button-md mt-6 inline-flex min-h-[44px] items-center justify-center self-start"
                                     >
                                         {category.cardCtaLabel}
                                     </Link>

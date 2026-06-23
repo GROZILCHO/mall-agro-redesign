@@ -39,7 +39,7 @@ export const homepageContent = {
       body: 'Behind a serious equipment request there is usually a production goal, a material flow, a site condition, a logistics question or an implementation need. Mall Agro helps structure these factors before the inquiry moves toward equipment selection or quotation.',
       items: [
         {
-          title: 'Requirement Analysis',
+          title: 'Operational Requirement Review',
           body: 'Clarifying production goals, material flow, site conditions and operational limits before equipment selection begins.',
         },
         {
@@ -51,7 +51,7 @@ export const homepageContent = {
           body: 'Planning delivery and coordination requirements for larger machines, handling systems and project-related equipment.',
         },
         {
-          title: 'Implementation Context',
+          title: 'Installation Context',
           body: 'Supporting the discussion around installation, integration and on-site implementation needs where relevant to the project.',
         },
       ],
@@ -74,7 +74,7 @@ export const homepageContent = {
           body: 'Mall Agro is not designed as an instant checkout experience or a product-stock browsing portal.',
         },
         {
-          title: 'Sensitive project discipline',
+          title: 'Confidential Communication',
           body: 'Public communication should protect client, project and supplier confidentiality where needed.',
         },
       ],
