@@ -1,5 +1,199 @@
 # Homepage Refined Copy Proposal v1
 
+## 1. Current Homepage Structure
+
+The current homepage sections are:
+
+1. Hero
+2. Why Mall Agro
+3. What We Support
+4. Project Capabilities
+5. Equipment Areas
+6. Industrial Inquiry Discipline
+7. Inquiry Process
+8. Final CTA
+
+This structure should remain unchanged for the next implementation task. The next implementation should refine approved copy only and should not add, remove, reorder, or redesign sections.
+
+## 2. Current Text Review by Section
+
+### Hero
+
+Current role: Establish Mall Agro as a B2B equipment and project-support company for agriculture, grain processing and food production.
+
+Current weakness: The structure and split headline/subline are acceptable, but the section still depends heavily on visual quality to communicate industrial scale.
+
+Should remain: Yes.
+
+Required refinement type: Minor copy refinement only.
+
+### Why Mall Agro
+
+Current role: Explain why a serious buyer should speak with Mall Agro before quotation.
+
+Current weakness: Current wording sounds too abstract and process-oriented. It needs a clearer client-facing explanation of how Mall Agro helps before quotation.
+
+Should remain: Yes.
+
+Required refinement type: Copy refinement only.
+
+### What We Support
+
+Current role: Show the range from individual equipment needs to lines and broader industrial projects.
+
+Current weakness: The structure is strong, but wording is still somewhat brochure-like. It needs more industrial/product vocabulary without becoming a product list.
+
+Should remain: Yes.
+
+Required refinement type: Copy refinement only.
+
+### Project Capabilities
+
+Current role: Show what Mall Agro contributes beyond category navigation and product listing.
+
+Current weakness: The section is useful, but it must sound like client value, not only internal methodology.
+
+Should remain: Yes.
+
+Required refinement type: Copy refinement only.
+
+### Equipment Areas
+
+Current role: Help visitors choose the correct category after the company and project-support message is established.
+
+Current weakness: The section is functional but too neutral. It needs more useful category language without exaggerated benefit claims.
+
+Should remain: Yes.
+
+Required refinement type: Copy refinement only.
+
+### Industrial Inquiry Discipline
+
+Current role: Explain how Mall Agro handles inquiries in a practical, structured, non-ecommerce way.
+
+Current weakness: The idea is important, but current wording is too defensive. "Separation from ecommerce" should be replaced by more professional language such as "Consultative inquiry model."
+
+Should remain: Yes, with refinement.
+
+Required refinement type: Copy refinement only.
+
+### Inquiry Process
+
+Current role: Explain the path from production need to a focused equipment discussion.
+
+Current weakness: The section is useful but repetitive. It needs slightly sharper language and a less academic tone.
+
+Should remain: Yes.
+
+Required refinement type: Copy refinement only.
+
+### Final CTA
+
+Current role: Provide a clear next step for machine requests and industrial project inquiries.
+
+Current weakness: Mostly acceptable. Minor refinement only.
+
+Should remain: Yes.
+
+Required refinement type: Minor copy refinement only.
+
+## 3. Language Balance Rules
+
+### Marketing language
+
+Use marketing language only to clarify positioning and value. Avoid hype.
+
+Allowed examples:
+
+- practical production decisions
+- industrial equipment solutions
+- focused equipment discussion
+- broader industrial solution
+
+Avoid:
+
+- market leader
+- best solution
+- world-class unless separately approved
+- guaranteed results
+
+### Engineering/Product language
+
+Use enough technical vocabulary to sound credible.
+
+Allowed examples:
+
+- machinery selection
+- material flow
+- site conditions
+- production line
+- handling systems
+- grain reception
+- cleaning
+- conveying
+- elevation
+- processing workflow
+- installation context
+
+Avoid overloading the homepage with:
+
+- model names
+- capacities
+- full equipment taxonomy
+- manufacturer-specific claims
+
+### Client-facing practical language
+
+Use client-facing practical language as the dominant language layer.
+
+Preferred style:
+
+- explain what the buyer needs to understand;
+- connect equipment to material, process, workflow and site;
+- keep the tone professional but understandable.
+
+## 4. Codex Implementation Rules
+
+Codex must not freely rewrite homepage copy.
+
+Codex may only:
+
+- map approved refined copy into existing content files;
+- preserve section order;
+- adjust formatting only where required by the existing data structure;
+- report if a proposed text does not fit the current component structure.
+
+Codex must not:
+
+- invent new claims;
+- add partner/manufacturer names;
+- add product lists;
+- introduce WooCommerce taxonomy;
+- change routes, slugs, SEO, localization or metadata;
+- add assets;
+- rewrite the tone freely.
+
+## 5. Claim-Safety Reminder
+
+Do not claim or imply:
+
+- official representative status;
+- exclusive distribution;
+- named manufacturer partnerships;
+- market leadership;
+- guaranteed delivery;
+- turnkey/EPC responsibility;
+- stock availability;
+- instant quotation;
+- exact capacities;
+- exact machine models;
+- client names;
+- confidential project references.
+
+Important: Do not publicly mention Cimbria or Bühler under Mall Agro unless separately approved in a future legal/brand decision.
+
+---
+
 ## 1. Hero
 
 ### Eyebrow
