@@ -24,20 +24,14 @@ export function HomepageIntroSection() {
         </div>
 
         <div className="min-w-0 border-y border-neutral py-2 lg:col-span-2">
-          <h3 className="responsive-h3 break-words [overflow-wrap:anywhere] py-4 text-primary">
-            {content.audiences.title}
-          </h3>
           <div>
-            {content.audiences.items.map((item) => (
+            {content.intro.supportPoints.map((item) => (
               <div
-                key={item.label}
+                key={item}
                 className="min-w-0 border-t border-neutral py-4"
               >
-                <p className="body text-accent">
-                  {item.label}
-                </p>
-                <p className="body mt-2 break-words [overflow-wrap:anywhere] text-menu">
-                  {item.body}
+                <p className="body break-words [overflow-wrap:anywhere] text-menu">
+                  {item}
                 </p>
               </div>
             ))}
@@ -65,7 +59,7 @@ export function HomepagePreCategorySections() {
             </p>
           </div>
 
-          <div className="grid min-w-0 gap-6 md:grid-cols-2">
+          <div className="grid min-w-0 gap-6 md:grid-cols-3">
             {content.whatWeSupport.paths.map((path) => (
               <article
                 key={path.title}
@@ -158,10 +152,15 @@ export default function HomepageContentSections() {
       <section className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl min-w-0">
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
-            <h2 className="responsive-h2 break-words [overflow-wrap:anywhere] text-primary">
-              {content.workflow.title}
-            </h2>
-            <p className="body break-words [overflow-wrap:anywhere] text-menu">
+            <div className="min-w-0">
+              <p className="body text-accent">
+                {content.workflow.eyebrow}
+              </p>
+              <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
+                {content.workflow.title}
+              </h2>
+            </div>
+            <p className="body break-words [overflow-wrap:anywhere] text-menu md:self-end">
               {content.workflow.body}
             </p>
           </div>

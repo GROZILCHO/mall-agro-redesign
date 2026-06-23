@@ -24,11 +24,14 @@ export default function HomePage() {
             <section id="categories" className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
                 <div className="mx-auto max-w-6xl min-w-0">
                     <div className="mb-10 max-w-3xl min-w-0">
+                        <p className="body text-accent">
+                            Equipment areas
+                        </p>
                         <h2 className="responsive-h2 break-words [overflow-wrap:anywhere] text-primary">
-                            Choose your starting category
+                            Choose the right starting area
                         </h2>
                         <p className="body mt-4 break-words [overflow-wrap:anywhere] text-menu">
-                            Choose the starting point that best matches the operation, material flow, production activity, or equipment requirement behind your inquiry.
+                            Use the category structure to start from the area that best matches the operation, material flow, production activity or equipment requirement behind your inquiry.
                         </p>
                     </div>
 
