@@ -50,7 +50,13 @@ Homepage v2 responsive and section hierarchy refinement is complete in commit `a
 
 The current homepage is a stable responsive baseline with the Content Matrix implemented. Mobile layout is no longer blocked by hidden CTAs or cramped cards, and desktop remains structurally stable. The refinement preserved routes, SEO behavior, metadata, localization, assets, product pages, and category pages.
 
-Known non-blocking homepage notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, missing strong visual proof of industrial scale, limited visual communication of equipment, production lines, logistics, implementation, and project capability, category cards that still need stronger future visual differentiation, and an Inquiry Process section that is functional but visually dry.
+Homepage static visual placeholder system is complete in commit `af8eb8e` (`feat: add homepage visual placeholder system`). The milestone created a reusable static homepage visual placeholder component, added controlled placeholder content data in `src/lib/content/homepage.js`, rendered one placeholder in the Company / Why Mall Agro section, and rendered one placeholder in the Project Capabilities section.
+
+The current homepage is a stable content/layout baseline with temporary visual slots for future project/equipment visuals. The page is less text-heavy than before. The placeholder milestone did not add images or public assets, did not rewrite homepage copy, and did not change routes, SEO behavior, metadata, localization, product pages, category pages, or public assets.
+
+Known non-blocking homepage notes remain: shared `<img>` warnings in `CategoryLandingPage.js`, stale Browserslist/caniuse-lite data, placeholder panels are temporary and must not be treated as final visual proof, the homepage still needs stronger section-level content refinement before final visual production, final visuals must avoid client-identifiable facilities, readable manufacturer labels, fake certificates, logos, and unsupported project claims, category cards still need stronger future visual differentiation, and an Inquiry Process section that is functional but visually dry.
+
+Current docs milestone in progress: `docs/HOMEPAGE_SECTION_REFINEMENT_MATRIX.md` has been created and is pending audit/commit. Once approved, it should become the controlled source for homepage copy refinement. Codex must not rewrite homepage copy freely; implementation should map approved matrix content into source and report any structure mismatch.
 
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
@@ -139,7 +145,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define the visual proof needed for industrial equipment context, production lines, grain handling / storage-adjacent systems, food production environments, logistics and delivery coordination, engineering / planning context, and category-specific credibility. The strategy must avoid client-identifiable facilities, readable manufacturer labels, visible brand logos unless approved, fake certificates, stock-photo handshakes, and exaggerated AI imagery. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Audit and commit `docs/HOMEPAGE_SECTION_REFINEMENT_MATRIX.md`. After approval/commit, implement the approved homepage section refinement matrix with exact content mapping only and no freeform copy rewriting. Optional follow-ups include homepage visual evidence strategy, About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -172,7 +178,7 @@ Create `docs/HOMEPAGE_VISUAL_EVIDENCE_STRATEGY.md` to define the visual proof ne
 - `/quote` placeholder route is implemented with temporary `noindex`; final inquiry/contact flow remains pending.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content and SEO treatment must be approved before the category pages become indexable.
-- Next major work packages: homepage visual evidence strategy, About page messaging, and later product template architecture/product import planning.
+- Next major work packages: homepage section refinement matrix, homepage visual evidence strategy, About page messaging, and later product template architecture/product import planning.
 - Broader asset performance audit remains a separate future task.
 - Current category-page baseline is the committed Agriculture image-slot architecture in `bc91cdd`.
 - Avoid multiple concurrent local dev servers. If `/` or another route behaves differently by port, kill stale Node processes, delete `.next` if needed, and restart one clean dev server from this repository.
