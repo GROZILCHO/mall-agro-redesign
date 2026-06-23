@@ -307,7 +307,7 @@ Project capability
 
 ### Title
 
-What stands behind the equipment request
+What shapes a serious equipment request
 
 ### Body
 
@@ -501,7 +501,7 @@ Equipment inquiry
 
 ### Title
 
-Planning a machine request or industrial project?
+Planning an equipment request or industrial project?
 
 ### Body
 

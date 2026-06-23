@@ -4,14 +4,14 @@ export const homepageContent = {
   en: {
     intro: {
       eyebrow: 'Why Mall Agro',
-      title: 'From equipment requests to production-ready decisions',
-      body: 'Mall Agro helps clients move from a business or production need toward a clearer equipment path. The company supports discussions around machinery, production lines, material handling, workflow requirements and project context before a focused quote discussion begins.',
-      note: 'For smaller buyers, this may mean identifying a suitable machine or upgrade. For larger projects, it may mean coordinating equipment requirements, logistics considerations and implementation context around a broader industrial solution.',
+      title: 'From equipment needs to practical production decisions',
+      body: 'Choosing industrial equipment is rarely only a product question. The right machine or line depends on the material being handled, the production goal, the available site conditions, the process flow and the way the equipment will be delivered, installed and used.',
+      note: 'Mall Agro helps clients structure these requirements before moving toward a quote or project discussion. For smaller buyers, this can mean identifying a suitable machine, replacement unit or process upgrade. For larger projects, it can mean preparing the equipment logic behind a production line, handling system or broader industrial solution.',
       supportPoints: [
-        'Equipment needs linked to real operating context',
-        'Support for both individual machines and broader projects',
+        'Equipment needs connected to real operating conditions',
+        'Support for individual machines, lines and broader projects',
         'Practical preparation before quotation',
-        'Category structure used as a starting point, not as the full service',
+        'Categories used as a starting point, not as the full service',
       ],
     },
     visualPlaceholders: {
@@ -26,27 +26,27 @@ export const homepageContent = {
     },
     whatWeSupport: {
       eyebrow: 'What we support',
-      title: 'Support across machines, production lines and industrial projects',
-      body: 'Mall Agro works with inquiries that range from focused equipment requests to broader production and handling projects.',
+      title: 'Support across machines, lines and industrial projects',
+      body: 'Mall Agro works with equipment inquiries at different levels of complexity - from a single machine request to production line planning, modernization work and coordinated industrial equipment solutions.',
       paths: [
         {
           title: 'Individual Equipment Needs',
-          body: 'Focused requests for individual machines, replacement equipment, process upgrades and handling systems for farms, processors and production operators.',
+          body: 'Focused requests for individual machines, replacement equipment, process upgrades and handling systems for farms, processors and production operators that need a practical equipment solution.',
         },
         {
           title: 'Production Lines and Modernization',
-          body: 'Support for production lines, process improvements, modernization work and coordinated equipment solutions across grain handling, agriculture and food production.',
+          body: 'Support for production lines, process improvements and modernization work where several machines, handling steps or processing stages need to operate together.',
         },
         {
           title: 'Integrated Industrial Project Support',
-          body: 'Project-oriented support where equipment selection, material flow, logistics, installation context and implementation planning need to work together.',
+          body: 'Project-oriented support for inquiries where equipment selection, material flow, logistics, installation context and implementation planning need to be considered as one connected process.',
         },
       ],
     },
     projectCapabilities: {
       eyebrow: 'Project capability',
-      title: 'Capabilities behind the equipment request',
-      body: 'Behind a serious equipment request there is usually a production goal, a material flow, a site condition, a logistics question or an implementation need. Mall Agro helps structure these factors before the inquiry moves toward equipment selection or quotation.',
+      title: 'What shapes a serious equipment request',
+      body: 'A serious equipment inquiry usually starts before the exact machine is selected. It begins with the production goal, the material or product, the site conditions, the required handling steps, and the practical limits around delivery and implementation.\n\nMall Agro helps organize these details so the first discussion can move beyond a generic product request and toward a more useful equipment or project review.',
       items: [
         {
           title: 'Operational Requirement Review',
@@ -58,7 +58,7 @@ export const homepageContent = {
         },
         {
           title: 'Logistics Coordination',
-          body: 'Planning delivery and coordination requirements for larger machines, handling systems and project-related equipment.',
+          body: 'Preparing delivery and coordination requirements for larger machines, handling systems and project-related equipment.',
         },
         {
           title: 'Installation Context',
@@ -80,8 +80,8 @@ export const homepageContent = {
           body: 'A useful quote discussion depends on material, workflow, site and expected equipment role.',
         },
         {
-          title: 'Separation from ecommerce',
-          body: 'Mall Agro is not designed as an instant checkout experience or a product-stock browsing portal.',
+          title: 'Consultative inquiry model',
+          body: 'Mall Agro is structured around equipment review and quote-based discussion, not instant checkout or product-stock browsing.',
         },
         {
           title: 'Confidential Communication',
@@ -91,8 +91,8 @@ export const homepageContent = {
     },
     workflow: {
       eyebrow: 'Inquiry process',
-      title: 'From production need to focused project discussion',
-      body: 'The inquiry path helps turn a broad equipment interest into the practical details needed for a first review.',
+      title: 'From production need to focused equipment discussion',
+      body: 'The inquiry path helps turn a broad equipment interest into the practical details needed for a first technical and commercial review.',
       steps: [
         {
           label: '01',
@@ -118,7 +118,7 @@ export const homepageContent = {
     },
     cta: {
       eyebrow: 'Equipment inquiry',
-      title: 'Planning a machine request or industrial project?',
+      title: 'Planning an equipment request or industrial project?',
       body: 'Share your operation, material or product type, current workflow, site limits and expected equipment need so Mall Agro can review the inquiry with the right context.',
       label: 'Request a Quote',
       href: siteRoutes.en[routeKeys.quote],

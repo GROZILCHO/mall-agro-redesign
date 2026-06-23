@@ -3,7 +3,7 @@ export const heroContent = {
     eyebrow: 'B2B equipment and project support',
     title: 'Industrial Equipment and Project Support',
     subline: 'Agriculture, Grain Processing and Food Production',
-    body: 'Mall Agro helps investors, farms and producers plan equipment requests, production lines and broader industrial solutions with practical context around equipment selection, logistics and implementation.',
+    body: 'Mall Agro helps farms, producers and investors plan equipment needs, production lines and industrial solutions with practical support around machinery selection, material flow, logistics and implementation context.',
     primaryCta: {
       label: 'Explore Capabilities',
       href: '/#categories',
