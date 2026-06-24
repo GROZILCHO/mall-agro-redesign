@@ -72,6 +72,12 @@ Section-level audit notes: Hero content direction is good, but the visual is sti
 
 Remaining homepage issues after audit: the page lacks final visual evidence of industrial scale, placeholders are temporary, the dark authority/inquiry discipline section is visually heavy, cards remain clean but generic, and `storage-adjacent handling` is a minor future copy-polish candidate if approved later. Next homepage work should focus on controlled visual hierarchy / evidence strategy before generating final assets, while preserving claim-safety rules: no public Cimbria/Bühler claims under Mall Agro, no official representative claim, no exclusive distribution claim, no market leader claim, no turnkey/EPC claim, and no instant quote or stock claim.
 
+Current Hero media state: the homepage Hero uses a legacy video background from the old Mall Agro site as a working visual asset. The same video is used across desktop, tablet, and mobile viewports. It is not well adapted below approximately `1012px`, and it should not be treated as final visual evidence.
+
+Hero video assessment: the legacy video is acceptable temporarily, but it leans strongly toward agriculture and does not fully represent grain processing, grain handling, food industry equipment, production lines, or industrial project capability. Future Hero media strategy must decide between optimized desktop video, desktop video plus static tablet/mobile fallback, a fully static industrial Hero visual, or using category/project visuals lower on the page instead of relying on Hero video.
+
+Recommended Hero media direction: keep the current video temporarily, do not start video replacement immediately, include Hero media strategy in the upcoming homepage visual hierarchy / evidence strategy, and evaluate a static tablet/mobile fallback later. Do not add new video assets, generate final visuals, change Hero implementation, or weaken claim-safety/localization rules yet.
+
 Navbar logo `next/image` legacy prop warnings have been fixed and committed.
 
 English rich category pages are implemented for `/products/agriculture`, `/products/grain-processing`, and `/products/food-industry-equipment`. Local browser QA confirms the three routes return `200`, render rich category layouts, show no broken images, and have no horizontal overflow at tested viewports.
@@ -159,7 +165,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Prepare a controlled homepage visual hierarchy / evidence strategy. The post-implementation audit for commit `3f037ad` is complete and found the refined copy stable with no broad rewrite recommended. Next work should define visual proof areas for industrial scale, equipment context, production lines, logistics and delivery coordination, implementation support, and category-specific credibility before generating final homepage assets. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Prepare a controlled homepage visual hierarchy / evidence strategy. The post-implementation audit for commit `3f037ad` is complete and found the refined copy stable with no broad rewrite recommended. Next work should define visual proof areas for industrial scale, equipment context, production lines, logistics and delivery coordination, implementation support, category-specific credibility, and Hero media strategy before generating final homepage assets. The current legacy Hero video should remain temporary while the strategy evaluates optimized desktop video, desktop video plus tablet/mobile static fallback, a fully static industrial Hero visual, or stronger category/project visuals lower on the page. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
 
 ## Source Audit Results
 
@@ -192,7 +198,7 @@ Prepare a controlled homepage visual hierarchy / evidence strategy. The post-imp
 - `/quote` placeholder route is implemented with temporary `noindex`; final inquiry/contact flow remains pending.
 - Indexable route-level SEO metadata and domain/locale runtime strategy remain separate future tasks.
 - Final category content and SEO treatment must be approved before the category pages become indexable.
-- Next major work packages: homepage visual hierarchy / evidence strategy, About page messaging, and later product template architecture/product import planning.
+- Next major work packages: homepage visual hierarchy / evidence strategy including Hero media strategy, About page messaging, and later product template architecture/product import planning.
 - Broader asset performance audit remains a separate future task.
 - Current category-page baseline is the committed Agriculture image-slot architecture in `bc91cdd`.
 - Avoid multiple concurrent local dev servers. If `/` or another route behaves differently by port, kill stale Node processes, delete `.next` if needed, and restart one clean dev server from this repository.
