@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { categoryPageContent } from '../../../lib/content/categoryPages.js';
 import { getCategoryById } from '../../../lib/content/categories.js';
 
@@ -40,11 +41,16 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
 
           <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
             {imageSlots.hero.asset && (
-              <img
-                src={imageSlots.hero.asset}
-                alt={imageSlots.hero.title}
-                className="aspect-[16/9] w-full object-cover"
-              />
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={imageSlots.hero.asset}
+                  alt={imageSlots.hero.title}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             )}
             <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
               <div>
@@ -125,11 +131,15 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               return (
               <article key={area.title} className="overflow-hidden rounded border border-neutral bg-gentle shadow">
                 {context?.asset && (
-                  <img
-                    src={context.asset}
-                    alt={context.title}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={context.asset}
+                      alt={context.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                 )}
                 <div className="flex min-h-48 items-end border-b border-neutral bg-white p-5">
                   <div>
