@@ -23,6 +23,10 @@ export const homepageContent = {
         eyebrow: 'Capability context',
         title: 'From requirement review to implementation planning',
       },
+      inquiryProcess: {
+        eyebrow: 'Inquiry context',
+        title: 'From need to focused equipment discussion',
+      },
     },
     whatWeSupport: {
       eyebrow: 'What we support',

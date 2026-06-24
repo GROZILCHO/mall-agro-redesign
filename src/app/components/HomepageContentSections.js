@@ -166,38 +166,45 @@ export default function HomepageContentSections() {
 
       <section className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl min-w-0">
-          <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
-            <div className="min-w-0">
+          <div className="mb-10 grid min-w-0 gap-8 lg:grid-cols-5 lg:items-stretch">
+            <div className="min-w-0 lg:col-span-3">
               <p className="body font-semibold text-primary">
                 {content.workflow.eyebrow}
               </p>
               <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
                 {content.workflow.title}
               </h2>
+              <p className="body mt-5 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
+                {content.workflow.body}
+              </p>
             </div>
-            <p className="body break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:self-end md:text-[1rem]">
-              {content.workflow.body}
-            </p>
+            <div className="min-w-0 lg:col-span-2">
+              <HomepageVisualPlaceholder
+                eyebrow={content.visualPlaceholders.inquiryProcess.eyebrow}
+                title={content.visualPlaceholders.inquiryProcess.title}
+                variant="capability"
+              />
+            </div>
           </div>
 
-          <div className="border-y border-neutral bg-white">
+          <div className="grid min-w-0 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {content.workflow.steps.map((step) => (
-              <div
+              <article
                 key={step.title}
-                className="grid min-w-0 gap-4 border-t border-neutral px-4 py-6 first:border-t-0 md:grid-cols-4 md:px-6"
+                className="flex min-w-0 flex-col rounded border border-neutral bg-white p-6 shadow-sm"
               >
-                <p className="body font-semibold text-primary md:col-span-1">
+                <p className="text-4xl font-semibold leading-none text-primary">
                   {step.label}
                 </p>
-                <div className="min-w-0 md:col-span-3">
-                  <h3 className="responsive-h3 break-words [overflow-wrap:anywhere] text-primary">
+                <div className="mt-5 min-w-0">
+                  <h3 className="responsive-h3 break-normal text-primary">
                     {step.title}
                   </h3>
                   <p className="body mt-3 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
                     {step.body}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
