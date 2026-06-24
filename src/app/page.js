@@ -31,7 +31,7 @@ export default function HomePage() {
                             Start from the right equipment area
                         </h2>
                         <p className="body mt-4 break-words text-base leading-7 [overflow-wrap:anywhere] text-menu md:text-[1rem]">
-                            Use the category structure to start from the area that best matches the operation, material flow, production activity or equipment requirement behind your inquiry.
+                            Start with the area that matches the material, operation or production process behind your inquiry - from field-related equipment to grain reception, cleaning, conveying and food production workflows.
                         </p>
                     </div>
 

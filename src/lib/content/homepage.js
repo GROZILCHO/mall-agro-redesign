@@ -96,7 +96,7 @@ export const homepageContent = {
     workflow: {
       eyebrow: 'Inquiry process',
       title: 'From production need to focused equipment discussion',
-      body: 'The inquiry path helps turn a broad equipment interest into the practical details needed for a first technical and commercial review.',
+      body: 'A useful request starts with the operation, material or product, current workflow and site limits. This helps Mall Agro review whether the need is an individual machine, a line adjustment or a broader equipment discussion.',
       steps: [
         {
           label: '01',
