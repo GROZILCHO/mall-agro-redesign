@@ -17,7 +17,7 @@ export default function Hero() {
   if (!isMounted) return null;
 
   return (
-    <section className="relative flex min-h-[100svh] max-w-full items-center overflow-x-hidden py-24 md:min-h-screen md:py-20 lg:py-0">
+    <section className="relative flex min-h-[100svh] max-w-full items-center overflow-x-hidden px-4 py-24 md:min-h-screen md:px-10 md:py-20 lg:px-16 lg:py-0">
       {/* Видео фон */} 
       <div className="absolute inset-0 z-[-2]">
         <video
@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-primary bg-opacity-70 z-[-1] pointer-events-none"></div>
 
       {/* Съдържание */}
-      <div className="relative z-20 mx-auto w-full max-w-full min-w-0 px-4 md:px-10 lg:px-16">
+      <div className="relative z-20 mx-auto w-full max-w-6xl min-w-0">
         <div className="w-full max-w-[34rem] min-w-0 text-white md:w-3/5 md:max-w-full lg:w-[60%]">
           <p className="body mb-3 text-accent text-shadow-custom md:mb-4">
             {content.eyebrow}
