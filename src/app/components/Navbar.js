@@ -3,21 +3,30 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { navigationItems } from '../../lib/content/navigation.js';
 import { siteRoutes } from '../../lib/routes/siteRoutes.js';
 import LanguageSwitcher from './LanguageSwitcher.js';
 
-const locale = 'en';
-const navItems = navigationItems[locale];
-const routes = siteRoutes[locale];
-const primaryNavItem = navItems.find((item) => item.isPrimary);
-const mainNavItems = navItems.filter((item) => !item.isPrimary);
+function getCurrentLocale(pathname) {
+  if (pathname?.startsWith('/produse')) {
+    return 'ro';
+  }
 
-function getNavHref(item) {
+  return 'en';
+}
+
+function getNavHref(item, routes) {
   return routes[item.routeKey] || '/';
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const locale = getCurrentLocale(pathname);
+  const navItems = navigationItems[locale] || navigationItems.en;
+  const routes = siteRoutes[locale] || siteRoutes.en;
+  const primaryNavItem = navItems.find((item) => item.isPrimary);
+  const mainNavItems = navItems.filter((item) => !item.isPrimary);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
@@ -57,7 +66,7 @@ export default function Navbar() {
         {/* Десктоп навигация */}
         <nav className="hidden xl:flex items-center space-x-6 text-accent text-sm md:text-base lg:text-lg">
           {mainNavItems.map((item) => (
-            <Link key={item.id} href={getNavHref(item)} className="hover:underline whitespace-nowrap">
+            <Link key={item.id} href={getNavHref(item, routes)} className="hover:underline whitespace-nowrap">
               {item.label}
             </Link>
           ))}
@@ -66,7 +75,7 @@ export default function Navbar() {
         {/* CTA бутон */}
         {primaryNavItem && (
           <Link
-            href={getNavHref(primaryNavItem)}
+            href={getNavHref(primaryNavItem, routes)}
             className="hidden xl:block button sm:button-sm md:button-md lg:button-lg"
           >
             {primaryNavItem.label}
@@ -101,12 +110,12 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <nav className="xl:hidden bg-[#154F3C] text-accent px-4 pt-4 pb-6 space-y-4 text-base">
           {mainNavItems.map((item) => (
-            <Link key={item.id} href={getNavHref(item)} onClick={() => setIsMobileMenuOpen(false)} className="block">
+            <Link key={item.id} href={getNavHref(item, routes)} onClick={() => setIsMobileMenuOpen(false)} className="block">
               {item.label}
             </Link>
           ))}
           {primaryNavItem && (
-            <Link href={getNavHref(primaryNavItem)} onClick={() => setIsMobileMenuOpen(false)} className="block button w-full text-center">
+            <Link href={getNavHref(primaryNavItem, routes)} onClick={() => setIsMobileMenuOpen(false)} className="block button w-full text-center">
               {primaryNavItem.label}
             </Link>
           )}

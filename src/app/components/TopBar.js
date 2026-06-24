@@ -1,8 +1,31 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Icon from './Icon';
 
+const topBarLabels = {
+    en: {
+        hours: 'Mon-Fri: 9:00 AM - 6:00 PM',
+        searchPlaceholder: 'Search products...',
+    },
+    ro: {
+        hours: 'Luni-Vineri: 9:00 - 18:00',
+        searchPlaceholder: 'Caută produse...',
+    },
+};
+
+function getCurrentLocale(pathname) {
+    if (pathname?.startsWith('/produse')) {
+        return 'ro';
+    }
+
+    return 'en';
+}
+
 export default function TopBar() {
+    const pathname = usePathname();
+    const locale = getCurrentLocale(pathname);
+    const labels = topBarLabels[locale] || topBarLabels.en;
     const [showTopBar, setShowTopBar] = useState(true);
     const [hasMounted, setHasMounted] = useState(false);
     const lastScrollY = useRef(0);
@@ -37,7 +60,7 @@ export default function TopBar() {
             {/* Лява секция */}
             <div className="flex items-center gap-2 whitespace-nowrap font-serif">
                 <Icon name="clockThin" size={22} />
-                <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                <span>{labels.hours}</span>
             </div>
 
             {/* Търсачка */}
@@ -45,7 +68,7 @@ export default function TopBar() {
                 <Icon name="search" size={22} />
                 <input
                     type="text"
-                    placeholder="Search products..."
+                    placeholder={labels.searchPlaceholder}
                     className="text-sm px-2 py-1 border rounded"
                 />
             </div>
