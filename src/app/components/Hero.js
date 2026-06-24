@@ -39,7 +39,7 @@ export default function Hero() {
           <p className="body mb-3 text-accent text-shadow-custom md:mb-4">
             {content.eyebrow}
           </p>
-          <h1 className="mb-4 break-words text-[1.7rem] font-bold leading-[1.14] text-shadow-custom sm:text-[2.3rem] md:mb-5 md:text-[3.25rem] md:leading-[1.06] lg:mb-6 lg:text-[4.5rem]">
+          <h1 className="responsive-h1 mb-4 break-words text-[1.8rem] leading-[1.14] text-shadow-custom sm:text-[2.35rem] md:mb-5 md:text-[3.25rem] md:leading-[1.06] lg:mb-6 lg:text-[4.5rem]">
             {content.title}
           </h1>
           <p className="mb-4 break-words text-[1.15rem] font-semibold leading-[1.3] text-accent text-shadow-custom sm:text-[1.35rem] md:mb-5 md:text-[1.75rem] lg:text-[2rem]">

@@ -131,8 +131,19 @@ export default function HomepageContentSections() {
   return (
     <>
       {content.authority && (
-        <section className="max-w-full overflow-hidden bg-primary px-4 py-16 text-white md:px-10 lg:px-16">
-          <div className="mx-auto grid max-w-6xl min-w-0 gap-10 lg:grid-cols-5">
+        <section className="relative isolate max-w-full overflow-hidden bg-primary px-4 py-16 text-white md:px-10 lg:px-16">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.08]"
+            aria-hidden="true"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(247,235,212,0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(247,235,212,0.9) 1px, transparent 1px)',
+              backgroundSize: '32px 32px',
+            }}
+          />
+          <div className="pointer-events-none absolute -right-24 top-8 h-64 w-64 rounded-full border border-white/10" aria-hidden="true" />
+
+          <div className="relative mx-auto grid max-w-6xl min-w-0 gap-10 rounded border border-white/10 bg-white/[0.04] p-6 shadow md:p-8 lg:grid-cols-5">
             <div className="min-w-0 lg:col-span-2">
               <p className="body font-semibold text-accent">
                 {content.authority.eyebrow}
@@ -149,7 +160,7 @@ export default function HomepageContentSections() {
               {content.authority.items.map((item) => (
                 <div
                   key={item.title}
-                  className="grid min-w-0 gap-3 border-t border-neutral py-5 first:border-t-0 md:grid-cols-[minmax(14rem,1fr)_2fr]"
+                  className="grid min-w-0 gap-3 rounded border border-white/10 bg-white/[0.05] p-5 md:grid-cols-[minmax(14rem,1fr)_2fr]"
                 >
                   <h3 className="responsive-h3 break-normal text-white">
                     {item.title}
