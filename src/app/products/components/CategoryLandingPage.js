@@ -13,6 +13,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
   }
 
   const imageSlots = richContent.imageSlots;
+  const categoryIntentItems = richContent.categoryIntent.filter((intent) => intent?.trim());
+  const relatedCategoryCtaLabel = locale === 'ro' ? 'Vezi categoria →' : 'View category →';
 
   return (
     <main className="bg-gentle">
@@ -31,7 +33,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </p>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {richContent.categoryIntent.map((intent) => (
+              {categoryIntentItems.map((intent) => (
                 <p key={intent} className="body rounded border border-neutral bg-gentle px-4 py-3 text-primary">
                   {intent}
                 </p>
@@ -40,7 +42,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
 
           <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
-            {imageSlots.hero.asset && (
+            {imageSlots.hero.asset ? (
               <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={imageSlots.hero.asset}
@@ -50,6 +52,22 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
+              </div>
+            ) : (
+              <div className="flex aspect-[16/9] w-full items-end border-b border-neutral bg-primary p-6 text-white">
+                <div className="w-full">
+                  <p className="body text-accent">
+                    {imageSlots.hero.label}
+                  </p>
+                  <p className="h3 mt-3 text-white">
+                    {categoryContent.title}
+                  </p>
+                  <div className="mt-6 grid grid-cols-3 gap-2" aria-hidden="true">
+                    <span className="h-2 rounded bg-accent" />
+                    <span className="h-2 rounded bg-white/70" />
+                    <span className="h-2 rounded bg-white/40" />
+                  </div>
+                </div>
               </div>
             )}
             <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
@@ -80,7 +98,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <nav aria-label="Agriculture category sections" className="bg-primary px-4 py-4 md:px-10 lg:px-16">
+      <nav aria-label={`${categoryContent.title} category sections`} className="bg-primary px-4 py-4 md:px-10 lg:px-16">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 text-white sm:flex-row sm:flex-wrap">
           {richContent.pageNavigation.map((item) => (
             <Link
@@ -121,7 +139,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               Operating contexts
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
-              Where the agriculture category can support inquiry framing
+              {richContent.applicationHeading}
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -287,9 +305,14 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="body rounded border border-neutral bg-gentle px-4 py-4 text-primary hover:text-accent"
+                className="group block rounded border border-neutral bg-white p-5 text-primary shadow transition hover:-translate-y-0.5 hover:border-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent"
               >
-                {item.label}
+                <span className="h3 block">
+                  {item.label}
+                </span>
+                <span className="body mt-3 block text-accent group-hover:underline">
+                  {relatedCategoryCtaLabel}
+                </span>
               </Link>
             ))}
           </div>

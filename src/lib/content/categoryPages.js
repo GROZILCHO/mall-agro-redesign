@@ -89,6 +89,7 @@ export const categoryPageContent = {
         'Inquiry planning',
         'Project discussion',
       ],
+      applicationHeading: 'Where the agriculture category can support inquiry framing',
       overview: {
         title: 'Agriculture category scope',
         body: [
@@ -149,7 +150,7 @@ export const categoryPageContent = {
         eyebrow: 'Project-oriented inquiry',
         title: 'Share the context for an agriculture equipment inquiry',
         body: 'Use the inquiry page to describe the operation, material, current work steps, and equipment needs so the first response can focus on the relevant details.',
-        label: 'Request a quote',
+        label: 'Request a Quote',
         href: '/quote',
       },
       relatedCategories: {
@@ -256,6 +257,7 @@ export const categoryPageContent = {
         'Line planning',
         'Inquiry preparation',
       ],
+      applicationHeading: 'Where food industry equipment can support inquiry framing',
       overview: {
         title: 'Food Industry Equipment category scope',
         body: [
@@ -316,7 +318,7 @@ export const categoryPageContent = {
         eyebrow: 'Equipment inquiry',
         title: 'Share the context for a food industry equipment inquiry',
         body: 'Use the inquiry page to describe the product type, production workflow, current process, and equipment need so the first response can focus on the relevant details.',
-        label: 'Request a quote',
+        label: 'Request a Quote',
         href: '/quote',
       },
       relatedCategories: {
@@ -423,6 +425,7 @@ export const categoryPageContent = {
         'Conveying and elevation',
         'Inquiry preparation',
       ],
+      applicationHeading: 'Where grain processing and handling can support inquiry framing',
       overview: {
         title: 'Grain Processing / Grain Handling category scope',
         body: [
@@ -483,7 +486,7 @@ export const categoryPageContent = {
         eyebrow: 'Equipment inquiry',
         title: 'Share the context for a grain processing equipment inquiry',
         body: 'Use the inquiry page to describe the grain material, current flow, handling steps, and equipment need so the first response can focus on the relevant details.',
-        label: 'Request a quote',
+        label: 'Request a Quote',
         href: '/quote',
       },
       relatedCategories: {
