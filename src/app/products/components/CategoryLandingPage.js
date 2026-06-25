@@ -243,13 +243,16 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 </p>
               </div>
             )}
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {richContent.equipmentDirection.items.map((item) => (
-                <li key={item.title || item} className={`body border border-neutral bg-white text-menu shadow ${isAgricultureUx ? 'border-l-4 border-l-accent p-5' : 'rounded p-4'}`}>
+            <ul className={isAgricultureUx ? 'grid overflow-hidden border border-neutral bg-white sm:grid-cols-2' : 'grid gap-4 sm:grid-cols-2'}>
+              {richContent.equipmentDirection.items.map((item, index) => (
+                <li key={item.title || item} className={isAgricultureUx ? `body border-neutral bg-white p-5 text-menu ${index < 3 ? 'border-b' : ''} ${index === 2 ? 'sm:border-b-0' : ''} ${index % 2 === 0 ? 'sm:border-r' : ''}` : 'body rounded border border-neutral bg-white p-4 text-menu shadow'}>
                   {typeof item === 'string' ? (
                     item
                   ) : (
                     <>
+                      {isAgricultureUx && (
+                        <div className="mb-4 h-1 w-12 bg-accent" aria-hidden="true" />
+                      )}
                       <h3 className="h3 text-primary">
                         {item.title}
                       </h3>
@@ -297,13 +300,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </p>
             </div>
           )}
-          <div className={isAgricultureUx ? 'grid border-y border-neutral' : 'grid gap-4'}>
+          <div className={isAgricultureUx ? 'grid border-y border-neutral bg-white' : 'grid gap-4'}>
             {richContent.inquiryWorkflow.steps.map((step, index) => (
-              <article key={step.title} className={isAgricultureUx ? 'grid gap-4 border-b border-neutral bg-gentle p-5 last:border-b-0 md:grid-cols-[72px_1fr] md:items-start' : 'grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start'}>
-                <p className="h3 text-primary">
+              <article key={step.title} className={isAgricultureUx ? 'grid gap-5 border-b border-neutral bg-white p-5 last:border-b-0 lg:grid-cols-[96px_1fr] lg:items-stretch lg:p-0' : 'grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start'}>
+                <p className={isAgricultureUx ? 'flex h-14 w-14 items-center justify-center bg-primary text-xl font-semibold leading-none text-white lg:h-full lg:w-full' : 'h3 text-primary'}>
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <div className={isAgricultureUx ? '' : 'md:col-span-4'}>
+                <div className={isAgricultureUx ? 'min-w-0 lg:p-6' : 'md:col-span-4'}>
                   <h3 className="h3 text-primary">
                     {step.title}
                   </h3>
@@ -333,9 +336,9 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             )}
           </div>
           <div className={isAgricultureUx ? '' : 'lg:col-span-3'}>
-            <ul className="grid gap-4 md:grid-cols-2">
+            <ul className={`grid md:grid-cols-2 ${isAgricultureUx ? 'gap-3' : 'gap-4'}`}>
               {richContent.inquiryPreparation.items.map((item, index) => (
-                <li key={item.title || item} className={`body rounded border border-neutral bg-white text-menu shadow ${isAgricultureUx ? 'p-5' : 'p-4'}`}>
+                <li key={item.title || item} className={isAgricultureUx ? 'body rounded border border-neutral bg-gentle p-5 text-menu' : 'body rounded border border-neutral bg-white p-4 text-menu shadow'}>
                   {!isAgricultureUx && (
                     <span className="text-primary">
                       {String(index + 1).padStart(2, '0')}
@@ -350,7 +353,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                       <span className="block font-semibold text-primary">
                         {item.title}
                       </span>
-                      <span className="mt-2 block">
+                      <span className={`${isAgricultureUx ? 'mt-4 border-t border-neutral pt-4' : 'mt-2'} block`}>
                         {item.body}
                       </span>
                     </span>
