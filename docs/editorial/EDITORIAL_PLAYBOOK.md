@@ -1957,3 +1957,5 @@ Every page should answer one essential question:
 > **What does the visitor understand now that they did not understand before reading this page?**
 
 If every published page satisfies that principle, the Mall Agro platform will continue to develop as an engineering-oriented industrial knowledge platform rather than a conventional equipment catalogue.
+
+Future versions of Public Page Copy Maps may evolve toward structured content objects aligned with the project Content Model, reducing ambiguity between editorial structure and implementation data.
