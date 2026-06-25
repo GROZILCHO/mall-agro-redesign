@@ -22,21 +22,22 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
 
   const imageSlots = richContent.imageSlots;
   const categoryIntentItems = richContent.categoryIntent.filter((intent) => intent?.trim());
+  const isAgricultureUx = richContent.layoutVariant === 'agriculture-ux-v1';
   const relatedCategoryCtaLabel = locale === 'ro' ? 'Vezi categoria →' : 'View category →';
 
   return (
     <main className="bg-gentle">
-      <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-stretch">
-          <div className="flex flex-col justify-between">
-            <div>
+      <section className={`bg-white px-4 md:px-10 lg:px-16 ${isAgricultureUx ? 'py-12 lg:py-16' : 'py-16'}`}>
+        <div className={`mx-auto grid max-w-6xl gap-8 ${isAgricultureUx ? 'lg:grid-cols-[1.08fr_0.92fr] lg:items-start' : 'lg:grid-cols-2 lg:items-stretch'}`}>
+          <div className={isAgricultureUx ? 'contents lg:flex lg:flex-col lg:justify-between' : 'flex flex-col justify-between'}>
+            <div className={isAgricultureUx ? 'order-1 min-w-0' : ''}>
               <p className="body font-semibold normal-case tracking-normal text-menu">
                 {richContent.hero.eyebrow}
               </p>
-              <h1 className="responsive-h1 mt-3 text-primary">
+              <h1 className={`responsive-h1 mt-3 text-primary ${isAgricultureUx ? 'max-w-4xl' : ''}`}>
                 {richContent.hero.title}
               </h1>
-              <div className="mt-6">
+              <div className={isAgricultureUx ? 'mt-6 max-w-3xl' : 'mt-6'}>
                 {toParagraphs(richContent.hero.body).map((paragraph) => (
                   <p key={paragraph} className="body mb-5 text-menu last:mb-0">
                     {paragraph}
@@ -44,7 +45,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 ))}
               </div>
             </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className={`grid gap-3 sm:grid-cols-2 ${isAgricultureUx ? 'order-3 mt-6 lg:mt-8' : 'mt-8'}`}>
               {categoryIntentItems.map((intent) => (
                 <p key={intent} className="body rounded border border-neutral bg-gentle px-4 py-3 font-semibold normal-case tracking-normal text-menu">
                   {intent}
@@ -53,7 +54,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </div>
           </div>
 
-          <div className="grid min-h-80 overflow-hidden rounded border border-neutral bg-gentle shadow">
+          <div className={`grid overflow-hidden rounded border border-neutral bg-gentle shadow ${isAgricultureUx ? 'order-2 min-h-0 lg:order-none' : 'min-h-80'}`}>
             {imageSlots.hero.asset ? (
               <div className="relative aspect-[16/9] w-full">
                 <Image
@@ -61,7 +62,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                   alt={imageSlots.hero.title}
                   fill
                   priority
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes={isAgricultureUx ? '(min-width: 1024px) 42vw, 100vw' : '(min-width: 1024px) 50vw, 100vw'}
                   className="object-cover"
                 />
               </div>
@@ -82,7 +83,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 </div>
               </div>
             )}
-            <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
+            <div className={`flex items-end border-b border-neutral bg-white ${isAgricultureUx ? 'min-h-0 p-5' : 'min-h-64 p-6'}`}>
               <div>
                 <p className="body font-semibold normal-case tracking-normal text-menu">
                   {imageSlots.hero.label}
@@ -95,7 +96,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 </p>
               </div>
             </div>
-            <div className="p-6">
+            <div className={isAgricultureUx ? 'p-5' : 'p-6'}>
               <p className="body font-semibold normal-case tracking-normal text-menu">
                 {richContent.currentCategory?.label || 'Current category'}
               </p>
@@ -110,13 +111,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <nav aria-label={`${categoryContent.title} category sections`} className="bg-primary px-4 py-4 md:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 text-white sm:flex-row sm:flex-wrap">
+      <nav aria-label={`${categoryContent.title} category sections`} className={`bg-primary px-4 md:px-10 lg:px-16 ${isAgricultureUx ? 'py-3' : 'py-4'}`}>
+        <div className={`mx-auto flex max-w-6xl gap-3 text-white ${isAgricultureUx ? 'overflow-x-auto pb-1 whitespace-nowrap md:flex-wrap md:overflow-visible md:whitespace-normal' : 'flex-col sm:flex-row sm:flex-wrap'}`}>
           {richContent.pageNavigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="body border border-neutral px-4 py-3 text-center text-white hover:text-accent"
+              className={`body border border-neutral text-center text-white hover:text-accent ${isAgricultureUx ? 'shrink-0 px-4 py-2.5' : 'px-4 py-3'}`}
             >
               {item.label}
             </Link>
@@ -124,9 +125,9 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </nav>
 
-      <section id="overview" className="scroll-mt-24 px-4 py-12 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 border-y border-neutral py-10 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+      <section id="overview" className={`scroll-mt-24 px-4 md:px-10 lg:px-16 ${isAgricultureUx ? 'py-14 lg:py-16' : 'py-12'}`}>
+        <div className={`mx-auto grid max-w-6xl gap-8 border-y border-neutral py-10 ${isAgricultureUx ? 'lg:grid-cols-[0.82fr_1.18fr] lg:items-start' : 'lg:grid-cols-5'}`}>
+          <div className={isAgricultureUx ? '' : 'lg:col-span-2'}>
             <p className="body font-semibold normal-case tracking-normal text-menu">
               {richContent.overview.eyebrow || 'Category overview'}
             </p>
@@ -134,7 +135,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               {richContent.overview.title}
             </h2>
           </div>
-          <div className="lg:col-span-3">
+          <div className={isAgricultureUx ? 'max-w-3xl lg:border-l lg:border-neutral lg:pl-8' : 'lg:col-span-3'}>
             {richContent.overview.body.map((paragraph) => (
               <p key={paragraph} className="body mb-5 text-menu last:mb-0">
                 {paragraph}
@@ -159,12 +160,14 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </p>
             )}
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className={`grid gap-6 ${isAgricultureUx ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-3'}`}>
             {richContent.applicationAreas.map((area, index) => {
               const context = imageSlots.operatingContexts[index];
+              const supportingNote = area.supportingNote || area.body;
+              const showSupportingNote = !isAgricultureUx || supportingNote !== (context?.body || area.body);
 
               return (
-              <article key={area.title} className="overflow-hidden rounded border border-neutral bg-gentle shadow">
+              <article key={area.title} className={`overflow-hidden rounded border border-neutral bg-gentle shadow ${isAgricultureUx && index === 2 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 {context?.asset && (
                   <div className="relative aspect-[4/3] w-full">
                     <Image
@@ -176,7 +179,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                     />
                   </div>
                 )}
-                <div className="flex min-h-48 items-end border-b border-neutral bg-white p-5">
+                <div className={`flex items-end border-b border-neutral bg-white p-5 ${isAgricultureUx ? 'min-h-0' : 'min-h-48'}`}>
                   <div>
                     <p className="body font-semibold normal-case tracking-normal text-menu">
                       {context?.label || area.title}
@@ -189,11 +192,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                     </p>
                   </div>
                 </div>
-                <div className="p-5">
-                  <p className="body mt-3 text-menu">
-                    {area.body}
-                  </p>
-                </div>
+                {showSupportingNote && (
+                  <div className="p-5">
+                    <p className="body mt-3 text-menu">
+                      {supportingNote}
+                    </p>
+                  </div>
+                )}
               </article>
               );
             })}
@@ -202,8 +207,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       <section id="equipment-direction" className="scroll-mt-24 px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className={`mx-auto grid max-w-6xl gap-8 ${isAgricultureUx ? 'lg:grid-cols-[0.9fr_1.1fr] lg:items-start' : 'lg:grid-cols-5'}`}>
+          <div className={isAgricultureUx ? '' : 'lg:col-span-2'}>
             <p className="body font-semibold normal-case tracking-normal text-menu">
               {richContent.equipmentDirection.eyebrow || 'Equipment direction'}
             </p>
@@ -220,7 +225,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </div>
             )}
           </div>
-          <div className="grid gap-6 lg:col-span-3">
+          <div className={isAgricultureUx ? 'grid gap-6' : 'grid gap-6 lg:col-span-3'}>
             {imageSlots.equipmentDirection.renderCard !== false && (
               <div className="rounded border border-neutral bg-white p-6 shadow">
                 <p className="body font-semibold normal-case tracking-normal text-menu">
@@ -236,7 +241,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             )}
             <ul className="grid gap-4 sm:grid-cols-2">
               {richContent.equipmentDirection.items.map((item) => (
-                <li key={item.title || item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
+                <li key={item.title || item} className={`body border border-neutral bg-white text-menu shadow ${isAgricultureUx ? 'border-l-4 border-l-accent p-5' : 'rounded p-4'}`}>
                   {typeof item === 'string' ? (
                     item
                   ) : (
@@ -258,7 +263,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
 
       <section id="inquiry" className="scroll-mt-24 bg-white px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
+          <div className={`mb-10 grid gap-6 ${isAgricultureUx ? 'lg:grid-cols-[0.8fr_1.2fr] lg:items-end' : 'md:grid-cols-2 md:items-end'}`}>
             <div>
               <p className="body font-semibold normal-case tracking-normal text-menu">
                 {richContent.inquiryWorkflow.eyebrow || 'Inquiry workflow'}
@@ -288,13 +293,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </p>
             </div>
           )}
-          <div className="grid gap-4">
+          <div className={isAgricultureUx ? 'grid border-y border-neutral' : 'grid gap-4'}>
             {richContent.inquiryWorkflow.steps.map((step, index) => (
-              <article key={step.title} className="grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start">
+              <article key={step.title} className={isAgricultureUx ? 'grid gap-4 border-b border-neutral bg-gentle p-5 last:border-b-0 md:grid-cols-[72px_1fr] md:items-start' : 'grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start'}>
                 <p className="h3 text-primary">
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <div className="md:col-span-4">
+                <div className={isAgricultureUx ? '' : 'md:col-span-4'}>
                   <h3 className="h3 text-primary">
                     {step.title}
                   </h3>
@@ -309,8 +314,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       <section className="px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className={`mx-auto grid max-w-6xl gap-8 ${isAgricultureUx ? 'lg:grid-cols-[0.9fr_1.1fr] lg:items-start' : 'lg:grid-cols-5'}`}>
+          <div className={isAgricultureUx ? '' : 'lg:col-span-2'}>
             <p className="body font-semibold normal-case tracking-normal text-menu">
               {richContent.inquiryPreparation.eyebrow || 'Before inquiry'}
             </p>
@@ -323,10 +328,10 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </p>
             )}
           </div>
-          <div className="lg:col-span-3">
+          <div className={isAgricultureUx ? '' : 'lg:col-span-3'}>
             <ul className="grid gap-4 md:grid-cols-2">
               {richContent.inquiryPreparation.items.map((item, index) => (
-                <li key={item.title || item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
+                <li key={item.title || item} className={`body rounded border border-neutral bg-white text-menu shadow ${isAgricultureUx ? 'p-5' : 'p-4'}`}>
                   <span className="text-primary">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -351,8 +356,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-6xl border-y border-neutral py-8">
+      <section className={`bg-white px-4 md:px-10 lg:px-16 ${isAgricultureUx ? 'py-16' : 'py-12'}`}>
+        <div className={`mx-auto max-w-6xl border-y border-neutral ${isAgricultureUx ? 'py-10' : 'py-8'}`}>
           {richContent.beyondField ? (
             <>
               <div className="max-w-3xl">
@@ -434,8 +439,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-8 bg-primary p-6 text-white shadow md:grid-cols-3 md:items-center">
-          <div className="md:col-span-2">
+        <div className={`mx-auto grid max-w-6xl gap-8 bg-primary p-6 text-white shadow ${isAgricultureUx ? 'lg:grid-cols-[1fr_auto] lg:items-center lg:p-8' : 'md:grid-cols-3 md:items-center'}`}>
+          <div className={isAgricultureUx ? 'max-w-3xl' : 'md:col-span-2'}>
             <p className="body text-accent">
               {richContent.cta.eyebrow}
             </p>
@@ -461,7 +466,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
           <Link
             href={richContent.cta.href}
-            className="button button-md inline-block self-start whitespace-nowrap md:justify-self-end"
+            className={`button button-md inline-block self-start whitespace-nowrap ${isAgricultureUx ? 'w-full text-center sm:w-auto lg:justify-self-end' : 'md:justify-self-end'}`}
           >
             {richContent.cta.label}
           </Link>
@@ -469,8 +474,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       {richContent.closingStatement && (
-        <section className="bg-gentle px-4 py-12 md:px-10 lg:px-16">
-          <div className="mx-auto max-w-4xl border-t border-neutral pt-8">
+        <section className={`bg-gentle px-4 md:px-10 lg:px-16 ${isAgricultureUx ? 'py-16' : 'py-12'}`}>
+          <div className={`mx-auto border-t border-neutral pt-8 ${isAgricultureUx ? 'max-w-3xl' : 'max-w-4xl'}`}>
             {toParagraphs(richContent.closingStatement).map((paragraph) => (
               <p key={paragraph} className="body mb-4 text-menu last:mb-0">
                 {paragraph}

@@ -2,6 +2,7 @@ export const categoryPageContent = {
   en: {
     agriculture: {
       categoryId: 'agriculture',
+      layoutVariant: 'agriculture-ux-v1',
       hero: {
         eyebrow: 'Agriculture Equipment Category',
         title: 'Agriculture Equipment for Field Operations, Material Handling and Operational Planning',
