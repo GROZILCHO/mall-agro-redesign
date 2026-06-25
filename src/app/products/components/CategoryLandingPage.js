@@ -85,10 +85,12 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             )}
             <div className={`flex items-end border-b border-neutral bg-white ${isAgricultureUx ? 'min-h-0 p-5' : 'min-h-64 p-6'}`}>
               <div>
-                <p className="body font-semibold normal-case tracking-normal text-menu">
-                  {imageSlots.hero.label}
-                </p>
-                <h2 className="h3 mt-3 text-primary">
+                {!isAgricultureUx && (
+                  <p className="body font-semibold normal-case tracking-normal text-menu">
+                    {imageSlots.hero.label}
+                  </p>
+                )}
+                <h2 className={`h3 text-primary ${isAgricultureUx ? '' : 'mt-3'}`}>
                   {imageSlots.hero.title}
                 </h2>
                 <p className="body mt-3 text-menu">
@@ -97,10 +99,12 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </div>
             </div>
             <div className={isAgricultureUx ? 'p-5' : 'p-6'}>
-              <p className="body font-semibold normal-case tracking-normal text-menu">
-                {richContent.currentCategory?.label || 'Current category'}
-              </p>
-              <p className="h3 mt-3 text-primary">
+              {!isAgricultureUx && (
+                <p className="body font-semibold normal-case tracking-normal text-menu">
+                  {richContent.currentCategory?.label || 'Current category'}
+                </p>
+              )}
+              <p className={`h3 text-primary ${isAgricultureUx ? '' : 'mt-3'}`}>
                 {richContent.currentCategory?.title || categoryContent.title}
               </p>
               <p className="body mt-3 text-menu">
@@ -167,9 +171,9 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               const showSupportingNote = !isAgricultureUx || supportingNote !== (context?.body || area.body);
 
               return (
-              <article key={area.title} className={`overflow-hidden rounded border border-neutral bg-gentle shadow ${isAgricultureUx && index === 2 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+              <article key={area.title} className={`flex h-full flex-col overflow-hidden rounded border border-neutral bg-gentle shadow ${isAgricultureUx && index === 2 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 {context?.asset && (
-                  <div className="relative aspect-[4/3] w-full">
+                  <div className="relative aspect-[4/3] w-full shrink-0">
                     <Image
                       src={context.asset}
                       alt={context.title}
@@ -179,7 +183,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                     />
                   </div>
                 )}
-                <div className={`flex items-end border-b border-neutral bg-white p-5 ${isAgricultureUx ? 'min-h-0' : 'min-h-48'}`}>
+                <div className={`flex flex-1 items-end border-b border-neutral bg-white p-5 ${isAgricultureUx ? 'min-h-0' : 'min-h-48'}`}>
                   <div>
                     <p className="body font-semibold normal-case tracking-normal text-menu">
                       {context?.label || area.title}
@@ -193,7 +197,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                   </div>
                 </div>
                 {showSupportingNote && (
-                  <div className="p-5">
+                  <div className="mt-auto p-5">
                     <p className="body mt-3 text-menu">
                       {supportingNote}
                     </p>
@@ -332,15 +336,17 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             <ul className="grid gap-4 md:grid-cols-2">
               {richContent.inquiryPreparation.items.map((item, index) => (
                 <li key={item.title || item} className={`body rounded border border-neutral bg-white text-menu shadow ${isAgricultureUx ? 'p-5' : 'p-4'}`}>
-                  <span className="text-primary">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+                  {!isAgricultureUx && (
+                    <span className="text-primary">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  )}
                   {typeof item === 'string' ? (
-                    <span className="mt-2 block">
+                    <span className={`${isAgricultureUx ? '' : 'mt-2'} block`}>
                       {item}
                     </span>
                   ) : (
-                    <span className="mt-2 block">
+                    <span className={`${isAgricultureUx ? '' : 'mt-2'} block`}>
                       <span className="block font-semibold text-primary">
                         {item.title}
                       </span>
@@ -439,8 +445,20 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       <section className="bg-white px-4 py-16 md:px-10 lg:px-16">
-        <div className={`mx-auto grid max-w-6xl gap-8 bg-primary p-6 text-white shadow ${isAgricultureUx ? 'lg:grid-cols-[1fr_auto] lg:items-center lg:p-8' : 'md:grid-cols-3 md:items-center'}`}>
-          <div className={isAgricultureUx ? 'max-w-3xl' : 'md:col-span-2'}>
+        <div className={`relative isolate mx-auto grid max-w-6xl gap-8 overflow-hidden bg-primary p-7 text-white shadow md:items-center md:p-8 ${isAgricultureUx ? 'lg:grid-cols-[1fr_auto]' : 'md:grid-cols-3'}`}>
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.08]"
+            aria-hidden="true"
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(247,235,212,0.85) 1px, transparent 1px), linear-gradient(90deg, rgba(247,235,212,0.85) 1px, transparent 1px)',
+              backgroundSize: '36px 36px',
+            }}
+          />
+          <div className="pointer-events-none absolute -bottom-24 -right-20 h-72 w-72 rounded-full border border-white/10 bg-white/[0.03]" aria-hidden="true" />
+          <div className="pointer-events-none absolute left-8 top-8 h-px w-32 bg-accent/40" aria-hidden="true" />
+
+          <div className={`relative z-10 ${isAgricultureUx ? 'max-w-3xl' : 'md:col-span-2'}`}>
             <p className="body text-accent">
               {richContent.cta.eyebrow}
             </p>
@@ -466,7 +484,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
           <Link
             href={richContent.cta.href}
-            className={`button button-md inline-block self-start whitespace-nowrap ${isAgricultureUx ? 'w-full text-center sm:w-auto lg:justify-self-end' : 'md:justify-self-end'}`}
+            className={`button button-md relative z-10 inline-flex min-h-[44px] w-full items-center justify-center self-start whitespace-nowrap text-center sm:w-auto ${isAgricultureUx ? 'lg:justify-self-end' : 'md:justify-self-end'}`}
           >
             {richContent.cta.label}
           </Link>
