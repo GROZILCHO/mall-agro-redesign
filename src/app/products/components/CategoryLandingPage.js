@@ -3,6 +3,14 @@ import Image from 'next/image';
 import { categoryPageContent } from '../../../lib/content/categoryPages.js';
 import { getCategoryById } from '../../../lib/content/categories.js';
 
+function toParagraphs(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value ? [value] : [];
+}
+
 export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
   const category = getCategoryById(categoryId);
   const richContent = categoryPageContent[locale]?.[categoryId];
@@ -28,9 +36,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               <h1 className="responsive-h1 mt-3 text-primary">
                 {richContent.hero.title}
               </h1>
-              <p className="body mt-6 text-menu">
-                {richContent.hero.body}
-              </p>
+              <div className="mt-6">
+                {toParagraphs(richContent.hero.body).map((paragraph) => (
+                  <p key={paragraph} className="body mb-5 text-menu last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {categoryIntentItems.map((intent) => (
@@ -85,13 +97,13 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </div>
             <div className="p-6">
               <p className="body font-semibold normal-case tracking-normal text-menu">
-                Current category
+                {richContent.currentCategory?.label || 'Current category'}
               </p>
               <p className="h3 mt-3 text-primary">
-                {categoryContent.title}
+                {richContent.currentCategory?.title || categoryContent.title}
               </p>
               <p className="body mt-3 text-menu">
-                {categoryContent.cardDescription}
+                {richContent.currentCategory?.body || categoryContent.cardDescription}
               </p>
             </div>
           </div>
@@ -116,7 +128,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto grid max-w-6xl gap-8 border-y border-neutral py-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="body font-semibold normal-case tracking-normal text-menu">
-              Category overview
+              {richContent.overview.eyebrow || 'Category overview'}
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
               {richContent.overview.title}
@@ -136,11 +148,16 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
             <p className="body font-semibold normal-case tracking-normal text-menu">
-              Operating contexts
+              {richContent.applicationEyebrow || 'Operating contexts'}
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
               {richContent.applicationHeading}
             </h2>
+            {richContent.applicationIntro && (
+              <p className="body mt-5 text-menu">
+                {richContent.applicationIntro}
+              </p>
+            )}
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {richContent.applicationAreas.map((area, index) => {
@@ -188,28 +205,50 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="body font-semibold normal-case tracking-normal text-menu">
-              Equipment direction
+              {richContent.equipmentDirection.eyebrow || 'Equipment direction'}
             </p>
             <h2 className="responsive-h2 text-primary">
               {richContent.equipmentDirection.title}
             </h2>
+            {richContent.equipmentDirection.intro && (
+              <div className="mt-5">
+                {toParagraphs(richContent.equipmentDirection.intro).map((paragraph) => (
+                  <p key={paragraph} className="body mb-5 text-menu last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
           <div className="grid gap-6 lg:col-span-3">
-            <div className="rounded border border-neutral bg-white p-6 shadow">
-              <p className="body font-semibold normal-case tracking-normal text-menu">
-                {imageSlots.equipmentDirection.label}
-              </p>
-              <h3 className="h3 mt-3 text-primary">
-                {imageSlots.equipmentDirection.title}
-              </h3>
-              <p className="body mt-3 text-menu">
-                {imageSlots.equipmentDirection.body}
-              </p>
-            </div>
+            {imageSlots.equipmentDirection.renderCard !== false && (
+              <div className="rounded border border-neutral bg-white p-6 shadow">
+                <p className="body font-semibold normal-case tracking-normal text-menu">
+                  {imageSlots.equipmentDirection.label}
+                </p>
+                <h3 className="h3 mt-3 text-primary">
+                  {imageSlots.equipmentDirection.title}
+                </h3>
+                <p className="body mt-3 text-menu">
+                  {imageSlots.equipmentDirection.body}
+                </p>
+              </div>
+            )}
             <ul className="grid gap-4 sm:grid-cols-2">
               {richContent.equipmentDirection.items.map((item) => (
-                <li key={item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
-                  {item}
+                <li key={item.title || item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
+                  {typeof item === 'string' ? (
+                    item
+                  ) : (
+                    <>
+                      <h3 className="h3 text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="body mt-3 text-menu">
+                        {item.body}
+                      </p>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>
@@ -222,27 +261,33 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
             <div>
               <p className="body font-semibold normal-case tracking-normal text-menu">
-                Inquiry workflow
+                {richContent.inquiryWorkflow.eyebrow || 'Inquiry workflow'}
               </p>
               <h2 className="responsive-h2 mt-3 text-primary">
                 {richContent.inquiryWorkflow.title}
               </h2>
             </div>
-            <p className="body border-l border-neutral pl-4 text-menu">
-              Move from general category interest toward a clearer project conversation.
-            </p>
+            <div className="border-l border-neutral pl-4">
+              {toParagraphs(richContent.inquiryWorkflow.intro || 'Move from general category interest toward a clearer project conversation.').map((paragraph) => (
+                <p key={paragraph} className="body mb-5 text-menu last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
-          <div className="mb-6 rounded border border-neutral bg-gentle p-5">
-            <p className="body font-semibold normal-case tracking-normal text-menu">
-              {imageSlots.workflow.label}
-            </p>
-            <h3 className="h3 mt-3 text-primary">
-              {imageSlots.workflow.title}
-            </h3>
-            <p className="body mt-3 text-menu">
-              {imageSlots.workflow.body}
-            </p>
-          </div>
+          {imageSlots.workflow.renderCard !== false && (
+            <div className="mb-6 rounded border border-neutral bg-gentle p-5">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
+                {imageSlots.workflow.label}
+              </p>
+              <h3 className="h3 mt-3 text-primary">
+                {imageSlots.workflow.title}
+              </h3>
+              <p className="body mt-3 text-menu">
+                {imageSlots.workflow.body}
+              </p>
+            </div>
+          )}
           <div className="grid gap-4">
             {richContent.inquiryWorkflow.steps.map((step, index) => (
               <article key={step.title} className="grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start">
@@ -267,22 +312,38 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="body font-semibold normal-case tracking-normal text-menu">
-              Before inquiry
+              {richContent.inquiryPreparation.eyebrow || 'Before inquiry'}
             </p>
             <h2 className="responsive-h2 text-primary">
               {richContent.inquiryPreparation.title}
             </h2>
+            {richContent.inquiryPreparation.intro && (
+              <p className="body mt-5 text-menu">
+                {richContent.inquiryPreparation.intro}
+              </p>
+            )}
           </div>
           <div className="lg:col-span-3">
             <ul className="grid gap-4 md:grid-cols-2">
               {richContent.inquiryPreparation.items.map((item, index) => (
-                <li key={item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
+                <li key={item.title || item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
                   <span className="text-primary">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="mt-2 block">
-                    {item}
-                  </span>
+                  {typeof item === 'string' ? (
+                    <span className="mt-2 block">
+                      {item}
+                    </span>
+                  ) : (
+                    <span className="mt-2 block">
+                      <span className="block font-semibold text-primary">
+                        {item.title}
+                      </span>
+                      <span className="mt-2 block">
+                        {item.body}
+                      </span>
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -291,31 +352,84 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       </section>
 
       <section className="bg-white px-4 py-12 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-6 border-y border-neutral py-8 md:grid-cols-3 md:items-center">
-          <div>
-            <p className="body font-semibold normal-case tracking-normal text-menu">
-              {richContent.relatedCategories.eyebrow}
-            </p>
-            <h2 className="h3 mt-3 text-primary">
-              {richContent.relatedCategories.title}
-            </h2>
-          </div>
-          <div className="grid gap-3 md:col-span-2 md:grid-cols-2">
-            {richContent.relatedCategories.links.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group block rounded border border-neutral bg-white p-5 text-primary shadow transition hover:-translate-y-0.5 hover:border-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent"
-              >
-                <span className="h3 block">
-                  {item.label}
-                </span>
-                <span className="body mt-3 block font-semibold normal-case tracking-normal text-menu group-hover:underline">
-                  {relatedCategoryCtaLabel}
-                </span>
-              </Link>
-            ))}
-          </div>
+        <div className="mx-auto max-w-6xl border-y border-neutral py-8">
+          {richContent.beyondField ? (
+            <>
+              <div className="max-w-3xl">
+                <p className="body font-semibold normal-case tracking-normal text-menu">
+                  {richContent.beyondField.eyebrow}
+                </p>
+                <h2 className="responsive-h2 mt-3 text-primary">
+                  {richContent.beyondField.title}
+                </h2>
+                <div className="mt-5">
+                  {toParagraphs(richContent.beyondField.intro).map((paragraph) => (
+                    <p key={paragraph} className="body mb-5 text-menu last:mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {richContent.beyondField.links.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group block rounded border border-neutral bg-white p-5 text-primary shadow transition hover:-translate-y-0.5 hover:border-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    {item.eyebrow && (
+                      <span className="body block font-semibold normal-case tracking-normal text-menu">
+                        {item.eyebrow}
+                      </span>
+                    )}
+                    <span className="h3 mt-3 block">
+                      {item.label}
+                    </span>
+                    {toParagraphs(item.body).map((paragraph) => (
+                      <span key={paragraph} className="body mt-3 block text-menu">
+                        {paragraph}
+                      </span>
+                    ))}
+                    <span className="body mt-5 block font-semibold normal-case tracking-normal text-menu group-hover:underline">
+                      {item.ctaLabel}
+                    </span>
+                    {item.ctaBody && (
+                      <span className="body mt-2 block text-menu">
+                        {item.ctaBody}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="grid gap-6 md:grid-cols-3 md:items-center">
+              <div>
+                <p className="body font-semibold normal-case tracking-normal text-menu">
+                  {richContent.relatedCategories.eyebrow}
+                </p>
+                <h2 className="h3 mt-3 text-primary">
+                  {richContent.relatedCategories.title}
+                </h2>
+              </div>
+              <div className="grid gap-3 md:col-span-2 md:grid-cols-2">
+                {richContent.relatedCategories.links.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group block rounded border border-neutral bg-white p-5 text-primary shadow transition hover:-translate-y-0.5 hover:border-accent hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <span className="h3 block">
+                      {item.label}
+                    </span>
+                    <span className="body mt-3 block font-semibold normal-case tracking-normal text-menu group-hover:underline">
+                      {relatedCategoryCtaLabel}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -328,9 +442,22 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             <h2 className="responsive-h2 text-white">
               {richContent.cta.title}
             </h2>
-            <p className="body mt-4">
-              {richContent.cta.body}
-            </p>
+            <div className="mt-4">
+              {toParagraphs(richContent.cta.body).map((paragraph) => (
+                <p key={paragraph} className="body mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            {richContent.cta.supportingText && (
+              <div className="mt-5 border-l border-accent/50 pl-4">
+                {toParagraphs(richContent.cta.supportingText).map((paragraph) => (
+                  <p key={paragraph} className="body mb-3 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
           <Link
             href={richContent.cta.href}
@@ -340,6 +467,18 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </Link>
         </div>
       </section>
+
+      {richContent.closingStatement && (
+        <section className="bg-gentle px-4 py-12 md:px-10 lg:px-16">
+          <div className="mx-auto max-w-4xl border-t border-neutral pt-8">
+            {toParagraphs(richContent.closingStatement).map((paragraph) => (
+              <p key={paragraph} className="body mb-4 text-menu last:mb-0">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }
