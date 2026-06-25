@@ -22,7 +22,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-stretch">
           <div className="flex flex-col justify-between">
             <div>
-              <p className="body text-accent">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
                 {richContent.hero.eyebrow}
               </p>
               <h1 className="responsive-h1 mt-3 text-primary">
@@ -34,7 +34,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {categoryIntentItems.map((intent) => (
-                <p key={intent} className="body rounded border border-neutral bg-gentle px-4 py-3 text-primary">
+                <p key={intent} className="body rounded border border-neutral bg-gentle px-4 py-3 font-semibold normal-case tracking-normal text-menu">
                   {intent}
                 </p>
               ))}
@@ -72,7 +72,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             )}
             <div className="flex min-h-64 items-end border-b border-neutral bg-white p-6">
               <div>
-                <p className="body text-accent">
+                <p className="body font-semibold normal-case tracking-normal text-menu">
                   {imageSlots.hero.label}
                 </p>
                 <h2 className="h3 mt-3 text-primary">
@@ -84,7 +84,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
               </div>
             </div>
             <div className="p-6">
-              <p className="body text-accent">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
                 Current category
               </p>
               <p className="h3 mt-3 text-primary">
@@ -115,7 +115,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       <section id="overview" className="scroll-mt-24 px-4 py-12 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 border-y border-neutral py-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               Category overview
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
@@ -135,7 +135,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       <section id="applications" className="scroll-mt-24 bg-white px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               Operating contexts
             </p>
             <h2 className="responsive-h2 mt-3 text-primary">
@@ -161,7 +161,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 )}
                 <div className="flex min-h-48 items-end border-b border-neutral bg-white p-5">
                   <div>
-                    <p className="body text-accent">
+                    <p className="body font-semibold normal-case tracking-normal text-menu">
                       {context?.label || area.title}
                     </p>
                     <h3 className="h3 mt-3 text-primary">
@@ -187,7 +187,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       <section id="equipment-direction" className="scroll-mt-24 px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               Equipment direction
             </p>
             <h2 className="responsive-h2 text-primary">
@@ -196,7 +196,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           </div>
           <div className="grid gap-6 lg:col-span-3">
             <div className="rounded border border-neutral bg-white p-6 shadow">
-              <p className="body text-accent">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
                 {imageSlots.equipmentDirection.label}
               </p>
               <h3 className="h3 mt-3 text-primary">
@@ -221,7 +221,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end">
             <div>
-              <p className="body text-accent">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
                 Inquiry workflow
               </p>
               <h2 className="responsive-h2 mt-3 text-primary">
@@ -233,7 +233,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             </p>
           </div>
           <div className="mb-6 rounded border border-neutral bg-gentle p-5">
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               {imageSlots.workflow.label}
             </p>
             <h3 className="h3 mt-3 text-primary">
@@ -246,7 +246,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
           <div className="grid gap-4">
             {richContent.inquiryWorkflow.steps.map((step, index) => (
               <article key={step.title} className="grid gap-4 rounded border border-neutral bg-gentle p-5 md:grid-cols-5 md:items-start">
-                <p className="h3 text-accent">
+                <p className="h3 text-primary">
                   {String(index + 1).padStart(2, '0')}
                 </p>
                 <div className="md:col-span-4">
@@ -266,7 +266,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       <section className="px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               Before inquiry
             </p>
             <h2 className="responsive-h2 text-primary">
@@ -277,7 +277,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
             <ul className="grid gap-4 md:grid-cols-2">
               {richContent.inquiryPreparation.items.map((item, index) => (
                 <li key={item} className="body rounded border border-neutral bg-white p-4 text-menu shadow">
-                  <span className="text-accent">
+                  <span className="text-primary">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="mt-2 block">
@@ -293,7 +293,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
       <section className="bg-white px-4 py-12 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-6 border-y border-neutral py-8 md:grid-cols-3 md:items-center">
           <div>
-            <p className="body text-accent">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               {richContent.relatedCategories.eyebrow}
             </p>
             <h2 className="h3 mt-3 text-primary">
@@ -310,7 +310,7 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 <span className="h3 block">
                   {item.label}
                 </span>
-                <span className="body mt-3 block text-accent group-hover:underline">
+                <span className="body mt-3 block font-semibold normal-case tracking-normal text-menu group-hover:underline">
                   {relatedCategoryCtaLabel}
                 </span>
               </Link>

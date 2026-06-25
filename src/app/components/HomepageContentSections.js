@@ -10,7 +10,7 @@ export function HomepageIntroSection() {
     <section className="max-w-full overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-16">
       <div className="mx-auto grid max-w-6xl min-w-0 gap-10 lg:grid-cols-5">
         <div className="min-w-0 lg:col-span-3">
-          <p className="body font-semibold text-primary">
+          <p className="body font-semibold normal-case tracking-normal text-menu">
             {content.intro.eyebrow}
           </p>
           <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
@@ -56,7 +56,7 @@ export function HomepagePreCategorySections() {
       <section className="max-w-full overflow-hidden bg-gentle px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl min-w-0">
           <div className="mb-10 max-w-3xl min-w-0">
-            <p className="body font-semibold text-primary">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               {content.whatWeSupport.eyebrow}
             </p>
             <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
@@ -82,7 +82,7 @@ export function HomepagePreCategorySections() {
               >
                 <div className="h-1 w-full bg-primary/80" aria-hidden="true" />
                 <div className="flex min-w-0 flex-1 flex-col p-7">
-                  <p className="body text-sm font-semibold uppercase tracking-[0.08em] text-accent">
+                  <p className="body text-sm font-semibold normal-case tracking-normal text-menu">
                     {pathLabels[index]}
                   </p>
                   <h3 className="responsive-h3 mt-3 break-normal text-primary">
@@ -103,7 +103,7 @@ export function HomepagePreCategorySections() {
       <section className="max-w-full overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl min-w-0 gap-10 lg:grid-cols-5">
           <div className="min-w-0 lg:col-span-2">
-            <p className="body font-semibold text-primary">
+            <p className="body font-semibold normal-case tracking-normal text-menu">
               {content.projectCapabilities.eyebrow}
             </p>
             <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
@@ -136,7 +136,7 @@ export function HomepagePreCategorySections() {
                 className="min-w-0 rounded border border-neutral bg-gentle p-6 shadow-sm"
               >
                 <div className="mb-5 h-1 w-12 bg-accent" aria-hidden="true" />
-                <p className="body text-sm font-semibold uppercase tracking-[0.08em] text-primary/70">
+                <p className="body text-sm font-semibold normal-case tracking-normal text-menu">
                   {capabilityLabels[index]}
                 </p>
                 <h3 className="responsive-h3 mt-3 break-normal text-primary">
@@ -231,7 +231,7 @@ export default function HomepageContentSections() {
         <div className="mx-auto max-w-6xl min-w-0">
           <div className="mb-10 grid min-w-0 gap-8 lg:grid-cols-5 lg:items-stretch">
             <div className="min-w-0 lg:col-span-3">
-              <p className="body font-semibold text-primary">
+              <p className="body font-semibold normal-case tracking-normal text-menu">
                 {content.workflow.eyebrow}
               </p>
               <h2 className="responsive-h2 mt-3 break-words [overflow-wrap:anywhere] text-primary">
@@ -256,7 +256,7 @@ export default function HomepageContentSections() {
                 key={step.title}
                 className="flex min-w-0 flex-col rounded border border-neutral bg-white p-6 shadow-sm"
               >
-                <p className="text-4xl font-semibold leading-none text-primary">
+                <p className="text-4xl font-semibold leading-none text-menu">
                   {step.label}
                 </p>
                 <div className="mt-5 min-w-0">
