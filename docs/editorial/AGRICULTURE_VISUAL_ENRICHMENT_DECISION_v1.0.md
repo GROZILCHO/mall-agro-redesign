@@ -1,5 +1,10 @@
 # Agriculture Visual Enrichment Decision v1.0
 
+> PM UPDATE:
+> The first implementation attempt based on this decision was rejected after visual QA.
+> Do not implement the diagram-like Project Information panel or separate Beyond the Field progression strip.
+> Revised direction: use a future media/image placeholder for Project Information and integrate category icons directly inside the Beyond the Field destination cards.
+
 ## 1. Verdict
 
 **Visual enrichment needed now.**
