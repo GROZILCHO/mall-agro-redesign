@@ -96,11 +96,15 @@ Navbar responsive correction is implemented: desktop layout appears at `xl`, and
 
 Latest stable category baseline includes rich English category pages for Agriculture, Grain Processing / Grain Handling, and Food Industry Equipment.
 
+Agriculture Category Benchmark v1 is accepted in commit `80c3e30` (`fix: use agriculture placeholder asset and align destination icons`). Agriculture is now the structural, content, and UX reference for continuing the category system. Do not continue polishing Agriculture unless a critical regression or launch-blocking issue appears.
+
+The confirmed category workflow is: Golden Master -> Public Page Copy Map -> Codex implementation -> UX refinement. Future category work should apply this workflow to Grain Processing / Grain Handling and Food Industry Equipment.
+
 The recent local homepage `404` report was traced to stale/multiple local dev servers or port mismatch. After killing Node processes, deleting `.next`, and starting one clean dev server, `/`, `/products/agriculture`, and `/quote` returned `200`. If route behavior differs by port, stop and clear stale Node/Next processes before assuming source regression.
 
 The Agriculture category page uses explicit image-slot architecture, v1 content, and implemented visuals. Food Industry Equipment has a rich page v1 and hero visual. Grain Processing / Grain Handling has a rich page v1 with all image slots currently empty. All three English category pages remain temporary `noindex`. Romanian category routes remain placeholders.
 
-The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted. Mobile readability at 375px remains a separate controlled follow-up. Mobile menu concerns are observation-only unless reproduced on a clean single dev server.
+Agriculture mobile/readability concerns are no longer active tracking items after benchmark acceptance; revisit only if a regression is reproduced. Mobile menu concerns are observation-only unless reproduced on a clean single dev server.
 
 ## What Exists
 
@@ -165,7 +169,7 @@ Workflow governance documentation:
 
 ## Next Recommended Task
 
-Prepare a controlled homepage visual hierarchy / evidence strategy. The post-implementation audit for commit `3f037ad` is complete and found the refined copy stable with no broad rewrite recommended. Next work should define visual proof areas for industrial scale, equipment context, production lines, logistics and delivery coordination, implementation support, category-specific credibility, and Hero media strategy before generating final homepage assets. The current legacy Hero video should remain temporary while the strategy evaluates optimized desktop video, desktop video plus tablet/mobile static fallback, a fully static industrial Hero visual, or stronger category/project visuals lower on the page. Optional follow-ups include About page messaging, a content/editorial QA sprint across the three English rich category pages, migrating shared category image rendering from `<img>` to `next/image`, and planning Grain Processing visual assets. Product template architecture and product import strategy remain later phases. Romanian homepage/root behavior, full Romanian header/navigation localization, `html lang="ro"`, and SEO runtime behavior remain deferred until separately scoped.
+Begin the Grain Processing / Grain Handling category editorial cycle using Agriculture Category Benchmark v1 as the reference. Food Industry Equipment should follow the same controlled editorial and implementation workflow. Homepage alignment should come after the remaining category pages establish the final site tone and structure. Final visual assets and photography for category pages remain a later visual asset pass, not the immediate next work.
 
 ## Source Audit Results
 

@@ -136,6 +136,10 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - SEO runtime remains deferred.
 - Romanian homepage/root behavior and full Romanian shared navigation/header localization remain deferred.
 - Latest stable implementation baseline includes rich English category pages for Agriculture, Grain Processing / Grain Handling, and Food Industry Equipment.
+- Agriculture Category Benchmark v1 is accepted in commit `80c3e30` (`fix: use agriculture placeholder asset and align destination icons`).
+- Agriculture is now the structural, content, and UX reference for the remaining category pages.
+- Agriculture-specific content/UX polishing is no longer the active next task unless a critical regression or launch-blocking issue appears.
+- Final Agriculture photography and category visual assets remain pending and should be handled later as a separate visual asset pass.
 - After killing stale Node processes, deleting `.next`, and starting one clean dev server, the homepage route `/` was confirmed working with `200`.
 - `/products/agriculture` was confirmed working and uses the rich Agriculture category page with explicit image-slot architecture.
 - `/quote` was confirmed working with `200`.
@@ -148,8 +152,7 @@ Documentation bootstrap baseline is complete. The existing early Next.js App Rou
 - `/products/agriculture` remains temporary `noindex`; SEO runtime remains deferred.
 - Temporary `noindex` remains on all three English category pages.
 - `npm.cmd run build` passed for the English category baseline. Non-blocking warnings remain: shared `<img>` warnings in `CategoryLandingPage.js` and stale Browserslist/caniuse-lite data.
-- The attempted Agriculture mobile overflow/readability fix was not committed and must not be treated as accepted.
-- Agriculture mobile 375px overflow/readability remains a separate controlled follow-up.
+- Agriculture mobile/readability concerns are no longer active tracking items after benchmark acceptance; revisit only if a regression is reproduced.
 - Mobile menu concerns remain observation-only unless reproduced on a clean single dev server.
 
 ## Current Constraints
