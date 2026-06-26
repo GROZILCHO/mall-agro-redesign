@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { categoryPageContent } from '../../../lib/content/categoryPages.js';
-import { getCategoryById } from '../../../lib/content/categories.js';
+import { categories, getCategoryById } from '../../../lib/content/categories.js';
 
 function toParagraphs(value) {
   if (Array.isArray(value)) {
@@ -23,6 +23,9 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
   const imageSlots = richContent.imageSlots;
   const categoryIntentItems = richContent.categoryIntent.filter((intent) => intent?.trim());
   const isAgricultureUx = richContent.layoutVariant === 'agriculture-ux-v1';
+  const categoriesByRoute = new Map(
+    categories.map((item) => [item.locales[locale]?.route, item.locales[locale]]),
+  );
   const relatedCategoryCtaLabel = locale === 'ro' ? 'Vezi categoria →' : 'View category →';
 
   return (
@@ -334,6 +337,17 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 {richContent.inquiryPreparation.intro}
               </p>
             )}
+            {isAgricultureUx && (
+              <div className="relative mt-6 aspect-[16/10] overflow-hidden border border-neutral bg-white" aria-hidden="true">
+                <Image
+                  src="/img-placeholder.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 36vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
           <div className={isAgricultureUx ? '' : 'lg:col-span-3'}>
             <ul className={`grid md:grid-cols-2 ${isAgricultureUx ? 'gap-3' : 'gap-4'}`}>
@@ -385,7 +399,10 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                 </div>
               </div>
               <div className="mt-8 grid gap-4 md:grid-cols-2">
-                {richContent.beyondField.links.map((item) => (
+                {richContent.beyondField.links.map((item) => {
+                  const destinationCategory = categoriesByRoute.get(item.href);
+
+                  return (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -396,8 +413,20 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                         {item.eyebrow}
                       </span>
                     )}
-                    <span className="h3 mt-3 block">
-                      {item.label}
+                    <span className="mt-3 flex items-start gap-3">
+                      {isAgricultureUx && destinationCategory?.icon && (
+                        <Image
+                          src={destinationCategory.icon}
+                          alt=""
+                          width={40}
+                          height={40}
+                          aria-hidden="true"
+                          className="h-10 w-10 shrink-0"
+                        />
+                      )}
+                      <span className="h3 block">
+                        {item.label}
+                      </span>
                     </span>
                     {toParagraphs(item.body).map((paragraph) => (
                       <span key={paragraph} className="body mt-3 block text-menu">
@@ -413,7 +442,8 @@ export default function CategoryLandingPage({ categoryId, locale = 'en' }) {
                       </span>
                     )}
                   </Link>
-                ))}
+                  );
+                })}
               </div>
             </>
           ) : (
